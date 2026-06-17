@@ -19,9 +19,6 @@ final class ChainProgressService {
 
     static let shared = ChainProgressService()
 
-    private static let supabaseURL = "https://azsrjwfieyldeertdlws.supabase.co"
-    private static let anonKey     = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF6c3Jqd2ZpZXlsZGVlcnRkbHdzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM5NTgsImV4cCI6MjA5MTY0OTk1OH0.biWZJ8VnVj4PYB6EoQRVJtd0OMrFmzaxtJy3DfDvW54"
-
     private init() {}
 
     /// Returns a random chain at `difficulty` that the current user hasn't
@@ -29,9 +26,9 @@ final class ChainProgressService {
     /// Returns `nil` when all chains at that difficulty are done or on error.
     func getChain(difficulty: String) async -> Chain? {
         guard let userId      = AuthService.shared.userId,
-              let accessToken = AuthService.shared.accessToken,
-              let url = URL(string: "\(Self.supabaseURL)/rest/v1/rpc/get_chain")
+              let accessToken = AuthService.shared.accessToken
         else { return nil }
+        let url = AppConfig.Supabase.rpcURL("get_chain")
 
         let body: [String: Any] = [
             "p_user_id":    userId,
@@ -41,7 +38,7 @@ final class ChainProgressService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json",      forHTTPHeaderField: "Content-Type")
-        request.setValue(Self.anonKey,            forHTTPHeaderField: "apikey")
+        request.setValue(AppConfig.Supabase.anonKey, forHTTPHeaderField: "apikey")
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
 

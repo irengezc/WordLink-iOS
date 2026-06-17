@@ -5,11 +5,6 @@ import XCTest
 /// Requires a network connection. Each test run creates a fresh anonymous user.
 final class SupabaseIntegrationTests: XCTestCase {
 
-    // MARK: - Config
-
-    private static let supabaseURL = "https://azsrjwfieyldeertdlws.supabase.co"
-    private static let anonKey     = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF6c3Jqd2ZpZXlsZGVlcnRkbHdzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM5NTgsImV4cCI6MjA5MTY0OTk1OH0.biWZJ8VnVj4PYB6EoQRVJtd0OMrFmzaxtJy3DfDvW54"
-
     // MARK: - Setup
 
     /// Clear stored session before each test so we always start with a fresh anonymous user.
@@ -24,11 +19,11 @@ final class SupabaseIntegrationTests: XCTestCase {
     // MARK: - Debug helper
 
     func testRawAnonSignIn() async throws {
-        let url = URL(string: "\(Self.supabaseURL)/auth/v1/signup")!
+        let url = AppConfig.Supabase.authURL(path: "signup")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(Self.anonKey, forHTTPHeaderField: "apikey")
+        request.setValue(AppConfig.Supabase.anonKey, forHTTPHeaderField: "apikey")
         request.httpBody = try? JSONSerialization.data(withJSONObject: [:])
 
         do {
@@ -93,13 +88,16 @@ final class SupabaseIntegrationTests: XCTestCase {
     }
 
     private func fetchUserProgress(userId: String, accessToken: String) async throws -> [ProgressRow] {
-        var components = URLComponents(string: "\(Self.supabaseURL)/rest/v1/user_progress")!
+        var components = URLComponents(
+            url: AppConfig.Supabase.restURL(path: "user_progress"),
+            resolvingAgainstBaseURL: false
+        )!
         components.queryItems = [
             URLQueryItem(name: "user_id", value: "eq.\(userId)"),
             URLQueryItem(name: "select",  value: "chain_id")
         ]
         var request = URLRequest(url: components.url!)
-        request.setValue(Self.anonKey,            forHTTPHeaderField: "apikey")
+        request.setValue(AppConfig.Supabase.anonKey, forHTTPHeaderField: "apikey")
         request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
 
         let (data, response) = try await URLSession.shared.data(for: request)

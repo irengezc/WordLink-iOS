@@ -49,6 +49,13 @@ final class GameViewModel: ObservableObject {
     func startGame(difficulty: Difficulty) {
         self.difficulty = difficulty
         gameStatus = .loading
+
+        if let chainData = ReservoirService.shared.next(for: difficulty) {
+            sessionId = nil
+            setupGame(chain: chainData.chain, explanations: chainData.explanations)
+            return
+        }
+
         Task {
             if let result = await SupabaseGameService.startGame(difficulty: difficulty) {
                 sessionId = result.sessionId

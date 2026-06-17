@@ -10,11 +10,6 @@ final class AuthService {
 
     static let shared = AuthService()
 
-    // MARK: - Constants
-
-    private static let supabaseURL = "https://azsrjwfieyldeertdlws.supabase.co"
-    private static let anonKey     = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF6c3Jqd2ZpZXlsZGVlcnRkbHdzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM5NTgsImV4cCI6MjA5MTY0OTk1OH0.biWZJ8VnVj4PYB6EoQRVJtd0OMrFmzaxtJy3DfDvW54"
-
     private let userIdKey      = "wordlink_anon_user_id"
     private let accessTokenKey = "wordlink_anon_access_token"
     private let refreshTokenKey = "wordlink_anon_refresh_token"
@@ -43,12 +38,12 @@ final class AuthService {
     // MARK: - Private
 
     private func signInAnonymously() async {
-        guard let url = URL(string: "\(Self.supabaseURL)/auth/v1/signup") else { return }
+        let url = AppConfig.Supabase.authURL(path: "signup")
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(Self.anonKey, forHTTPHeaderField: "apikey")
+        request.setValue(AppConfig.Supabase.anonKey, forHTTPHeaderField: "apikey")
         request.httpBody = try? JSONSerialization.data(withJSONObject: [:])
 
         guard let (data, _) = try? await URLSession.shared.data(for: request),
@@ -59,12 +54,17 @@ final class AuthService {
     }
 
     private func refresh(token: String) async -> Bool {
-        guard let url = URL(string: "\(Self.supabaseURL)/auth/v1/token?grant_type=refresh_token") else { return false }
+        var components = URLComponents(
+            url: AppConfig.Supabase.authURL(path: "token"),
+            resolvingAgainstBaseURL: false
+        )
+        components?.queryItems = [URLQueryItem(name: "grant_type", value: "refresh_token")]
+        guard let url = components?.url else { return false }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(Self.anonKey, forHTTPHeaderField: "apikey")
+        request.setValue(AppConfig.Supabase.anonKey, forHTTPHeaderField: "apikey")
         request.httpBody = try? JSONSerialization.data(withJSONObject: ["refresh_token": token])
 
         guard let (data, _) = try? await URLSession.shared.data(for: request),

@@ -3,9 +3,6 @@ import Foundation
 // MARK: - AI Service (via Supabase Edge Function)
 final class GeminiService {
 
-    private static let endpoint = "https://azsrjwfieyldeertdlws.supabase.co/functions/v1/generate-chain"
-    private static let anonKey  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF6c3Jqd2ZpZXlsZGVlcnRkbHdzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzM5NTgsImV4cCI6MjA5MTY0OTk1OH0.biWZJ8VnVj4PYB6EoQRVJtd0OMrFmzaxtJy3DfDvW54"
-
     private static let fallbackData = ChainData(
         chain: ["HIGH", "SCHOOL", "BUS", "STOP", "SIGN", "LANGUAGE", "BARRIER", "REEF", "KNOT"],
         explanations: [
@@ -21,13 +18,13 @@ final class GeminiService {
     )
 
     static func generateWordChain(difficulty: Difficulty) async -> ChainData {
-        guard let url = URL(string: endpoint) else { return fallbackData }
+        let url = AppConfig.Supabase.edgeFunctionURL("generate-chain")
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(anonKey)", forHTTPHeaderField: "Authorization")
-        request.setValue(anonKey, forHTTPHeaderField: "apikey")
+        request.setValue("Bearer \(AppConfig.Supabase.anonKey)", forHTTPHeaderField: "Authorization")
+        request.setValue(AppConfig.Supabase.anonKey, forHTTPHeaderField: "apikey")
         request.httpBody = try? JSONSerialization.data(withJSONObject: ["difficulty": difficulty.rawValue])
 
         do {

@@ -10,6 +10,9 @@
 		27063FF72FB1FCFA0045E59B /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27063FF62FB1FCF90045E59B /* GameDetailsView.swift */; };
 		27EFA0992F8D214F005088E6 /* SupabaseGameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EFA0982F8D214F005088E6 /* SupabaseGameService.swift */; };
 		27EFA09B2F8D2159005088E6 /* ReservoirService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EFA09A2F8D2159005088E6 /* ReservoirService.swift */; };
+		27EFA09C2F8D2169005088E6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EFA09D2F8D2169005088E6 /* AppConfig.swift */; };
+		27EFA09E2F8D2179005088E6 /* reservoir.json in Resources */ = {isa = PBXBuildFile; fileRef = 27EFA09F2F8D2179005088E6 /* reservoir.json */; };
+		27EFA0A02F8D2189005088E6 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 27EFA0A12F8D2189005088E6 /* PrivacyInfo.xcprivacy */; };
 		AA000001 /* WordLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100001 /* WordLinkApp.swift */; };
 		AA000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100002 /* ContentView.swift */; };
 		AA000003 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100003 /* Models.swift */; };
@@ -33,6 +36,9 @@
 		27063FF62FB1FCF90045E59B /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsView.swift; sourceTree = "<group>"; };
 		27EFA0982F8D214F005088E6 /* SupabaseGameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseGameService.swift; sourceTree = "<group>"; };
 		27EFA09A2F8D2159005088E6 /* ReservoirService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservoirService.swift; sourceTree = "<group>"; };
+		27EFA09D2F8D2169005088E6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		27EFA09F2F8D2179005088E6 /* reservoir.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reservoir.json; sourceTree = "<group>"; };
+		27EFA0A12F8D2189005088E6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AA100001 /* WordLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLinkApp.swift; sourceTree = "<group>"; };
 		AA100002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA100003 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 			children = (
 				27EFA09A2F8D2159005088E6 /* ReservoirService.swift */,
 				27EFA0982F8D214F005088E6 /* SupabaseGameService.swift */,
+				27EFA09D2F8D2169005088E6 /* AppConfig.swift */,
+				27EFA09F2F8D2179005088E6 /* reservoir.json */,
+				27EFA0A12F8D2189005088E6 /* PrivacyInfo.xcprivacy */,
 				AA100001 /* WordLinkApp.swift */,
 				AA100002 /* ContentView.swift */,
 				AA400003 /* Models */,
@@ -205,6 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EFA09E2F8D2179005088E6 /* reservoir.json in Resources */,
+				27EFA0A02F8D2189005088E6 /* PrivacyInfo.xcprivacy in Resources */,
 				AA000016 /* Assets.xcassets in Resources */,
 				AA000017 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -220,6 +231,7 @@
 				AA000001 /* WordLinkApp.swift in Sources */,
 				AA000002 /* ContentView.swift in Sources */,
 				AA000003 /* Models.swift in Sources */,
+				27EFA09C2F8D2169005088E6 /* AppConfig.swift in Sources */,
 				27EFA0992F8D214F005088E6 /* SupabaseGameService.swift in Sources */,
 				AA000004 /* GeminiService.swift in Sources */,
 				AA000005 /* AudioService.swift in Sources */,

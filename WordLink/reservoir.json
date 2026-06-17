@@ -1,423 +1,592 @@
 {
   "easy": [
     {
-      "chain": ["COLD", "WATER", "FALL", "BACK", "YARD", "WORK", "SHOP", "PING", "PONG"],
+      "chain": ["HIGH", "SCHOOL", "BUS", "STOP", "SIGN", "LANGUAGE", "BARRIER", "REEF", "FISH"],
       "explanations": [
-        "COLD WATER: Water at a low temperature, often used for drinking or cooling.",
-        "WATER FALL: A cascade of water falling from a height.",
-        "FALL BACK: To retreat or revert to a previous position.",
-        "BACK YARD: The outdoor area behind a house.",
-        "YARD WORK: Tasks done to maintain a garden or lawn.",
-        "WORK SHOP: A room or building where crafts or repairs are done.",
-        "SHOP PING: The act of visiting stores to buy goods.",
-        "PING PONG: A table tennis game played with small paddles and a lightweight ball."
+        "HIGH SCHOOL: A secondary school for teenagers.",
+        "SCHOOL BUS: A bus that takes students to and from school.",
+        "BUS STOP: A place where buses pick up or drop off passengers.",
+        "STOP SIGN: A road sign that tells drivers to stop.",
+        "SIGN LANGUAGE: A visual language using hands, face, and body movements.",
+        "LANGUAGE BARRIER: A communication problem caused by different languages.",
+        "BARRIER REEF: A long reef that runs near and parallel to a coast.",
+        "REEF FISH: A fish that lives around coral reefs."
       ]
     },
     {
-      "chain": ["SUN", "FLOWER", "POT", "LUCK", "KEY", "BOARD", "GAME", "PLAN", "NET"],
+      "chain": ["WATER", "FILTER", "PAPER", "BAG", "LUNCH", "BOX", "TOP", "HAT", "TRICK"],
       "explanations": [
-        "SUN FLOWER: A tall plant with a large yellow bloom that turns toward the sun.",
-        "FLOWER POT: A container used for growing plants.",
-        "POT LUCK: A meal where each guest brings a dish to share.",
-        "LUCK KEY: Something that brings good fortune.",
-        "KEY BOARD: A set of keys on a computer or piano.",
-        "BOARD GAME: A game played on a flat surface with pieces or cards.",
-        "GAME PLAN: A strategy devised before a competition or task.",
-        "PLAN NET: A system of organized routes or connections."
+        "WATER FILTER: A device that removes impurities from water.",
+        "FILTER PAPER: Paper used to filter liquids or air.",
+        "PAPER BAG: A bag made of paper.",
+        "BAG LUNCH: A packed lunch carried in a bag.",
+        "LUNCH BOX: A container used to carry lunch.",
+        "BOX TOP: The top part of a box.",
+        "TOP HAT: A tall formal hat.",
+        "HAT TRICK: Three successes by one player or person in a single event."
       ]
     },
     {
-      "chain": ["APPLE", "JUICE", "BOX", "OFFICE", "WORK", "OUT", "DOOR", "STEP", "DAD"],
+      "chain": ["SUN", "SCREEN", "DOOR", "BELL", "TOWER", "BRIDGE", "LOAN", "SHARK", "TANK"],
       "explanations": [
-        "APPLE JUICE: A drink made from pressed apples.",
-        "JUICE BOX: A small container of juice with a straw.",
-        "BOX OFFICE: The place where tickets are sold at a theater.",
-        "OFFICE WORK: Tasks carried out in a professional workplace.",
-        "WORK OUT: Physical exercise or a training session.",
-        "OUT DOOR: Outside, relating to the open air.",
-        "DOOR STEP: The step at the entrance of a building.",
-        "STEP DAD: A stepfather; a man married to one's mother."
+        "SUN SCREEN: A lotion that protects skin from the sun.",
+        "SCREEN DOOR: A door with mesh that lets air in and keeps insects out.",
+        "DOOR BELL: A bell or button used to announce someone at the door.",
+        "BELL TOWER: A tower that contains one or more bells.",
+        "TOWER BRIDGE: A bridge with towers, often used as a landmark name.",
+        "BRIDGE LOAN: A short-term loan used until longer-term financing is ready.",
+        "LOAN SHARK: A person who lends money at unfairly high interest.",
+        "SHARK TANK: A tank or enclosure used to display sharks."
       ]
     },
     {
-      "chain": ["FIRE", "PLACE", "MAT", "BOARD", "WALK", "WAY", "SIDE", "WALK", "IN"],
+      "chain": ["COFFEE", "TABLE", "TENNIS", "COURT", "ORDER", "FORM", "LETTER", "BOX", "OFFICE"],
       "explanations": [
-        "FIRE PLACE: A structure in a room for holding a fire.",
-        "PLACE MAT: A flat mat set on a table for a plate.",
-        "MAT BOARD: A thick cardboard used in picture framing.",
-        "BOARD WALK: A wooden path along a beach or waterfront.",
-        "WALK WAY: A path or passage for walking.",
-        "WAY SIDE: The edge of a road or path.",
-        "SIDE WALK: A paved path beside a street.",
-        "WALK IN: A room large enough to walk into, like a walk-in closet."
+        "COFFEE TABLE: A low table often placed in front of a sofa.",
+        "TABLE TENNIS: A game played with paddles and a small ball on a table.",
+        "TENNIS COURT: A marked area where tennis is played.",
+        "COURT ORDER: An official instruction from a court.",
+        "ORDER FORM: A document used to request goods or services.",
+        "FORM LETTER: A standard letter reused for many recipients.",
+        "LETTER BOX: A box or slot where letters are delivered.",
+        "BOX OFFICE: The place where tickets are sold for a show or event."
       ]
     },
     {
-      "chain": ["RAIN", "COAT", "RACK", "UP", "TOWN", "SHIP", "YARD", "SALE", "TAX"],
+      "chain": ["BOOK", "CLUB", "HOUSE", "PLANT", "FOOD", "TRUCK", "STOP", "WATCH", "BAND"],
       "explanations": [
-        "RAIN COAT: A waterproof coat worn in wet weather.",
-        "COAT RACK: A stand or fixture for hanging coats.",
-        "RACK UP: To accumulate a score or total.",
-        "UP TOWN: The upper or residential part of a city.",
-        "TOWN SHIP: A small administrative division of a county.",
-        "SHIP YARD: A place where ships are built and repaired.",
-        "YARD SALE: An outdoor sale of used household goods.",
-        "SALE TAX: A tax imposed on retail transactions."
+        "BOOK CLUB: A group that reads and discusses books.",
+        "CLUB HOUSE: A building used by a club or sports group.",
+        "HOUSE PLANT: A plant grown indoors.",
+        "PLANT FOOD: Fertilizer or nutrients used to help plants grow.",
+        "FOOD TRUCK: A vehicle that sells prepared food.",
+        "TRUCK STOP: A roadside place where truck drivers can rest and refuel.",
+        "STOP WATCH: A watch used to measure elapsed time.",
+        "WATCH BAND: The strap that holds a watch on the wrist."
       ]
     },
     {
-      "chain": ["BOOK", "SHELF", "LIFE", "TIME", "OUT", "SIDE", "SHOW", "ROOM", "MATE"],
+      "chain": ["MUSIC", "VIDEO", "GAME", "SHOW", "ROOM", "KEY", "CHAIN", "REACTION", "TIME"],
       "explanations": [
-        "BOOK SHELF: A shelf used to hold books.",
-        "SHELF LIFE: The length of time a product remains usable.",
-        "LIFE TIME: The duration of a person's existence.",
-        "TIME OUT: A brief pause or break in activity.",
-        "OUT SIDE: The external area beyond a boundary.",
-        "SIDE SHOW: A minor attraction at a circus or fair.",
-        "SHOW ROOM: A room used to display goods for sale.",
+        "MUSIC VIDEO: A video made to accompany a song.",
+        "VIDEO GAME: An electronic game played on a screen.",
+        "GAME SHOW: A television show where contestants play games.",
+        "SHOW ROOM: A room where products are displayed for customers.",
+        "ROOM KEY: A key used to enter a room, especially in a hotel.",
+        "KEY CHAIN: A small chain or ring used to hold keys.",
+        "CHAIN REACTION: A series of events where each event causes the next.",
+        "REACTION TIME: The time it takes to respond to something."
+      ]
+    },
+    {
+      "chain": ["AIR", "PORT", "CITY", "HALL", "PASS", "WORD", "SEARCH", "ENGINE", "ROOM"],
+      "explanations": [
+        "AIR PORT: A place where airplanes take off and land.",
+        "PORT CITY: A city with a harbor or major shipping port.",
+        "CITY HALL: The main office building for a city government.",
+        "HALL PASS: Permission for a student to leave class or move through a hall.",
+        "PASS WORD: A secret word or phrase used to access something.",
+        "WORD SEARCH: A puzzle where hidden words are found in a grid of letters.",
+        "SEARCH ENGINE: A tool used to find information online.",
+        "ENGINE ROOM: The room on a ship where engines are located."
+      ]
+    },
+    {
+      "chain": ["BASE", "BALL", "PARK", "BENCH", "PRESS", "RELEASE", "DATE", "NIGHT", "OWL"],
+      "explanations": [
+        "BASE BALL: A bat-and-ball sport played between two teams.",
+        "BALL PARK: A field or stadium where baseball is played.",
+        "PARK BENCH: A bench found in a park.",
+        "BENCH PRESS: A weightlifting exercise done while lying on a bench.",
+        "PRESS RELEASE: An official statement sent to the media.",
+        "RELEASE DATE: The date when something becomes available.",
+        "DATE NIGHT: An evening planned for a romantic outing.",
+        "NIGHT OWL: A person who likes staying up late."
+      ]
+    },
+    {
+      "chain": ["RAIN", "COAT", "CHECK", "LIST", "PRICE", "TAG", "TEAM", "PLAYER", "PIANO"],
+      "explanations": [
+        "RAIN COAT: A waterproof coat worn in rainy weather.",
+        "COAT CHECK: A place where coats are stored temporarily.",
+        "CHECK LIST: A list used to make sure tasks or items are completed.",
+        "LIST PRICE: The official or advertised price of an item.",
+        "PRICE TAG: A label that shows the price of something.",
+        "TAG TEAM: A team whose members take turns, especially in wrestling.",
+        "TEAM PLAYER: Someone who works well with others.",
+        "PLAYER PIANO: A piano that can play music automatically."
+      ]
+    },
+    {
+      "chain": ["GARDEN", "HOSE", "PIPE", "CLEANER", "FISH", "TANK", "TOP", "SOIL", "SAMPLE"],
+      "explanations": [
+        "GARDEN HOSE: A flexible tube used to water a garden.",
+        "HOSE PIPE: A hose used for carrying water.",
+        "PIPE CLEANER: A flexible wire brush used to clean pipes or for crafts.",
+        "CLEANER FISH: A fish that removes parasites or dead skin from other fish.",
+        "FISH TANK: A glass container where fish are kept.",
+        "TANK TOP: A sleeveless shirt.",
+        "TOP SOIL: The upper layer of soil where many plants grow.",
+        "SOIL SAMPLE: A small amount of soil taken for testing."
+      ]
+    },
+    {
+      "chain": ["DOG", "PARK", "RANGER", "STATION", "WAGON", "WHEEL", "CHAIR", "COVER", "LETTER"],
+      "explanations": [
+        "DOG PARK: A park or fenced area where dogs can play.",
+        "PARK RANGER: A person who protects and manages a park.",
+        "RANGER STATION: A building used by park rangers.",
+        "STATION WAGON: A car with a long body and rear storage space.",
+        "WAGON WHEEL: A wheel used on a wagon.",
+        "WHEEL CHAIR: A chair with wheels used by someone who has difficulty walking.",
+        "CHAIR COVER: A cover placed over a chair.",
+        "COVER LETTER: A letter sent with a job application or document."
+      ]
+    },
+    {
+      "chain": ["PHONE", "CALL", "LOG", "CABIN", "FEVER", "DREAM", "HOUSE", "PARTY", "HAT"],
+      "explanations": [
+        "PHONE CALL: A conversation by telephone.",
+        "CALL LOG: A record of phone calls.",
+        "LOG CABIN: A small house built from logs.",
+        "CABIN FEVER: Restlessness from being indoors or isolated too long.",
+        "FEVER DREAM: A strange or intense dream, often associated with illness.",
+        "DREAM HOUSE: A house that someone would love to live in.",
+        "HOUSE PARTY: A party held at someone's home.",
+        "PARTY HAT: A hat worn at a party or celebration."
+      ]
+    },
+    {
+      "chain": ["HOME", "WORK", "SHEET", "MUSIC", "BOX", "LUNCH", "BREAK", "ROOM", "MATE"],
+      "explanations": [
+        "HOME WORK: Schoolwork done outside class.",
+        "WORK SHEET: A paper or digital page of exercises or tasks.",
+        "SHEET MUSIC: Printed music notation.",
+        "MUSIC BOX: A small box that plays music.",
+        "BOX LUNCH: A packed lunch served in a box.",
+        "LUNCH BREAK: A break from work or school for lunch.",
+        "BREAK ROOM: A room where workers can rest or eat.",
         "ROOM MATE: A person who shares a room or apartment."
       ]
     },
     {
-      "chain": ["PLAY", "GROUND", "WORK", "FORCE", "FEED", "BACK", "PACK", "AGE", "OLD"],
+      "chain": ["TOOTH", "BRUSH", "STROKE", "COUNT", "DOWN", "HILL", "SIDE", "WALK", "WAY"],
       "explanations": [
-        "PLAY GROUND: An outdoor area designed for children to play.",
-        "GROUND WORK: Preparatory work that forms a foundation.",
-        "WORK FORCE: The people engaged in or available for work.",
-        "FORCE FEED: To make someone eat or accept something unwillingly.",
-        "FEED BACK: Information about reactions to a product or action.",
-        "BACK PACK: A bag carried on the back with shoulder straps.",
-        "PACK AGE: A wrapped or boxed set of items.",
-        "AGE OLD: Having existed for a very long time."
+        "TOOTH BRUSH: A brush used to clean teeth.",
+        "BRUSH STROKE: A mark made by a paintbrush.",
+        "STROKE COUNT: The number of strokes taken, especially in swimming or golf.",
+        "COUNT DOWN: A backward count before an event.",
+        "DOWN HILL: Sloping downward or becoming easier.",
+        "HILL SIDE: The side of a hill.",
+        "SIDE WALK: A paved path beside a street.",
+        "WALK WAY: A path or passage for walking."
       ]
     },
     {
-      "chain": ["BIRD", "HOUSE", "WORK", "SHOP", "LIFT", "OFF", "BEAT", "BOX", "CAR"],
+      "chain": ["CAT", "FOOD", "BOWL", "CUT", "LINE", "COOK", "BOOK", "STORE", "CREDIT"],
       "explanations": [
-        "BIRD HOUSE: A small structure built for birds to nest in.",
-        "HOUSE WORK: Cleaning and other tasks done in the home.",
-        "WORK SHOP: A place where things are made or repaired.",
-        "SHOP LIFT: To steal goods from a store.",
-        "LIFT OFF: The moment a rocket or aircraft leaves the ground.",
-        "OFF BEAT: Unconventional or unusual.",
-        "BEAT BOX: To produce drum sounds with one's mouth.",
-        "BOX CAR: A railroad freight car with a box-like structure."
-      ]
-    },
-    {
-      "chain": ["STAR", "FISH", "POND", "WATER", "PROOF", "READ", "OUT", "RUN", "WAY"],
-      "explanations": [
-        "STAR FISH: A marine animal shaped like a star.",
-        "FISH POND: A small body of water stocked with fish.",
-        "POND WATER: Water from a natural or artificial pond.",
-        "WATER PROOF: Resistant to penetration by water.",
-        "PROOF READ: To check a text for errors.",
-        "READ OUT: To read something aloud.",
-        "OUT RUN: To run faster or further than someone else.",
-        "RUN WAY: A strip of land for aircraft takeoff and landing."
-      ]
-    },
-    {
-      "chain": ["PAPER", "BACK", "FIRE", "WORKS", "SHOP", "KEEPER", "NET", "WORK", "DAY"],
-      "explanations": [
-        "PAPER BACK: A book with a flexible paper cover.",
-        "BACK FIRE: When a plan produces the opposite result intended.",
-        "FIRE WORKS: Explosive devices used for entertainment displays.",
-        "WORKS SHOP: A workplace where goods are manufactured.",
-        "SHOP KEEPER: A person who owns or manages a small shop.",
-        "KEEPER NET: A net used to hold fish while fishing.",
-        "NET WORK: A system of interconnected things or people.",
-        "WORK DAY: A day on which work is done."
+        "CAT FOOD: Food made for cats.",
+        "FOOD BOWL: A bowl used to hold food.",
+        "BOWL CUT: A haircut with an even rounded shape.",
+        "CUT LINE: A line that marks where something should be cut.",
+        "LINE COOK: A cook who works at a station in a restaurant kitchen.",
+        "COOK BOOK: A book of recipes.",
+        "BOOK STORE: A shop that sells books.",
+        "STORE CREDIT: Credit a store gives instead of a cash refund."
       ]
     }
   ],
   "medium": [
     {
-      "chain": ["HIGH", "SCHOOL", "BUS", "STOP", "SIGN", "LANGUAGE", "BARRIER", "REEF", "KNOT"],
-      "explanations": [
-        "HIGH SCHOOL: A secondary school for students aged roughly 14–18.",
-        "SCHOOL BUS: A vehicle that transports students to and from school.",
-        "BUS STOP: A designated place where passengers board or exit a bus.",
-        "STOP SIGN: A red octagonal road sign requiring vehicles to halt.",
-        "SIGN LANGUAGE: A visual language using hand shapes and movements.",
-        "LANGUAGE BARRIER: Difficulty communicating due to different languages.",
-        "BARRIER REEF: A coral reef running parallel to a coastline.",
-        "REEF KNOT: A simple, symmetrical knot used to bind two ropes together."
-      ]
-    },
-    {
       "chain": ["SOCIAL", "MEDIA", "COVERAGE", "AREA", "CODE", "SWITCH", "BOARD", "ROOM", "SERVICE"],
       "explanations": [
-        "SOCIAL MEDIA: Online platforms for sharing content and connecting with others.",
-        "MEDIA COVERAGE: The reporting of news events by the press.",
-        "COVERAGE AREA: The geographic region served by a network or service.",
-        "AREA CODE: A three-digit number identifying a phone region.",
-        "CODE SWITCH: To alternate between languages or dialects in conversation.",
-        "SWITCH BOARD: A device for manually connecting telephone lines.",
-        "BOARD ROOM: A room where a board of directors meets.",
-        "ROOM SERVICE: Delivery of food and drinks to hotel guest rooms."
+        "SOCIAL MEDIA: Websites and apps where people share content and interact.",
+        "MEDIA COVERAGE: News attention given to an event or topic.",
+        "COVERAGE AREA: The region where a service or signal is available.",
+        "AREA CODE: The number used before a local phone number for a region.",
+        "CODE SWITCH: To change language or speaking style depending on context.",
+        "SWITCH BOARD: A panel or system used to connect electrical or phone lines.",
+        "BOARD ROOM: A room where a company's board meets.",
+        "ROOM SERVICE: Hotel service that brings food or drinks to a guest's room."
       ]
     },
     {
-      "chain": ["FIELD", "TRIP", "WIRE", "LESS", "ON", "LINE", "DANCE", "FLOOR", "PLAN"],
+      "chain": ["PRIME", "TIME", "ZONE", "DEFENSE", "MECHANISM", "DESIGN", "TEAM", "WORK", "LOAD"],
       "explanations": [
-        "FIELD TRIP: An educational excursion outside the classroom.",
-        "TRIP WIRE: A wire stretched close to the ground that triggers an alarm.",
-        "WIRE LESS: Using radio waves rather than wires to transmit signals.",
-        "LESS ON: A period of learning or instruction.",
-        "ON LINE: Connected to or available through a computer network.",
-        "LINE DANCE: A dance in which people stand in lines and perform the same steps.",
-        "DANCE FLOOR: An area designated for dancing.",
-        "FLOOR PLAN: A diagram of a room or building as seen from above."
+        "PRIME TIME: The part of the evening when many people watch television.",
+        "TIME ZONE: A region that uses the same standard time.",
+        "ZONE DEFENSE: A defensive strategy where players guard areas instead of individuals.",
+        "DEFENSE MECHANISM: A mental habit used to protect oneself from stress or anxiety.",
+        "MECHANISM DESIGN: A field that studies how to design rules or systems for desired outcomes.",
+        "DESIGN TEAM: A group responsible for designing a product or experience.",
+        "TEAM WORK: Cooperative effort by members of a group.",
+        "WORK LOAD: The amount of work someone has to do."
       ]
     },
     {
-      "chain": ["PRIME", "TIME", "ZONE", "OUT", "BREAK", "DOWN", "TOWN", "HALL", "MARK"],
+      "chain": ["MIND", "SET", "POINT", "GUARD", "RAIL", "ROAD", "BLOCK", "PARTY", "LINE"],
       "explanations": [
-        "PRIME TIME: The hours when the largest number of people watch TV.",
-        "TIME ZONE: A region that observes a uniform standard time.",
-        "ZONE OUT: To lose concentration and stop paying attention.",
-        "OUT BREAK: A sudden occurrence of something unwelcome.",
-        "BREAK DOWN: A failure in a vehicle or machine, or an emotional collapse.",
-        "DOWN TOWN: The central part of a city.",
-        "TOWN HALL: A building where local government offices are held.",
-        "HALL MARK: A mark denoting quality or excellence."
-      ]
-    },
-    {
-      "chain": ["SHORT", "CUT", "THROAT", "CLEARING", "HOUSE", "HOLD", "UP", "BEAT", "DOWN"],
-      "explanations": [
-        "SHORT CUT: A quicker route or method.",
-        "CUT THROAT: Ruthlessly competitive.",
-        "THROAT CLEARING: The action of clearing one's throat before speaking.",
-        "CLEARING HOUSE: A central agency that coordinates transactions.",
-        "HOUSE HOLD: A family living together in a single dwelling.",
-        "HOLD UP: A robbery at gunpoint, or a delay.",
-        "UP BEAT: Optimistic or cheerful.",
-        "BEAT DOWN: Intense sunlight or heat pressing down."
-      ]
-    },
-    {
-      "chain": ["DEAD", "LINE", "BACKER", "BOARD", "GAME", "CHANGER", "OVER", "NIGHT", "SHIFT"],
-      "explanations": [
-        "DEAD LINE: The latest time by which something must be done.",
-        "LINE BACKER: A defensive player in American football.",
-        "BACKER BOARD: A rigid panel used as a base in tiling.",
-        "BOARD GAME: A game played on a flat board with pieces.",
-        "GAME CHANGER: Something that fundamentally alters a situation.",
-        "CHANGER OVER: A transition from one system to another.",
-        "OVER NIGHT: During or throughout the night.",
-        "NIGHT SHIFT: A period of work scheduled for the night hours."
-      ]
-    },
-    {
-      "chain": ["MASTER", "MIND", "SET", "BACK", "STAGE", "COACH", "WORK", "LOAD", "STONE"],
-      "explanations": [
-        "MASTER MIND: The person who plans and directs a complex scheme.",
-        "MIND SET: A person's established attitudes and outlook.",
-        "SET BACK: A reversal or check to progress.",
-        "BACK STAGE: The area behind the stage in a theater.",
-        "STAGE COACH: A horse-drawn carriage used to carry passengers.",
-        "COACH WORK: The bodywork of a vehicle.",
-        "WORK LOAD: The amount of work to be done by someone.",
-        "LOAD STONE: A piece of magnetite that attracts iron."
-      ]
-    },
-    {
-      "chain": ["DOUBLE", "CROSS", "WORD", "PLAY", "GROUND", "BREAKING", "NEWS", "FLASH", "MOB"],
-      "explanations": [
-        "DOUBLE CROSS: To betray someone who trusted you.",
-        "CROSS WORD: A puzzle in which words are filled into a grid.",
-        "WORD PLAY: The witty use of words, especially puns.",
-        "PLAY GROUND: An outdoor area equipped for children to play.",
-        "GROUND BREAKING: Innovative or pioneering.",
-        "BREAKING NEWS: Newly received information about an ongoing event.",
-        "NEWS FLASH: A brief item of important news broadcast urgently.",
-        "FLASH MOB: A group that assembles suddenly in a public place."
-      ]
-    },
-    {
-      "chain": ["SILVER", "LINING", "UP", "STREAM", "LINE", "DANCE", "MOVE", "MENT", "WIDE"],
-      "explanations": [
-        "SILVER LINING: A positive aspect of a bad situation.",
-        "LINING UP: Arranging in a line.",
-        "UP STREAM: Moving in the direction against the flow of a stream.",
-        "STREAM LINE: To make something more efficient or simpler.",
-        "LINE DANCE: A choreographed dance in which everyone performs the same steps.",
-        "DANCE MOVE: A specific step or action performed while dancing.",
-        "MOVE MENT: The action of moving or the activity of a group toward a goal.",
-        "MENT WIDE: A broad scope covering an entire area."
-      ]
-    },
-    {
-      "chain": ["BRAIN", "STORM", "CHASER", "SCENE", "SETTING", "SUN", "RISE", "ABOVE", "BOARD"],
-      "explanations": [
-        "BRAIN STORM: A group discussion to produce ideas.",
-        "STORM CHASER: A person who pursues severe weather events.",
-        "CHASER SCENE: A sequence in a film involving a pursuit.",
-        "SCENE SETTING: Establishing the context or background of a story.",
-        "SETTING SUN: The sun as it disappears below the horizon.",
-        "SUN RISE: The time in the morning when the sun appears.",
-        "RISE ABOVE: To overcome a difficult situation.",
-        "ABOVE BOARD: Legitimate and without deception."
-      ]
-    },
-    {
-      "chain": ["OPEN", "MINDED", "SET", "POINT", "GUARD", "RAIL", "ROAD", "BLOCK", "CHAIN"],
-      "explanations": [
-        "OPEN MINDED: Willing to consider new ideas.",
-        "MINDED SET: A fixed mental attitude or disposition.",
-        "SET POINT: The score at which a player can win the set in tennis.",
+        "MIND SET: A person's usual way of thinking.",
+        "SET POINT: A target value that a system tries to maintain.",
         "POINT GUARD: A basketball player who directs the team's offense.",
-        "GUARD RAIL: A rail fixed along the edge of a road or stairway.",
-        "RAIL ROAD: A track made of rails for trains to travel on.",
-        "ROAD BLOCK: An obstruction placed across a road by police.",
-        "BLOCK CHAIN: A system for recording digital transactions."
+        "GUARD RAIL: A rail that prevents people or vehicles from leaving a path or road.",
+        "RAIL ROAD: A system of tracks and trains.",
+        "ROAD BLOCK: A barrier placed across a road.",
+        "BLOCK PARTY: A neighborhood party held on a street or block.",
+        "PARTY LINE: The official position or policy of a political party."
       ]
     },
     {
-      "chain": ["MARKET", "PLACE", "HOLDER", "ON", "CALL", "CENTER", "PIECE", "MEAL", "TIME"],
+      "chain": ["SILVER", "LINING", "FABRIC", "SOFTENER", "SHEET", "METAL", "DETECTOR", "DOG", "WHISTLE"],
       "explanations": [
-        "MARKET PLACE: A place where goods are bought and sold.",
-        "PLACE HOLDER: Something that marks a position to be filled later.",
-        "HOLDER ON: A person who holds on or waits.",
-        "ON CALL: Available to work if required at short notice.",
-        "CALL CENTER: An office where calls are handled.",
-        "CENTER PIECE: The most important or attractive feature.",
-        "PIECE MEAL: Done unsystematically, one piece at a time.",
-        "MEAL TIME: The time at which a meal is eaten."
+        "SILVER LINING: A hopeful or positive side of a difficult situation.",
+        "LINING FABRIC: Fabric used inside clothing, bags, or curtains.",
+        "FABRIC SOFTENER: A product used to make clothes feel softer.",
+        "SOFTENER SHEET: A sheet used in a dryer to soften clothes and reduce static.",
+        "SHEET METAL: Metal formed into thin flat pieces.",
+        "METAL DETECTOR: A device used to find metal objects.",
+        "DETECTOR DOG: A trained dog that finds substances such as drugs or explosives.",
+        "DOG WHISTLE: A high-pitched whistle used to train or call dogs."
+      ]
+    },
+    {
+      "chain": ["MARKET", "PLACE", "VALUE", "JUDGMENT", "CALL", "CENTER", "STAGE", "FRIGHT", "NIGHT"],
+      "explanations": [
+        "MARKET PLACE: A place or system where goods and services are bought and sold.",
+        "PLACE VALUE: The value a digit has because of its position in a number.",
+        "VALUE JUDGMENT: An opinion based on beliefs about what is good or important.",
+        "JUDGMENT CALL: A decision based on personal judgment rather than a fixed rule.",
+        "CALL CENTER: An office where workers handle many phone calls.",
+        "CENTER STAGE: The central and most visible position on a stage.",
+        "STAGE FRIGHT: Nervousness before or during a public performance.",
+        "FRIGHT NIGHT: A night associated with scary events or entertainment."
+      ]
+    },
+    {
+      "chain": ["FIELD", "TRIP", "WIRE", "TRANSFER", "WINDOW", "SHOPPING", "CART", "WHEEL", "HOUSE"],
+      "explanations": [
+        "FIELD TRIP: A school trip to learn outside the classroom.",
+        "TRIP WIRE: A wire that triggers something when touched or pulled.",
+        "WIRE TRANSFER: An electronic transfer of money.",
+        "TRANSFER WINDOW: A limited period when sports players can move between teams.",
+        "WINDOW SHOPPING: Looking at goods in stores without necessarily buying them.",
+        "SHOPPING CART: A cart used to carry items while shopping.",
+        "CART WHEEL: A sideways gymnastic move using hands and feet.",
+        "WHEEL HOUSE: An area of strength, comfort, or expertise."
+      ]
+    },
+    {
+      "chain": ["CROSS", "WORD", "PLAY", "GROUND", "RULE", "BOOK", "MARK", "DOWN", "PAYMENT"],
+      "explanations": [
+        "CROSS WORD: A word puzzle with clues and intersecting answers.",
+        "WORD PLAY: Clever or playful use of words.",
+        "PLAY GROUND: An outdoor area where children play.",
+        "GROUND RULE: A basic rule agreed on before an activity.",
+        "RULE BOOK: A book that explains the rules of a game or organization.",
+        "BOOK MARK: A marker used to keep one's place in a book.",
+        "MARK DOWN: A reduction in price.",
+        "DOWN PAYMENT: Money paid at the start of a purchase or loan."
+      ]
+    },
+    {
+      "chain": ["SHORT", "STORY", "TIME", "LIMIT", "ORDER", "BOOK", "REVIEW", "COPY", "EDIT"],
+      "explanations": [
+        "SHORT STORY: A brief work of fiction.",
+        "STORY TIME: A time when stories are read aloud, often to children.",
+        "TIME LIMIT: The maximum amount of time allowed.",
+        "LIMIT ORDER: An order to buy or sell at a specific price or better.",
+        "ORDER BOOK: A list of buy and sell orders in a market.",
+        "BOOK REVIEW: A written opinion or evaluation of a book.",
+        "REVIEW COPY: A copy provided so someone can review a work.",
+        "COPY EDIT: To edit text for grammar, clarity, and style."
+      ]
+    },
+    {
+      "chain": ["PRESENTATION", "SLIDE", "SHOW", "CASE", "STUDY", "GUIDE", "BOOK", "SHELF", "LIFE"],
+      "explanations": [
+        "PRESENTATION SLIDE: One page or screen in a presentation.",
+        "SLIDE SHOW: A sequence of images or slides shown one after another.",
+        "SHOW CASE: A display case or a chance to present something at its best.",
+        "CASE STUDY: A detailed example used for learning or analysis.",
+        "STUDY GUIDE: Material that helps someone prepare or learn.",
+        "GUIDE BOOK: A book with information for travelers or learners.",
+        "BOOK SHELF: A shelf used to hold books.",
+        "SHELF LIFE: The length of time a product remains usable."
+      ]
+    },
+    {
+      "chain": ["BRAIN", "STORM", "CLOUD", "COVER", "STORY", "BOARD", "MEETING", "PLACE", "MAT"],
+      "explanations": [
+        "BRAIN STORM: A session or process for generating ideas.",
+        "STORM CLOUD: A cloud that may bring a storm.",
+        "CLOUD COVER: The amount of sky covered by clouds.",
+        "COVER STORY: A main story featured on the cover of a magazine or publication.",
+        "STORY BOARD: A sequence of drawings used to plan a film, video, or animation.",
+        "BOARD MEETING: A formal meeting of a board of directors.",
+        "MEETING PLACE: A place where people arrange to meet.",
+        "PLACE MAT: A small mat placed under a plate at a table."
+      ]
+    },
+    {
+      "chain": ["PRIVATE", "EYE", "CONTACT", "LENS", "FLARE", "GUN", "CONTROL", "PANEL", "DISCUSSION"],
+      "explanations": [
+        "PRIVATE EYE: An informal term for a private detective.",
+        "EYE CONTACT: Looking directly into another person's eyes.",
+        "CONTACT LENS: A thin lens worn on the eye to correct vision.",
+        "LENS FLARE: A bright glare or streak caused by light hitting a camera lens.",
+        "FLARE GUN: A gun used to fire a signal flare.",
+        "GUN CONTROL: Laws or policies about the sale and use of guns.",
+        "CONTROL PANEL: A board or screen used to operate a machine or system.",
+        "PANEL DISCUSSION: A discussion among a group of invited speakers."
+      ]
+    },
+    {
+      "chain": ["STOCK", "MARKET", "SHARE", "PRICE", "INDEX", "CARD", "CATALOG", "ENTRY", "LEVEL"],
+      "explanations": [
+        "STOCK MARKET: A market where shares of companies are bought and sold.",
+        "MARKET SHARE: The portion of total sales controlled by a company or product.",
+        "SHARE PRICE: The price of one share of a company.",
+        "PRICE INDEX: A measure that tracks changes in prices over time.",
+        "INDEX CARD: A small card used for notes or records.",
+        "CARD CATALOG: An organized set of cards listing library materials.",
+        "CATALOG ENTRY: A record for an item in a catalog.",
+        "ENTRY LEVEL: Suitable for beginners or people starting a role."
+      ]
+    },
+    {
+      "chain": ["QUALITY", "CONTROL", "GROUP", "CHAT", "ROOM", "TEMPERATURE", "CHECK", "POINT", "SYSTEM"],
+      "explanations": [
+        "QUALITY CONTROL: The process of checking that products or work meet standards.",
+        "CONTROL GROUP: A comparison group in an experiment.",
+        "GROUP CHAT: A digital conversation with several people.",
+        "CHAT ROOM: An online space where people exchange messages.",
+        "ROOM TEMPERATURE: The normal temperature of an indoor room.",
+        "TEMPERATURE CHECK: A check of someone's or something's temperature.",
+        "CHECK POINT: A place where people, vehicles, or progress are checked.",
+        "POINT SYSTEM: A method of scoring or measuring using points."
+      ]
+    },
+    {
+      "chain": ["SEARCH", "WARRANT", "OFFICER", "TRAINING", "MANUAL", "LABOR", "UNION", "STATION", "MASTER"],
+      "explanations": [
+        "SEARCH WARRANT: A legal document allowing authorities to search a place.",
+        "WARRANT OFFICER: A military officer with specialized technical authority.",
+        "OFFICER TRAINING: Training for people preparing to become officers.",
+        "TRAINING MANUAL: A manual that explains how to train or perform tasks.",
+        "MANUAL LABOR: Physical work done by people.",
+        "LABOR UNION: An organization that represents workers.",
+        "UNION STATION: A main station shared by multiple rail lines or services.",
+        "STATION MASTER: A person in charge of a railway station."
+      ]
+    },
+    {
+      "chain": ["PRESS", "CONFERENCE", "CALL", "OPTION", "TRADING", "FLOOR", "MANAGER", "REVIEW", "BOARD"],
+      "explanations": [
+        "PRESS CONFERENCE: A meeting where officials answer questions from journalists.",
+        "CONFERENCE CALL: A phone or video call with several participants.",
+        "CALL OPTION: A financial contract giving the right to buy an asset at a set price.",
+        "OPTION TRADING: Buying and selling options contracts.",
+        "TRADING FLOOR: The area where traders buy and sell financial products.",
+        "FLOOR MANAGER: A person responsible for operations on a floor or venue.",
+        "MANAGER REVIEW: An evaluation conducted by or about a manager.",
+        "REVIEW BOARD: A group that examines decisions, cases, or proposals."
       ]
     }
   ],
   "hard": [
     {
-      "chain": ["COLD", "FEET", "FIRST", "HAND", "SHAKE", "DOWN", "FALL", "OUT", "CAST"],
+      "chain": ["COLD", "CASE", "FILE", "CABINET", "MAKER", "SPACE", "RACE", "HORSE", "POWER"],
       "explanations": [
-        "COLD FEET: Reluctance or nervousness before an important event.",
-        "FEET FIRST: Entering a situation without caution.",
-        "FIRST HAND: Directly from the original source.",
-        "HAND SHAKE: Grasping and shaking someone's hand as a greeting.",
-        "SHAKE DOWN: An extortion scheme or a thorough search.",
-        "DOWN FALL: A sudden loss of power or status.",
-        "FALL OUT: A quarrel or dispute, or radioactive debris.",
-        "OUT CAST: A person rejected by their social group."
-      ]
-    },
-    {
-      "chain": ["NIGHT", "OWL", "EYED", "WITNESS", "STAND", "OFF", "HAND", "PICKED", "UP"],
-      "explanations": [
-        "NIGHT OWL: A person who habitually stays up late.",
-        "OWL EYED: Having large, wide-open eyes like an owl.",
-        "EYED WITNESS: A person who has personally seen something.",
-        "WITNESS STAND: The enclosure in a courtroom where a witness sits.",
-        "STAND OFF: A deadlock between opposing parties.",
-        "OFF HAND: Without prior thought or preparation.",
-        "HAND PICKED: Carefully chosen for a specific purpose.",
-        "PICKED UP: To collect something or to learn informally."
-      ]
-    },
-    {
-      "chain": ["IRON", "CLAD", "SECRET", "KEEPER", "SAKE", "BOMB", "SHELL", "SHOCKED", "AWE"],
-      "explanations": [
-        "IRON CLAD: Covered with iron, or impossible to contradict.",
-        "CLAD SECRET: A hidden truth kept tightly covered.",
-        "SECRET KEEPER: A person trusted with confidential information.",
-        "KEEPER SAKE: Something kept as a memento.",
-        "SAKE BOMB: A cocktail made by dropping sake into beer.",
-        "BOMB SHELL: An overwhelming surprise or a very attractive person.",
-        "SHELL SHOCKED: Suffering psychological trauma from combat.",
-        "SHOCKED AWE: Stunned astonishment."
-      ]
-    },
-    {
-      "chain": ["DOUBLE", "EDGED", "OUT", "FOXED", "HOLE", "CARD", "SHARP", "SHOOTER", "GAME"],
-      "explanations": [
-        "DOUBLE EDGED: Having two sharp sides, or having both advantages and disadvantages.",
-        "EDGED OUT: Defeated by a very narrow margin.",
-        "OUT FOXED: Outwitted by someone cunning.",
-        "FOXED HOLE: A small pit dug for cover in battle.",
-        "HOLE CARD: A card kept secret until the decisive moment.",
-        "CARD SHARP: A person who cheats at card games.",
-        "SHARP SHOOTER: A skilled marksman.",
-        "SHOOTER GAME: A video game genre focused on ranged combat."
-      ]
-    },
-    {
-      "chain": ["SMOKE", "SCREEN", "PLAY", "MAKER", "SHIFT", "WORK", "AROUND", "CLOCK", "WISE"],
-      "explanations": [
-        "SMOKE SCREEN: Something designed to conceal or mislead.",
-        "SCREEN PLAY: The script of a film including dialogue and directions.",
-        "PLAY MAKER: A player who creates opportunities for teammates.",
-        "MAKER SHIFT: Temporary and makeshift.",
-        "SHIFT WORK: Employment where hours are arranged in shifts.",
-        "WORK AROUND: A method for overcoming a problem.",
-        "AROUND CLOCK: Continuously, at all hours.",
-        "CLOCK WISE: In the same direction as clock hands move."
-      ]
-    },
-    {
-      "chain": ["RAZOR", "SHARP", "SHOOTER", "PROOF", "READ", "BETWEEN", "LINES", "MAN", "HUNT"],
-      "explanations": [
-        "RAZOR SHARP: Extremely sharp or quick-witted.",
-        "SHARP SHOOTER: An expert marksman.",
-        "SHOOTER PROOF: Resistant to gunfire.",
-        "PROOF READ: To examine a text and correct errors.",
-        "READ BETWEEN: To find hidden meaning in something.",
-        "BETWEEN LINES: Implied meaning not directly stated.",
-        "LINES MAN: An official who watches for boundary violations.",
-        "MAN HUNT: An organized search for a person, especially a criminal."
-      ]
-    },
-    {
-      "chain": ["WILD", "CARD", "BOARD", "GAME", "FACE", "LIFT", "OFF", "BEAT", "NICK"],
-      "explanations": [
-        "WILD CARD: An unpredictable person or an extra selection in a tournament.",
-        "CARD BOARD: Stiff pasteboard used for packaging.",
-        "BOARD GAME: A game played on a flat surface with pieces.",
-        "GAME FACE: A determined expression adopted before a competition.",
-        "FACE LIFT: A cosmetic surgery or a renovation that improves appearance.",
-        "LIFT OFF: The vertical takeoff of a rocket.",
-        "OFF BEAT: Unconventional; not following the standard rhythm.",
-        "BEAT NICK: One who belongs to the Beat Generation subculture."
+        "COLD CASE: An unsolved case that is no longer actively investigated.",
+        "CASE FILE: A collection of documents about a case.",
+        "FILE CABINET: A cabinet used to store files.",
+        "CABINET MAKER: A person who makes cabinets or fine wooden furniture.",
+        "MAKER SPACE: A shared place where people make or repair things.",
+        "SPACE RACE: A competition to achieve advances in space exploration.",
+        "RACE HORSE: A horse bred or trained for racing.",
+        "HORSE POWER: A unit used to measure engine power."
       ]
     },
     {
       "chain": ["GLASS", "CEILING", "FAN", "BASE", "CAMP", "FIRE", "SIDE", "TRACK", "RECORD"],
       "explanations": [
-        "GLASS CEILING: An unacknowledged barrier to advancement for minorities.",
-        "CEILING FAN: A mechanical fan mounted on the ceiling of a room.",
-        "FAN BASE: A group of enthusiastic supporters of someone or something.",
-        "BASE CAMP: A camp from which expeditions set off.",
-        "CAMP FIRE: An outdoor fire in a camp setting.",
-        "FIRE SIDE: The area around a fireplace.",
-        "SIDE TRACK: To divert from the main course or topic.",
-        "TRACK RECORD: The past achievements of a person or organization."
+        "GLASS CEILING: An invisible barrier that limits advancement, especially at work.",
+        "CEILING FAN: A fan attached to the ceiling.",
+        "FAN BASE: The group of people who support a person, team, or product.",
+        "BASE CAMP: A main camp used as a starting point for an expedition.",
+        "CAMP FIRE: A fire made outdoors at a campsite.",
+        "FIRE SIDE: The area beside a fire.",
+        "SIDE TRACK: To distract from the main subject or route.",
+        "TRACK RECORD: A history of past performance."
       ]
     },
     {
-      "chain": ["SPIN", "DOCTOR", "OFFICE", "HOLDER", "BACK", "FIRE", "STORM", "DRAIN", "PIPE"],
+      "chain": ["RED", "HERRING", "BONE", "DRY", "RUN", "TIME", "CAPSULE", "WARDROBE", "MALFUNCTION"],
       "explanations": [
-        "SPIN DOCTOR: A spokesperson who presents information favorably.",
-        "DOCTOR OFFICE: A place where a physician sees patients.",
-        "OFFICE HOLDER: A person who holds public office.",
-        "HOLDER BACK: Someone who restrains or suppresses something.",
-        "BACK FIRE: To have the opposite effect of what was intended.",
-        "FIRE STORM: An intense and often destructive controversy.",
-        "STORM DRAIN: A drain that carries away rainwater.",
-        "DRAIN PIPE: A pipe that carries away waste water."
+        "RED HERRING: A clue or detail that distracts from the real issue.",
+        "HERRING BONE: A V-shaped pattern used in fabric, flooring, or design.",
+        "BONE DRY: Completely dry.",
+        "DRY RUN: A practice attempt before the real event.",
+        "RUN TIME: The length of time something runs, especially a program or show.",
+        "TIME CAPSULE: A container holding objects or messages for the future.",
+        "CAPSULE WARDROBE: A small collection of versatile clothing items.",
+        "WARDROBE MALFUNCTION: An accidental clothing problem, often in public."
       ]
     },
     {
-      "chain": ["BLIND", "SPOT", "CHECK", "MATE", "SHIP", "SHAPE", "SHIFT", "ER", "BOARD"],
+      "chain": ["WILD", "GOOSE", "CHASE", "SCENE", "CHANGE", "MANAGEMENT", "CONSULTANT", "FEE", "STRUCTURE"],
       "explanations": [
-        "BLIND SPOT: An area where vision is absent or a gap in awareness.",
-        "SPOT CHECK: A random inspection made without warning.",
-        "CHECK MATE: The winning move in chess.",
-        "MATE SHIP: The relationship between friends or companions.",
-        "SHIP SHAPE: In good order; neat and tidy.",
-        "SHAPE SHIFT: To change one's form or appearance.",
-        "SHIFT ER: A device that changes gears.",
-        "ER BOARD: A scoreboard showing emergency room information."
+        "WILD GOOSE: A goose that lives in the wild.",
+        "GOOSE CHASE: A useless or hopeless search.",
+        "CHASE SCENE: A scene in a film or story involving a chase.",
+        "SCENE CHANGE: A change from one scene to another in a performance or story.",
+        "CHANGE MANAGEMENT: The process of guiding organizational change.",
+        "MANAGEMENT CONSULTANT: A professional who advises organizations on management.",
+        "CONSULTANT FEE: The amount paid to a consultant.",
+        "FEE STRUCTURE: The way fees are arranged or calculated."
+      ]
+    },
+    {
+      "chain": ["RUBBER", "STAMP", "DUTY", "FREE", "FALL", "GUY", "LINE", "JUDGE", "ADVOCATE"],
+      "explanations": [
+        "RUBBER STAMP: A stamp made of rubber, or an approval given without real review.",
+        "STAMP DUTY: A tax paid on some legal or property transactions.",
+        "DUTY FREE: Sold without certain local taxes, often at airports.",
+        "FREE FALL: Falling freely under gravity.",
+        "FALL GUY: A person blamed for someone else's mistake.",
+        "GUY LINE: A rope or cable used to steady a tent, pole, or mast.",
+        "LINE JUDGE: An official who judges whether a ball or player crosses a line.",
+        "JUDGE ADVOCATE: A military legal officer."
+      ]
+    },
+    {
+      "chain": ["CARBON", "COPY", "RIGHT", "ANGLE", "BRACKET", "CREEP", "FEED", "BACK", "CHANNEL"],
+      "explanations": [
+        "CARBON COPY: A duplicate copy of a document or message.",
+        "COPY RIGHT: Legal protection for creative work.",
+        "RIGHT ANGLE: An angle of 90 degrees.",
+        "ANGLE BRACKET: A bracket shaped like < or >.",
+        "BRACKET CREEP: A gradual movement into a higher tax bracket due to inflation or income changes.",
+        "CREEP FEED: Feed given to young animals while they still nurse.",
+        "FEED BACK: Information given in response to performance or work.",
+        "BACK CHANNEL: A private or unofficial communication route."
+      ]
+    },
+    {
+      "chain": ["DARK", "HORSE", "RACE", "CARD", "SHARP", "TURN", "SIGNAL", "PROCESSING", "UNIT"],
+      "explanations": [
+        "DARK HORSE: A competitor whose abilities are not well known but who may succeed.",
+        "HORSE RACE: A race between horses.",
+        "RACE CARD: A list of races and runners at a racing event.",
+        "CARD SHARP: A skilled card player, often one who wins by trickery.",
+        "SHARP TURN: A sudden or tight turn.",
+        "TURN SIGNAL: A vehicle light that shows a driver intends to turn.",
+        "SIGNAL PROCESSING: The analysis or transformation of signals such as sound or data.",
+        "PROCESSING UNIT: A hardware unit that processes data."
+      ]
+    },
+    {
+      "chain": ["SILVER", "SPOON", "FED", "UP", "SCALE", "MODEL", "CITIZEN", "SCIENCE", "FICTION"],
+      "explanations": [
+        "SILVER SPOON: A symbol of being born into wealth or privilege.",
+        "SPOON FED: Given help or information in an overly easy way.",
+        "FED UP: Annoyed, tired, or frustrated with something.",
+        "UP SCALE: Expensive or intended for wealthy customers.",
+        "SCALE MODEL: A smaller or larger model made in proportion to the real thing.",
+        "MODEL CITIZEN: A person considered an excellent member of society.",
+        "CITIZEN SCIENCE: Scientific work done with help from the general public.",
+        "SCIENCE FICTION: Stories about imagined science, technology, or future worlds."
+      ]
+    },
+    {
+      "chain": ["PAPER", "TRAIL", "MIX", "TAPE", "DECK", "CHAIR", "LIFT", "TICKET", "STUB"],
+      "explanations": [
+        "PAPER TRAIL: Written or printed evidence of actions or decisions.",
+        "TRAIL MIX: A snack mixture often eaten while hiking.",
+        "MIX TAPE: A collection of songs recorded or arranged together.",
+        "TAPE DECK: A device used to play or record cassette tapes.",
+        "DECK CHAIR: A folding chair used outdoors.",
+        "CHAIR LIFT: A moving seat system that carries people up a slope.",
+        "LIFT TICKET: A ticket that allows someone to use ski lifts.",
+        "TICKET STUB: The part of a ticket kept after entry."
+      ]
+    },
+    {
+      "chain": ["SWEET", "TOOTH", "PASTE", "BOARD", "GAME", "THEORY", "TEST", "CASE", "LAW"],
+      "explanations": [
+        "SWEET TOOTH: A strong liking for sweet foods.",
+        "TOOTH PASTE: A paste used to clean teeth.",
+        "PASTE BOARD: Thick paperboard made from layers of pasted paper.",
+        "BOARD GAME: A game played on a board with pieces or cards.",
+        "GAME THEORY: The study of strategic decision-making.",
+        "THEORY TEST: A test of theoretical knowledge, often before a practical exam.",
+        "TEST CASE: A specific case used to test a rule, system, or idea.",
+        "CASE LAW: Law based on previous court decisions."
+      ]
+    },
+    {
+      "chain": ["FALSE", "START", "LINE", "ITEM", "NUMBER", "CRUNCH", "TIME", "LAG", "SCREW"],
+      "explanations": [
+        "FALSE START: An invalid start before the proper signal.",
+        "START LINE: The line where a race begins.",
+        "LINE ITEM: A single entry in a list, budget, or invoice.",
+        "ITEM NUMBER: A number used to identify a product or item.",
+        "NUMBER CRUNCH: To process or calculate many numbers.",
+        "CRUNCH TIME: A short period when intense effort is needed before a deadline.",
+        "TIME LAG: A delay between an action and its effect.",
+        "LAG SCREW: A large screw used for heavy fastening."
+      ]
+    },
+    {
+      "chain": ["MORAL", "HAZARD", "LIGHT", "POLLUTION", "CONTROL", "FREAK", "SHOW", "TRIAL", "LAWYER"],
+      "explanations": [
+        "MORAL HAZARD: A situation where someone takes more risk because another party bears the cost.",
+        "HAZARD LIGHT: A flashing warning light on a vehicle.",
+        "LIGHT POLLUTION: Excess artificial light that affects the night sky or environment.",
+        "POLLUTION CONTROL: Measures used to reduce pollution.",
+        "CONTROL FREAK: A person who strongly wants to control situations or people.",
+        "FREAK SHOW: A display or event presented as strange or sensational.",
+        "SHOW TRIAL: A trial held mainly for public display rather than justice.",
+        "TRIAL LAWYER: A lawyer who represents clients in court trials."
+      ]
+    },
+    {
+      "chain": ["LOSS", "LEADER", "BOARD", "MEMBER", "STATE", "CAPITAL", "LETTER", "HEAD", "COUNT"],
+      "explanations": [
+        "LOSS LEADER: A product sold cheaply to attract customers.",
+        "LEADER BOARD: A ranking list of top scores or performers.",
+        "BOARD MEMBER: A person who serves on a board.",
+        "MEMBER STATE: A country or state that belongs to an organization.",
+        "STATE CAPITAL: The capital city of a state.",
+        "CAPITAL LETTER: An uppercase letter.",
+        "LETTER HEAD: The printed heading on official stationery.",
+        "HEAD COUNT: A count of people present."
+      ]
+    },
+    {
+      "chain": ["RISK", "PREMIUM", "BOND", "MARKET", "TIMING", "BELT", "LOOP", "HOLE", "PUNCH"],
+      "explanations": [
+        "RISK PREMIUM: Extra expected return for taking on additional risk.",
+        "PREMIUM BOND: A bond sold above its face value.",
+        "BOND MARKET: The market where bonds are bought and sold.",
+        "MARKET TIMING: Trying to buy or sell based on predicted market movements.",
+        "TIMING BELT: A belt that synchronizes parts of an engine.",
+        "BELT LOOP: A loop on clothing that holds a belt.",
+        "LOOP HOLE: A gap or ambiguity in a rule or law.",
+        "HOLE PUNCH: A tool used to make holes in paper."
+      ]
+    },
+    {
+      "chain": ["PUPPET", "STATE", "SECRET", "SERVICE", "INDUSTRY", "STANDARD", "ISSUE", "BRIEF", "CASE"],
+      "explanations": [
+        "PUPPET STATE: A country controlled by another power.",
+        "STATE SECRET: Information kept secret by a government.",
+        "SECRET SERVICE: A government agency responsible for protection or intelligence.",
+        "SERVICE INDUSTRY: Businesses that provide services rather than goods.",
+        "INDUSTRY STANDARD: A widely accepted standard in a field.",
+        "STANDARD ISSUE: Equipment normally provided to members of an organization.",
+        "ISSUE BRIEF: A short document explaining a policy issue.",
+        "BRIEF CASE: A flat case used for carrying documents."
       ]
     }
   ]
