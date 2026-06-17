@@ -5,36 +5,47 @@ publishing.
 
 ## WordLink Privacy Policy
 
-Effective date: To be set before App Store upload.
+Effective date: June 18, 2026.
 
 WordLink is a word puzzle game for iOS. This policy explains what information
-the app uses and how it is handled.
+the app uses and how it is handled. Version 1 can be played without an account,
+without advertising, and without providing your name, email, or other personal
+details.
+
+## No Account Required
+
+WordLink does not require you to create an account or sign in. We do not ask for
+your name, email address, phone number, location, or other contact information.
 
 ## Information We Store On Your Device
 
 WordLink stores gameplay information locally on your device, including:
 
-- Puzzle history.
-- Scores.
-- Completed phrases.
-- Anonymous session tokens when backend services are enabled.
+- Puzzles you have played.
+- Selected difficulty.
+- Game results and history.
+- Basic app preferences.
 
 This information is used to keep the game working, remember your progress, and
-show your recent results.
+show your recent results. This local information stays on your device unless a
+backend feature is enabled.
 
 ## Backend Services
 
-WordLink may use Supabase for anonymous authentication, puzzle delivery,
-progress tracking, or content updates.
+WordLink may use Supabase as backend infrastructure for puzzle delivery,
+anonymous progress support, or related app features.
 
-When enabled, Supabase may process technical information needed to provide those
-services, such as an anonymous user identifier and completed puzzle records. No
-formal account or personal login is required in version 1.
+When enabled, Supabase may process limited technical and gameplay information
+needed to provide those services, such as an anonymous app identifier, selected
+difficulty, completed puzzle records, and standard network request information.
+These backend features do not require a personal account and are not used for
+advertising or cross-app tracking.
 
 ## Ads And Tracking
 
-Version 1 of WordLink does not include ads and does not use tracking for
-advertising.
+Version 1 of WordLink does not include ads. We do not sell or rent your data. We
+do not use advertising identifiers, tracking pixels, or third-party advertising
+SDKs.
 
 ## In-App Purchases
 
