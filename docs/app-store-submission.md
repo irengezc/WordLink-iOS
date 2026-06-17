@@ -8,7 +8,7 @@ enrollment is approved.
 | Field | Draft |
 |---|---|
 | App name | WordLink |
-| Bundle ID | `com.wordlink.app` |
+| Bundle ID | `com.wordlinkgame.app` |
 | SKU | `wordlink-ios` |
 | Primary category | Games |
 | Secondary category | Education or Word |

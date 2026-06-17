@@ -24,7 +24,7 @@ Use this as the must-do list before uploading WordLink to App Store Connect.
 ## Apple Account And App Store
 
 - Apple Developer Program enrollment is approved.
-- Bundle ID `com.wordlink.app` is available and configured.
+- Bundle ID `com.wordlinkgame.app` is available and configured.
 - Team ID `XVW2C26TQX` is confirmed.
 - App Store Connect app record is created.
 - Support URL is live: `https://irengezc.github.io/WordLink/`.

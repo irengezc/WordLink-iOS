@@ -20,13 +20,14 @@ pre-launch preparation.
 |---|---|---|
 | Initial context doc set | Added `CLAUDE.md` and docs for monetization, retention, ASO, and web funnel. | 2026-06-17 |
 | Supabase client config cleanup | Added `WordLink/AppConfig.swift` and updated app services/tests to read Supabase client config from one place. | 2026-06-17 |
+| App Store upload pre-flight | Updated the app bundle ID to `com.wordlinkgame.app`, verified Release settings, archived successfully, and uploaded the build to App Store Connect for processing. | 2026-06-17 |
 
 ## In Progress
 
 | Item | Current State | Next Action |
 |---|---|---|
 | Game loading and content backend path | Normal game starts now use the bundled reservoir before network. Supabase may still be expired and the local reservoir is still small. | Expand the bundled reservoir and decide whether to remove or de-emphasize live generation fallback. |
-| App Store pre-upload readiness | Added a must-do checklist for backend, Apple account, monetization, quality, and validation. | User needs to confirm Apple Developer enrollment and Supabase project status when available. |
+| App Store pre-upload readiness | Bundle ID, Team ID, deployment target, reservoir validation, archive, and upload have passed. | Wait for App Store Connect processing, attach the uploaded build to the iOS version, and complete final review submission metadata. |
 | Supabase project | Project host is reachable and `start-game` returned a valid response. Anonymous sign-in currently returns `422` because anonymous sign-ins are disabled. | Enable anonymous sign-ins if `AuthService`/progress sync will ship, or keep those paths disabled for v1. |
 | Reservoir QA | Added `tools/validate-reservoir.js`, replaced the old reservoir with a cleaned 45-chain seed, and validated with zero errors/warnings/quality flags. | Continue expanding content from this clean baseline. |
 
