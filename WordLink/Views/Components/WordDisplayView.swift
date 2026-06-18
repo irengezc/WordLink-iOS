@@ -48,6 +48,7 @@ struct WordDisplayView: View {
     // MARK: - Target Word Card
     private var targetWordCard: some View {
         VStack(spacing: 12) {
+            phrasePreview
             letterTiles
             feedbackLabel
         }
@@ -67,6 +68,43 @@ struct WordDisplayView: View {
 
     // Tiles per row before wrapping (36pt tile + 6pt gap = 42pt each; card fits ~7)
     private let maxTilesPerRow = 7
+
+    private var phrasePreview: some View {
+        HStack(spacing: 8) {
+            Text(firstWord)
+                .font(.system(size: 14, weight: .black))
+                .foregroundColor(Color(.systemGray))
+            Image(systemName: "plus")
+                .font(.system(size: 9, weight: .black))
+                .foregroundColor(Color(.systemGray3))
+            Text(targetPreview)
+                .font(.system(size: 14, weight: .black))
+                .foregroundColor(.indigo)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 7)
+        .background(Color.indigo.opacity(0.07))
+        .cornerRadius(18)
+    }
+
+    private var targetPreview: String {
+        guard !targetWord.isEmpty else { return "" }
+
+        return String(
+            targetWord.indices.enumerated().map { offset, index in
+                if offset < revealedCount {
+                    return targetWord[index]
+                }
+
+                let inputOffset = offset - revealedCount
+                if inputOffset < userInput.count {
+                    return userInput[userInput.index(userInput.startIndex, offsetBy: inputOffset)]
+                }
+
+                return "_"
+            }
+        )
+    }
 
     @ViewBuilder
     private var letterTiles: some View {

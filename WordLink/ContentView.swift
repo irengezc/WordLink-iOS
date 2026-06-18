@@ -8,9 +8,7 @@ struct ContentView: View {
         switch vm.gameStatus {
         case .start, .difficultySelect, .loading, .results:
             return Color(red: 0.15, green: 0.08, blue: 0.38)
-        case .playing:
-            return Color(.systemGroupedBackground)
-        case .history:
+        case .playing, .history:
             return Color(.systemGroupedBackground)
         }
     }
