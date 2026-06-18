@@ -123,15 +123,18 @@ struct GameView: View {
 
             Spacer()
 
-            VStack(spacing: 1) {
-                Text("\(vm.difficulty.displayName)")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundColor(Color(.systemGray2))
-                    .tracking(1)
-                Text("Score: \(vm.score)")
-                    .font(.system(size: 20, weight: .black))
-                    .foregroundColor(Color(.label))
-            }
+            Text("\(vm.score)")
+                .font(.system(size: 32, weight: .black))
+                .foregroundColor(Color(.label))
+                .contentTransition(.numericText())
+                .animation(.spring(response: 0.35, dampingFraction: 0.7), value: vm.score)
+                .overlay(alignment: .top) {
+                    if let change = vm.scoreChange {
+                        FloatingScoreView(amount: change.amount)
+                            .id(change.id)
+                            .offset(y: -14)
+                    }
+                }
 
             Spacer()
 
@@ -140,13 +143,9 @@ struct GameView: View {
                 HapticsService.shared.light()
                 vm.useHint()
             } label: {
-                VStack(spacing: 1) {
-                    Image(systemName: "lightbulb.fill")
-                        .font(.system(size: 14, weight: .bold))
-                    Text("-\(vm.difficulty.hintCost)")
-                        .font(.system(size: 9, weight: .bold))
-                }
-                .foregroundColor(hintAvailable ? .amber : Color(.systemGray3))
+                Image(systemName: "lightbulb.fill")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(hintAvailable ? .amber : Color(.systemGray3))
                 .frame(width: 44, height: 36)
                 .background(hintAvailable ? Color.orange.opacity(0.12) : Color(.systemGray6))
                 .cornerRadius(10)
@@ -187,6 +186,47 @@ struct GameView: View {
         ) { _ in
             withAnimation { keyboardHeight = 0 }
         }
+    }
+}
+
+// MARK: - Floating "+N" / "-N" score badge
+/// A playful badge that pops out near the score, drifts upward and fades.
+/// Green "+N" when points are earned, coral "-N" when spent on a hint.
+/// Drives its own animation on appear; the view model removes it after.
+private struct FloatingScoreView: View {
+    let amount: Int  // signed
+    @State private var appeared = false
+    @State private var leaving = false
+
+    private var isGain: Bool { amount >= 0 }
+    private var label: String { isGain ? "+\(amount)" : "\(amount)" }
+    private var tint: Color {
+        isGain
+            ? Color(red: 0.18, green: 0.78, blue: 0.44)   // fresh green
+            : Color(red: 1.0, green: 0.35, blue: 0.42)    // coral
+    }
+
+    var body: some View {
+        Text(label)
+            .font(.system(size: 15, weight: .heavy, design: .rounded))
+            .foregroundColor(.white)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 3)
+            .background(Capsule().fill(tint))
+            .shadow(color: tint.opacity(0.4), radius: 4, y: 2)
+            .scaleEffect(appeared ? 1.0 : 0.3)
+            .offset(y: leaving ? -28 : 0)
+            .opacity(leaving ? 0 : (appeared ? 1 : 0))
+            .onAppear {
+                // Phase 1: springy pop-in. Phase 2: float up and fade out.
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.55)) {
+                    appeared = true
+                }
+                withAnimation(.easeOut(duration: 0.6).delay(0.35)) {
+                    leaving = true
+                }
+            }
+            .allowsHitTesting(false)
     }
 }
 

@@ -29,6 +29,24 @@ final class GameViewModel: ObservableObject {
     @Published var completedPhrases: [PhraseInfo] = []
     @Published var difficulty: Difficulty = .medium
 
+    // Transient event used to animate a floating "+N"/"-N" near the score.
+    @Published var scoreChange: ScoreChange? = nil
+    struct ScoreChange: Identifiable, Equatable {
+        let id = UUID()
+        let amount: Int  // signed: positive = earned, negative = spent
+    }
+
+    /// Fires a floating score badge and auto-clears it after the animation.
+    private func flashScoreChange(_ amount: Int) {
+        let change = ScoreChange(amount: amount)
+        scoreChange = change
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            if self?.scoreChange?.id == change.id {
+                self?.scoreChange = nil
+            }
+        }
+    }
+
     // MARK: - History
     @Published var history: [HistoryItem] = []
     @Published var selectedHistoryId: String? = nil
@@ -123,13 +141,13 @@ final class GameViewModel: ObservableObject {
         let explanation = explanations.indices.contains(currentIndex) ? explanations[currentIndex] : ""
         let points = max(10, 50 - (revealedLetters - 1) * 10)
         score += points
+        flashScoreChange(points)
 
         let phrase = PhraseInfo(word1: currentWord, word2: target, explanation: explanation)
         completedPhrases.append(phrase)
 
         AudioService.shared.playCorrect()
         HapticsService.shared.success()
-        SpeechService.shared.speak(target)
         feedback = .correct
 
         // Confirm with server in background (non-blocking)
@@ -169,10 +187,14 @@ final class GameViewModel: ObservableObject {
     func useHint() {
         guard wordLength > 0, revealedLetters < wordLength else { return }
         guard score >= difficulty.hintCost else { return }
-        score = max(0, score - difficulty.hintCost)
+        let cost = difficulty.hintCost
+        score = max(0, score - cost)
         hintsUsed += 1
         AudioService.shared.playHint()
         HapticsService.shared.medium()
+
+        // Trigger the floating "-N" animation; auto-clear after it finishes.
+        flashScoreChange(-cost)
 
         revealedLetters += 1
         let target = currentTargetWord
