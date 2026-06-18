@@ -52,7 +52,7 @@ Important code paths:
 | Supabase game edge functions | `WordLink/Services/SupabaseGameService.swift` |
 | Chain RPC / progress service | `WordLink/Services/PhraseService.swift` |
 | Fallback edge function generation | `WordLink/Services/GeminiService.swift` |
-| Local bundled chain reservoir | `WordLink/reservoir.json`, `WordLink/ReservoirService.swift` |
+| Local bundled chain reservoir | `WordLink/reservoir.json`, `WordLink/Services/ReservoirService.swift` |
 | Local history | `WordLink/Services/StorageService.swift` |
 | Integration tests | `WordLinkTests/SupabaseIntegrationTests.swift` |
 

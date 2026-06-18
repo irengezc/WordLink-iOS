@@ -81,8 +81,6 @@
 		AA400002 /* WordLink */ = {
 			isa = PBXGroup;
 			children = (
-				27EFA09A2F8D2159005088E6 /* ReservoirService.swift */,
-				27EFA0982F8D214F005088E6 /* SupabaseGameService.swift */,
 				27EFA09D2F8D2169005088E6 /* AppConfig.swift */,
 				27EFA09F2F8D2179005088E6 /* reservoir.json */,
 				27EFA0A12F8D2189005088E6 /* PrivacyInfo.xcprivacy */,
@@ -109,6 +107,8 @@
 		AA400004 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				27EFA09A2F8D2159005088E6 /* ReservoirService.swift */,
+				27EFA0982F8D214F005088E6 /* SupabaseGameService.swift */,
 				AA100004 /* GeminiService.swift */,
 				AA100005 /* AudioService.swift */,
 				AA100006 /* StorageService.swift */,

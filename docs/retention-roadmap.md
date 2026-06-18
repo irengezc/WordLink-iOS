@@ -86,7 +86,7 @@ Implementation notes:
 | Need | Current / Expected Path |
 |---|---|
 | Game flow | `WordLink/ViewModels/GameViewModel.swift` |
-| Local reservoir | `WordLink/reservoir.json`, `WordLink/ReservoirService.swift` |
+| Local reservoir | `WordLink/reservoir.json`, `WordLink/Services/ReservoirService.swift` |
 | Difficulty model | `WordLink/Models/Models.swift` |
 | Local completion history | `WordLink/Services/StorageService.swift` |
 | Backend game start | `WordLink/Services/SupabaseGameService.swift` |
