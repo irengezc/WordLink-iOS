@@ -18,7 +18,7 @@ pre-launch preparation.
 
 | Item | Outcome | Date |
 |---|---|---|
-| Initial context doc set | Added `CLAUDE.md` and docs for monetization, retention, ASO, and web funnel. | 2026-06-17 |
+| Initial context doc set | Added the project context docs that now live under `product-workflow/`. | 2026-06-17 |
 | Supabase client config cleanup | Added `WordLink/AppConfig.swift` and updated app services/tests to read Supabase client config from one place. | 2026-06-17 |
 | App Store upload pre-flight | Updated the app bundle ID to `com.wordlinkgame.app`, verified Release settings, archived successfully, and uploaded the build to App Store Connect for processing. | 2026-06-17 |
 

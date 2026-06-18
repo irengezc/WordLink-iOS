@@ -1,19 +1,42 @@
-# Agent Instructions
+# WordLink Agent Start File
 
-This is the canonical WordLink product-spec workspace. Read and update the
-original files here directly. Do not create a duplicate product spec or context
-document inside a temporary workspace.
+This is the only file you need to give an AI agent when starting a new
+WordLink session.
 
-Before changing app code, also read the repository root `AGENTS.md` because it
-contains durable project rules, shipping constraints, and code-path references.
+Canonical path:
+
+`/Users/zhengcheng/Documents/🌰 Nutstore/🍊Personal project_coding/WordLink-iOS/product-workflow/AGENTS.md`
+
+The `product-workflow/` folder is the source of truth for product context,
+feature specs, agent instructions, and durable project decisions. Do not use
+root-level `AGENTS.md` or `CLAUDE.md` files; they are intentionally not part of
+this workflow.
+
+Read this file first, then read only the additional files it directs you to
+based on the task.
+
+## Product Snapshot
+
+WordLink is a native iOS word puzzle game. Players solve 9-word chains by
+guessing the hidden connecting word between adjacent compound phrases. Each
+chain has 8 connections to solve.
+
+The product is for English learners and casual word-game players. The ESL /
+fluency angle is intentional: explanations, pronunciation, flashcard-style
+review, and future learning interactions should reinforce that position.
+
+Version 1 is local-first: normal gameplay should start from the bundled
+reservoir before any network call. Supabase can remain optional backend support,
+but it must not block first play.
+
+Version 1 ships without ads, in-app purchases, subscriptions, or required login.
 
 ## Start Every Session
 
-The user should provide:
+The user should provide a feature name and mode when the task is feature work.
 
 - Feature name
 - Mode: `exploration`, `product prototype`, `implementation`, or `review`
-- Canonical spec workspace path
 
 If any of these are missing and the task cannot be safely inferred, ask before
 proceeding.
@@ -25,6 +48,16 @@ Then:
 3. Follow the mode-specific reading order below.
 4. Read only relevant codebase files and docs. Do not read unrelated feature
    folders unless the user asks.
+
+For small code fixes that do not belong to a feature spec, read:
+
+1. `foundation/technical-context.md`
+2. `foundation/product.md` if the behavior affects product direction
+3. `foundation/design-system.md` if the behavior affects UI
+4. Relevant code files in the iOS repository
+
+For new product decisions, update the relevant feature spec or foundation file
+inside `product-workflow/`. Do not recreate context in the repo root.
 
 ## Mode: Exploration
 
@@ -82,7 +115,8 @@ Read in this order:
 2. `foundation/technical-context.md`
 3. `foundation/design-system.md` for UI work
 4. Relevant codebase files and tests
-5. Existing docs under `docs/` that should stay synchronized
+5. Existing implementation docs under `docs/` only when they contain current
+   technical checklists that must stay synchronized
 
 Rules:
 
@@ -93,6 +127,50 @@ Rules:
   flows without an explicit migration plan.
 - Never put server-side secrets in the app.
 - Validate the implementation against the requirements before finishing.
+
+## Current Project Map
+
+| Need | File |
+|---|---|
+| Active feature index | `ACTIVE.md` |
+| Product foundation | `foundation/product.md` |
+| Technical architecture and paths | `foundation/technical-context.md` |
+| UI/design patterns | `foundation/design-system.md` |
+| Durable collaboration/product preferences | `preferences.md` |
+| Reusable feature spec template | `features/_TEMPLATE/SPEC.md` |
+| Current content-depth spec | `features/active/local-content-depth/SPEC.md` |
+
+## Codebase Map
+
+| Need | Path |
+|---|---|
+| App entry | `../WordLink/WordLinkApp.swift` |
+| App/backend config | `../WordLink/AppConfig.swift` |
+| Main state machine | `../WordLink/ViewModels/GameViewModel.swift` |
+| Models and constants | `../WordLink/Models/Models.swift` |
+| Local bundled reservoir | `../WordLink/reservoir.json` |
+| Local reservoir service | `../WordLink/Services/ReservoirService.swift` |
+| Supabase auth | `../WordLink/Services/AuthService.swift` |
+| Supabase edge functions | `../WordLink/Services/SupabaseGameService.swift` |
+| Chain RPC wrapper | `../WordLink/Services/PhraseService.swift` |
+| AI fallback generation | `../WordLink/Services/GeminiService.swift` |
+| Local history | `../WordLink/Services/StorageService.swift` |
+| Reservoir validator | `../tools/validate-reservoir.js` |
+| Integration tests | `../WordLinkTests/SupabaseIntegrationTests.swift` |
+
+## Non-Negotiable Rules
+
+- Verify technical facts against live code before changing or repeating them.
+- Keep user-facing gameplay native iOS first.
+- Keep version 1 local-first unless a new product decision is recorded.
+- Do not introduce backend schema changes, new monetization SDKs, or new auth
+  flows without an explicit migration plan.
+- Keep public client config centralized in `../WordLink/AppConfig.swift`.
+- Never put server-side secrets in the app.
+- Treat English phrase quality as a product requirement. Reject awkward ESL
+  examples, suffix fragments, and synthetic connector pairs.
+- For standard or major features, update the relevant `SPEC.md` as part of the
+  work.
 
 ## Mode: Review
 
@@ -141,4 +219,3 @@ Then update only that feature's row in `ACTIVE.md`.
 
 Suggest possible additions to `preferences.md`, but do not add them without
 approval.
-

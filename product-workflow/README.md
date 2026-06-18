@@ -17,7 +17,6 @@ implementation should get a feature folder under `features/active/`.
 ```text
 product-workflow/
   AGENTS.md
-  CLAUDE.md
   ACTIVE.md
   preferences.md
 
@@ -73,7 +72,8 @@ Exploration:
 Work on `local-content-depth` in exploration mode.
 The canonical spec workspace is:
 `/Users/zhengcheng/Documents/🌰 Nutstore/🍊Personal project_coding/WordLink-iOS/product-workflow`.
-Read AGENTS.md and follow its instructions. Update the original SPEC.md directly.
+Read only `product-workflow/AGENTS.md` first and follow its instructions. Update
+the original SPEC.md directly.
 ```
 
 Implementation:
@@ -82,9 +82,9 @@ Implementation:
 Work on `local-content-depth` in implementation mode.
 The canonical spec workspace is:
 `/Users/zhengcheng/Documents/🌰 Nutstore/🍊Personal project_coding/WordLink-iOS/product-workflow`.
-Read AGENTS.md and follow its instructions. Update the original SPEC.md directly.
+Read only `product-workflow/AGENTS.md` first and follow its instructions. Update
+the original SPEC.md directly.
 ```
 
 Before finishing, ask the agent to update the active feature's `SPEC.md` and
 the matching row in `ACTIVE.md`.
-

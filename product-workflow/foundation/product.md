@@ -59,9 +59,8 @@ connections to solve.
 
 ## Source Docs
 
-- Root project context: `AGENTS.md`
+- Agent start file: `product-workflow/AGENTS.md`
 - Current progress: `docs/progress.md`
 - Retention and content roadmap: `docs/retention-roadmap.md`
 - Web funnel: `docs/web-funnel.md`
 - App Store submission: `docs/app-store-submission.md`
-

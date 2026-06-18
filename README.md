@@ -39,7 +39,8 @@ first play.
 - No subscriptions
 - No account required
 
-See `CLAUDE.md` and `docs/pre-upload-checklist.md` for release-prep context.
+See `product-workflow/AGENTS.md` and `docs/pre-upload-checklist.md` for
+release-prep context.
 
 ## Reservoir QA
 
