@@ -286,17 +286,17 @@ final class GameViewModel: ObservableObject {
         guard isTutorial, !isGameOver else { return nil }
         switch currentIndex {
         case 0:
-            return "\(currentWord) + UP makes “go up”, which means move higher. The U is filled in — type P to solve it."
+            return "“Go up” means to move higher. Type P to finish the word."
         case 1:
             if hintsUsed == 0 {
-                return "Nice — that pair became a flashcard. Now tap Hint once to reveal a letter in SIDE and see how points change."
+                return "Tap Hint to reveal a letter."
             }
-            return "Good. Hint revealed another letter and cost points. Finish SIDE to keep going."
+            return "That hint cost points. Finish the word to keep going."
         default:
             if hintsUsed == 0 {
-                return "Last link! Find the word that links with \(currentWord), or use Hint if you get stuck."
+                return "Last link! Find the word that pairs with \(currentWord)."
             }
-            return "Almost there — finish the word to complete your first chain!"
+            return "Almost there — complete your first chain!"
         }
     }
 

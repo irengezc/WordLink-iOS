@@ -6,48 +6,23 @@ struct WordDisplayView: View {
     let revealedCount: Int
     let userInput: String
     let feedback: FeedbackState
+    /// When true, a pulsing ring draws the eye to the next tile to fill
+    /// (used to guide first-time players during the tutorial).
+    var highlightCursor: Bool = false
 
     @State private var shakeOffset: CGFloat = 0
 
     var body: some View {
-        VStack(spacing: 12) {
-            // First Word Card
-            firstWordCard
-            // Target Word Letter Tiles
-            targetWordCard
-        }
-        .padding(.horizontal)
-        .onChange(of: feedback) { newValue in
-            if newValue == .wrong { shake() }
-        }
+        targetWordCard
+            .padding(.horizontal)
+            .onChange(of: feedback) { newValue in
+                if newValue == .wrong { shake() }
+            }
     }
 
-    // MARK: - First Word Card
-    private var firstWordCard: some View {
-        VStack(spacing: 4) {
-            Text("LINK WORD")
-                .font(.system(size: 9, weight: .black))
-                .foregroundColor(Color(.systemGray3))
-                .tracking(2)
-
-            Text(firstWord)
-                .font(.system(size: 26, weight: .black))
-                .foregroundColor(Color(.systemGray))
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 14)
-        .background(Color(.systemBackground))
-        .cornerRadius(14)
-        .shadow(color: Color(.systemGray5), radius: 2, y: 1)
-        .scaleEffect(feedback == .correct ? 0.75 : 1.0)
-        .opacity(feedback == .correct ? 0 : 1)
-        .offset(y: feedback == .correct ? -40 : 0)
-        .animation(.easeInOut(duration: 0.5), value: feedback)
-    }
-
-    // MARK: - Target Word Card
+    // MARK: - Word Card
     private var targetWordCard: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 16) {
             phrasePreview
             letterTiles
             feedbackLabel
@@ -70,21 +45,21 @@ struct WordDisplayView: View {
     private let maxTilesPerRow = 7
 
     private var phrasePreview: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 10) {
             Text(firstWord)
-                .font(.system(size: 14, weight: .black))
+                .font(.system(size: 18, weight: .black))
                 .foregroundColor(Color(.systemGray))
             Image(systemName: "plus")
-                .font(.system(size: 9, weight: .black))
+                .font(.system(size: 11, weight: .black))
                 .foregroundColor(Color(.systemGray3))
             Text(targetPreview)
-                .font(.system(size: 14, weight: .black))
+                .font(.system(size: 18, weight: .black))
                 .foregroundColor(.indigo)
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 7)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 9)
         .background(Color.indigo.opacity(0.07))
-        .cornerRadius(18)
+        .cornerRadius(20)
     }
 
     private var targetPreview: String {
@@ -130,7 +105,8 @@ struct WordDisplayView: View {
                     character: tileCharacter(index: index, char: char),
                     isRevealed: index < revealedCount,
                     hasUserInput: !tileCharacter(index: index, char: char).isEmpty && index >= revealedCount,
-                    isCursor: isCursorPosition(index: index)
+                    isCursor: isCursorPosition(index: index),
+                    showPulse: highlightCursor && isCursorPosition(index: index)
                 )
             }
         }
@@ -172,13 +148,7 @@ struct WordDisplayView: View {
                     .background(Color.green.opacity(0.12))
                     .cornerRadius(20)
             case .none:
-                Text("\(targetWord.count) letters")
-                    .font(.system(size: 11, weight: .black))
-                    .foregroundColor(Color(.systemGray3))
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 5)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(20)
+                EmptyView()
             }
         }
         .animation(.easeInOut(duration: 0.2), value: feedback)
@@ -228,6 +198,7 @@ struct LetterTile: View {
     let isRevealed: Bool
     let hasUserInput: Bool
     let isCursor: Bool
+    var showPulse: Bool = false
 
     var body: some View {
         ZStack {
@@ -250,8 +221,10 @@ struct LetterTile: View {
                     .frame(width: 18, height: 3)
                     .offset(y: 12)
             }
+
         }
         .frame(width: 36, height: 44)
+        .rippleHighlight(showPulse, cornerRadius: 12)
         .animation(.spring(response: 0.2), value: character)
     }
 
@@ -270,5 +243,54 @@ struct LetterTile: View {
     private var textColor: Color {
         if isRevealed { return .indigo }
         return Color(.label)
+    }
+}
+
+// MARK: - Ripple Highlight
+/// An expanding amber ring that emanates from a view to draw the eye. Used on
+/// the tutorial tile cursor to show where typing lands.
+struct RippleHighlight: ViewModifier {
+    let active: Bool
+    var cornerRadius: CGFloat = 12
+
+    @State private var pulse = false
+
+    func body(content: Content) -> some View {
+        content.overlay {
+            if active {
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(Color.amber, lineWidth: 3)
+                    .scaleEffect(pulse ? 1.18 : 1.0)
+                    .opacity(pulse ? 0 : 0.9)
+                    .animation(.easeOut(duration: 1.0).repeatForever(autoreverses: false), value: pulse)
+                    .onAppear { pulse = true }
+                    .onDisappear { pulse = false }
+            }
+        }
+    }
+}
+
+extension View {
+    func rippleHighlight(_ active: Bool, cornerRadius: CGFloat = 12) -> some View {
+        modifier(RippleHighlight(active: active, cornerRadius: cornerRadius))
+    }
+}
+
+// MARK: - Guide Arrow
+/// A bouncing amber arrow that points up at the Hint button to show first-time
+/// players where to tap during the tutorial's hint step.
+struct GuideArrow: View {
+    @State private var bounce = false
+
+    var body: some View {
+        Image(systemName: "arrowshape.up.fill")
+            .font(.system(size: 24, weight: .black))
+            .foregroundColor(.amber)
+            .shadow(color: Color.amber.opacity(0.4), radius: 4, y: 2)
+            // Bob only downward so the highest point never reaches the button.
+            .offset(y: bounce ? 0 : 7)
+            .animation(.easeInOut(duration: 0.6).repeatForever(autoreverses: true), value: bounce)
+            .onAppear { bounce = true }
+            .transition(.scale(scale: 0.5).combined(with: .opacity))
     }
 }

@@ -2,7 +2,7 @@
 
 Status: implementation
 Owner: product
-Last updated: 2026-06-19
+Last updated: 2026-06-24
 
 ## Problem
 
@@ -23,11 +23,16 @@ to relearn when they start their first real game.
 
 Guidance is layered on top of the live screen as:
 - A **coach banner** under the progress bar whose copy is derived directly from
-  game state (`GameViewModel.tutorialCoach`), so it always stays in sync.
-- A labeled **Hint** pill in the top bar, with a spotlight during the second
-  link to teach hints once.
-- A small active-card phrase preview (`GO + U_`) so the relationship between the
-  link word and target word is visible before the user solves.
+  game state (`GameViewModel.tutorialCoach`), so it always stays in sync. The
+  banner is amber from the first frame (not only after the idle nudge), and copy
+  is kept to one short line.
+- A labeled **Hint** pill in the top bar (no `-N` cost label), with a spotlight
+  during the second link to teach hints once.
+- A **single active-word card**: a prominent phrase preview (`GO + U_`) over the
+  letter tiles. The preview is the only place the link word appears — the
+  separate "LINK WORD" card and the redundant letters-count pill were removed.
+- A pulsing **amber ring** on the next tile to fill during the tutorial's
+  opening word, so first-timers see exactly where their typing lands.
 
 **Gating comes for free from the game loop:** you cannot reach link 2 until link
 1 is solved. No artificial per-step gates or touch-swallowing overlays are
@@ -56,8 +61,8 @@ chain rather than the fixed `GameConstants.maxWords`.
 
 | Game state | Coach copy teaches |
 |------------|--------------------|
-| Link 1 (`GO`) | The link-word concept + first answer in prompt + typing the rest |
-| Link 2 (`UP`), no hint used | Solved pairs become flashcards + tap Hint once |
+| Link 1 (`GO`) | Phrase meaning + the answer (type P); the `GO + U_` preview shows the link |
+| Link 2 (`UP`), no hint used | Tap Hint once |
 | Link 2, after a hint | Hint cost/effect + finish the word |
 | Last link (`SIDE`) | Finish to complete the chain |
 | Game over | → real Results screen |
@@ -82,11 +87,12 @@ chain rather than the fixed `GameConstants.maxWords`.
   hand-authored chain, `startTutorial()`, `tutorialCoach`, chain-derived
   `totalWords`, tutorial safety net in `processWrongGuess`, first-launch routing,
   and tutorial-aware `finishGame` / `goHome` (mark seen, skip history save).
-- `WordLink/Views/GameView.swift` — coach banner, labeled hint pill,
-  hint spotlight/pulse, 3-second idle nudge, and progress bar driven by
-  `vm.totalWords`.
-- `WordLink/Views/Components/WordDisplayView.swift` — active-card phrase
-  preview.
+- `WordLink/Views/GameView.swift` — amber coach banner, labeled hint pill
+  (no cost label), hint spotlight/pulse, opening-word tile pulse (`tilePulse`),
+  3-second idle nudge, and progress bar driven by `vm.totalWords`.
+- `WordLink/Views/Components/WordDisplayView.swift` — single active-word card
+  with phrase preview and tiles (no separate link-word card, no letters pill);
+  `highlightCursor` drives the pulsing ring on the active `LetterTile`.
 - `WordLink/Services/StorageService.swift` — `hasSeenTutorial` get/set.
 - `WordLink/Views/HomeView.swift` — How to Play button → `goToTutorial()`.
 

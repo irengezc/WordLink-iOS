@@ -4,7 +4,6 @@ struct GameView: View {
     @EnvironmentObject var vm: GameViewModel
     @FocusState private var isKeyboardFocused: Bool
     @State private var keyboardHeight: CGFloat = 0
-    @State private var hintPulse = false
     @State private var showIdleNudge = false
     @State private var idleTask: Task<Void, Never>?
 
@@ -17,6 +16,7 @@ struct GameView: View {
                 .padding(.bottom, 8)
                 .background(Color(.systemBackground))
                 .shadow(color: Color(.systemGray5), radius: 1, y: 1)
+                .zIndex(1)
 
             // Progress Bar
             progressBar
@@ -52,7 +52,8 @@ struct GameView: View {
                                 targetWord: vm.targetWord,
                                 revealedCount: vm.revealedLetters,
                                 userInput: vm.userInput,
-                                feedback: vm.feedback
+                                feedback: vm.feedback,
+                                highlightCursor: tilePulse
                             )
                             .id("active")
                             .padding(.top, vm.completedPhrases.isEmpty ? 0 : 8)
@@ -94,7 +95,6 @@ struct GameView: View {
         .onAppear {
             isKeyboardFocused = true
             setupKeyboardObserver()
-            hintPulse = true
             scheduleIdleNudge()
         }
         .animation(.easeInOut(duration: 0.25), value: vm.tutorialCoach)
@@ -168,24 +168,19 @@ struct GameView: View {
                         .font(.system(size: 13, weight: .black))
                     Text("Hint")
                         .font(.system(size: 13, weight: .black))
-                    Text("-\(vm.difficulty.hintCost)")
-                        .font(.system(size: 11, weight: .black))
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(Color.white.opacity(hintAvailable ? 0.25 : 0))
-                        .cornerRadius(7)
                 }
                 .foregroundColor(hintAvailable ? .white : Color(.systemGray3))
-                .frame(width: 94, height: 36)
+                .frame(width: 76, height: 36)
                 .background(hintAvailable ? Color.amber : Color(.systemGray6))
                 .cornerRadius(11)
                 .shadow(color: hintAvailable ? Color.amber.opacity(0.25) : .clear, radius: 5, y: 2)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 11)
-                        .stroke(Color.white, lineWidth: hintSpotlight ? 2 : 0)
-                )
-                .scaleEffect(hintSpotlight && hintPulse ? 1.08 : 1.0)
-                .animation(hintSpotlight ? .easeInOut(duration: 0.7).repeatForever(autoreverses: true) : .default, value: hintPulse)
+                .rippleHighlight(hintSpotlight, cornerRadius: 11)
+                .overlay(alignment: .bottom) {
+                    if hintSpotlight {
+                        GuideArrow()
+                            .offset(y: 36)
+                    }
+                }
             }
             .disabled(!hintAvailable)
         }
@@ -199,30 +194,38 @@ struct GameView: View {
         vm.isTutorial && !vm.isGameOver && vm.hintsUsed == 0 && (vm.currentIndex == 1 || showIdleNudge)
     }
 
+    /// Whether the next tile to fill should pulse to show first-time players
+    /// where to type. Only on the tutorial's opening word, before they answer.
+    private var tilePulse: Bool {
+        vm.isTutorial && !vm.isGameOver && vm.currentIndex == 0 && vm.feedback == .none
+    }
+
     // MARK: - Tutorial coach banner
     private func coachBanner(_ text: String, isNudge: Bool) -> some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .center, spacing: 14) {
             Image(systemName: "lightbulb.fill")
                 .font(.system(size: 16, weight: .bold))
-                .foregroundColor(isNudge ? .amber : .indigo)
+                .foregroundColor(.amber)
                 .frame(width: 32, height: 32)
-                .background((isNudge ? Color.amber : Color.indigo).opacity(0.12))
+                .background(Color.amber.opacity(0.18))
                 .clipShape(Circle())
 
             Text(text)
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(Color(.label))
+                .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .center)
         }
-        .padding(14)
-        .background(isNudge ? Color.amber.opacity(0.12) : Color(.systemBackground))
+        .padding(.horizontal, 18)
+        .padding(.vertical, 14)
+        .background(Color.amber.opacity(0.12))
         .cornerRadius(16)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.amber, lineWidth: isNudge ? 2 : 0)
+                .stroke(Color.amber, lineWidth: isNudge ? 2 : 1)
         )
-        .shadow(color: Color(.systemGray5), radius: 3, y: 1)
+        .shadow(color: Color.amber.opacity(0.15), radius: 3, y: 1)
         .animation(.easeInOut(duration: 0.2), value: text)
         .animation(.easeInOut(duration: 0.2), value: isNudge)
     }
