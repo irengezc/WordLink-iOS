@@ -23,8 +23,7 @@ struct WordDisplayView: View {
     // MARK: - Word Card
     private var targetWordCard: some View {
         VStack(spacing: 16) {
-            phrasePreview
-            letterTiles
+            phraseTiles
             feedbackLabel
         }
         .padding(24)
@@ -41,72 +40,71 @@ struct WordDisplayView: View {
         .animation(.spring(response: 0.3, dampingFraction: 0.6), value: feedback == .correct)
     }
 
-    // Tiles per row before wrapping (36pt tile + 6pt gap = 42pt each; card fits ~7)
-    private let maxTilesPerRow = 7
+    /// Tile scales tried (largest first) when shrinking the target to fit one
+    /// line. `ViewThatFits` picks the first that fits the available width.
+    private let tileScales: [CGFloat] = [1.0, 0.88, 0.76, 0.64, 0.54, 0.46]
 
-    private var phrasePreview: some View {
-        HStack(spacing: 10) {
-            Text(firstWord)
-                .font(.system(size: 18, weight: .black))
-                .foregroundColor(Color(.systemGray))
-            Image(systemName: "plus")
-                .font(.system(size: 11, weight: .black))
-                .foregroundColor(Color(.systemGray3))
-            Text(targetPreview)
-                .font(.system(size: 18, weight: .black))
-                .foregroundColor(.indigo)
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 9)
-        .background(Color.indigo.opacity(0.07))
-        .cornerRadius(20)
-    }
-
-    private var targetPreview: String {
-        guard !targetWord.isEmpty else { return "" }
-
-        return String(
-            targetWord.indices.enumerated().map { offset, index in
-                if offset < revealedCount {
-                    return targetWord[index]
-                }
-
-                let inputOffset = offset - revealedCount
-                if inputOffset < userInput.count {
-                    return userInput[userInput.index(userInput.startIndex, offsetBy: inputOffset)]
-                }
-
-                return "_"
+    /// The front word + plus, followed by the target spelled out as tiles.
+    ///
+    /// Layout keeps each word whole on a single line:
+    /// - Preferred: everything on one line, full-size tiles.
+    /// - If the front word makes it too wide, it moves onto its own line above
+    ///   the target (the target stays full size).
+    /// - If the target itself is too long, the tiles shrink to fit one line.
+    private var phraseTiles: some View {
+        ViewThatFits(in: .horizontal) {
+            // 1. Front word + full-size target, all on one line.
+            HStack(spacing: 10) {
+                frontWordLabel
+                plusIcon
+                tileRow(scale: 1)
             }
-        )
-    }
-
-    @ViewBuilder
-    private var letterTiles: some View {
-        let count = targetWord.count
-        if count > maxTilesPerRow {
-            let half = Int(ceil(Double(count) / 2.0))
-            VStack(spacing: 8) {
-                tileRow(from: 0, to: half)
-                tileRow(from: half, to: count)
+            // 2. Front word stacked above the target; target shrinks to fit.
+            VStack(spacing: 10) {
+                // Only here — on its own full-width line — do we allow the front
+                // word to scale down, as a last resort for very long words.
+                frontWordLabel
+                    .minimumScaleFactor(0.7)
+                fittedTileRow
             }
-            .frame(maxWidth: .infinity, alignment: .center)
-        } else {
-            tileRow(from: 0, to: count)
-                .frame(maxWidth: .infinity, alignment: .center)
         }
     }
 
-    private func tileRow(from start: Int, to end: Int) -> some View {
-        HStack(spacing: 6) {
-            ForEach(start..<end, id: \.self) { index in
+    // Rigid in the inline layout: it reports its true width so a long front word
+    // forces the stacked fallback instead of silently shrinking on one line.
+    private var frontWordLabel: some View {
+        Text(firstWord)
+            .font(.system(size: 18, weight: .black))
+            .foregroundColor(Color(.systemGray))
+            .lineLimit(1)
+    }
+
+    private var plusIcon: some View {
+        Image(systemName: "plus")
+            .font(.system(size: 11, weight: .black))
+            .foregroundColor(Color(.systemGray3))
+    }
+
+    /// The target on a single line, shrunk just enough to fit the width.
+    private var fittedTileRow: some View {
+        ViewThatFits(in: .horizontal) {
+            ForEach(tileScales, id: \.self) { scale in
+                tileRow(scale: scale)
+            }
+        }
+    }
+
+    private func tileRow(scale: CGFloat) -> some View {
+        HStack(spacing: 6 * scale) {
+            ForEach(0..<targetWord.count, id: \.self) { index in
                 let char = targetWord[targetWord.index(targetWord.startIndex, offsetBy: index)]
                 LetterTile(
                     character: tileCharacter(index: index, char: char),
                     isRevealed: index < revealedCount,
                     hasUserInput: !tileCharacter(index: index, char: char).isEmpty && index >= revealedCount,
                     isCursor: isCursorPosition(index: index),
-                    showPulse: highlightCursor && isCursorPosition(index: index)
+                    showPulse: highlightCursor && isCursorPosition(index: index),
+                    scale: scale
                 )
             }
         }
@@ -199,32 +197,34 @@ struct LetterTile: View {
     let hasUserInput: Bool
     let isCursor: Bool
     var showPulse: Bool = false
+    /// Uniform scale (1 = default 36×44 tile) used to shrink long words to fit.
+    var scale: CGFloat = 1
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 10 * scale)
                 .fill(tileBackground)
-            RoundedRectangle(cornerRadius: 10)
-                .frame(height: 4)
+            RoundedRectangle(cornerRadius: 10 * scale)
+                .frame(height: 4 * scale)
                 .foregroundColor(bottomColor)
-                .offset(y: 18)
+                .offset(y: 18 * scale)
 
             if !character.isEmpty {
                 Text(character)
-                    .font(.system(size: 22, weight: .black))
+                    .font(.system(size: 22 * scale, weight: .black))
                     .foregroundColor(textColor)
             }
 
             if isCursor {
-                RoundedRectangle(cornerRadius: 2)
+                RoundedRectangle(cornerRadius: 2 * scale)
                     .fill(Color.indigo.opacity(0.6))
-                    .frame(width: 18, height: 3)
-                    .offset(y: 12)
+                    .frame(width: 18 * scale, height: 3 * scale)
+                    .offset(y: 12 * scale)
             }
 
         }
-        .frame(width: 36, height: 44)
-        .rippleHighlight(showPulse, cornerRadius: 12)
+        .frame(width: 36 * scale, height: 44 * scale)
+        .rippleHighlight(showPulse, cornerRadius: 12 * scale)
         .animation(.spring(response: 0.2), value: character)
     }
 
