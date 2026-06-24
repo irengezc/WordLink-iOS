@@ -45,6 +45,92 @@ const forbiddenPairs = new Set([
   "WORKS SHOP",
 ]);
 
+// CEFR frequency gate ------------------------------------------------------
+// The `easy` tier targets A1–A2 but tolerates the occasional B1 word inside an
+// otherwise transparent everyday compound (a strict all-A2 rule is topologically
+// impossible for 9-word chains: only ~15 A1/A2 words act as compound
+// pass-throughs, so chains cannot avoid heavy repetition). So:
+//   easy   : B2+ = ERROR (blocks the real offenders, e.g. BARRIER/FILTER/LOAN),
+//            B1   = quality flag (above the A1–A2 target; human-review).
+//   medium : C1+ = ERROR (cap B2).
+//   hard   : uncapped.
+// Lookup is lowercase + spelling-insensitive (US/UK forms both resolve). Words
+// missing from the (incomplete) word list are quality flags for human review.
+const cefrWordlistPath = path.join(__dirname, "cefr-wordlist.json");
+const levelRank = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 };
+const tierErrorCap = { easy: 3, medium: 4, hard: 6 };
+const tierFlagCap = { easy: 2 };
+
+// Explicit irregular spelling pairs not covered by the rule-based swaps below.
+const irregularSpellings = {
+  judgment: ["judgement"],
+  judgement: ["judgment"],
+  catalog: ["catalogue"],
+  catalogue: ["catalog"],
+  gray: ["grey"],
+  grey: ["gray"],
+  plow: ["plough"],
+  plough: ["plow"],
+  tire: ["tyre"],
+  tyre: ["tire"],
+  check: ["cheque"],
+  donut: ["doughnut"],
+  doughnut: ["donut"],
+};
+
+// Generate plausible US/UK spelling variants of a lowercase word.
+function spellingVariants(word) {
+  const variants = new Set([word]);
+  const swaps = [
+    [/our\b/g, "or"],
+    [/or\b/g, "our"],
+    [/re\b/g, "er"],
+    [/er\b/g, "re"],
+    [/ise\b/g, "ize"],
+    [/ize\b/g, "ise"],
+    [/isation\b/g, "ization"],
+    [/ization\b/g, "isation"],
+    [/ogue\b/g, "og"],
+    [/og\b/g, "ogue"],
+    [/se\b/g, "ce"],
+    [/ce\b/g, "se"],
+  ];
+  for (const [pattern, replacement] of swaps) {
+    if (pattern.test(word)) {
+      variants.add(word.replace(pattern, replacement));
+    }
+  }
+  for (const variant of irregularSpellings[word] || []) {
+    variants.add(variant);
+  }
+  return variants;
+}
+
+function loadWordlist() {
+  if (!fs.existsSync(cefrWordlistPath)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(cefrWordlistPath, "utf8"));
+  } catch (error) {
+    fail(`Invalid JSON in ${cefrWordlistPath}: ${error.message}`);
+  }
+}
+
+// Return the lowest (most lenient) CEFR rank among the word's spelling
+// variants, or null if none are in the list.
+function lookupLevel(wordlist, word) {
+  const lower = word.toLowerCase();
+  let best = null;
+  let bestLevel = null;
+  for (const variant of spellingVariants(lower)) {
+    const level = wordlist[variant];
+    if (level && (best === null || levelRank[level] < best)) {
+      best = levelRank[level];
+      bestLevel = level;
+    }
+  }
+  return bestLevel;
+}
+
 function fail(message) {
   console.error(`Error: ${message}`);
   process.exit(1);
@@ -69,7 +155,7 @@ function normalizePair(left, right) {
   return `${left.trim().toUpperCase()} ${right.trim().toUpperCase()}`;
 }
 
-function validateEntry(entry, bucket, index, seenChains, seenPairs, report) {
+function validateEntry(entry, bucket, index, seenChains, seenPairs, report, wordlist) {
   const label = `${bucket}[${index}]`;
 
   if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
@@ -112,6 +198,19 @@ function validateEntry(entry, bucket, index, seenChains, seenPairs, report) {
 
     if (normalized.length <= 1 || fragmentLikeWords.has(normalized)) {
       report.qualityFlags.push(`${label}: "${normalized}" looks fragment-like; verify it forms natural phrases`);
+    }
+
+    if (wordlist && normalized.length > 1) {
+      const errorCap = tierErrorCap[bucket];
+      const flagCap = tierFlagCap[bucket];
+      const level = lookupLevel(wordlist, normalized);
+      if (level === null) {
+        report.qualityFlags.push(`${label}: "${normalized}" not in CEFR word list; verify it fits the ${bucket} tier`);
+      } else if (errorCap !== undefined && levelRank[level] > errorCap) {
+        report.errors.push(`${label}: "${normalized}" is ${level}, above the ${bucket}-tier cap`);
+      } else if (flagCap !== undefined && levelRank[level] > flagCap) {
+        report.qualityFlags.push(`${label}: "${normalized}" is ${level}, above the A1–A2 target for ${bucket} (review)`);
+      }
     }
 
     return normalized;
@@ -162,6 +261,7 @@ const report = {
 };
 const seenChains = new Map();
 const seenPairs = new Map();
+const wordlist = loadWordlist();
 
 for (const bucket of expectedBuckets) {
   const entries = reservoir[bucket];
@@ -172,7 +272,7 @@ for (const bucket of expectedBuckets) {
   }
 
   report.counts[bucket] = entries.length;
-  entries.forEach((entry, index) => validateEntry(entry, bucket, index + 1, seenChains, seenPairs, report));
+  entries.forEach((entry, index) => validateEntry(entry, bucket, index + 1, seenChains, seenPairs, report, wordlist));
 }
 
 for (const key of Object.keys(reservoir)) {
@@ -186,6 +286,7 @@ const total = expectedBuckets.reduce((sum, bucket) => sum + report.counts[bucket
 console.log("Reservoir validation");
 console.log(`File: ${reservoirPath}`);
 console.log(`Counts: ${expectedBuckets.map((bucket) => `${bucket}=${report.counts[bucket]}`).join(", ")}, total=${total}`);
+console.log(`CEFR gate: ${wordlist ? `on (easy: B2+ error / B1 flag, medium<=B2, hard uncapped; ${Object.keys(wordlist).length} words)` : "off (no word list)"}`);
 console.log(`Errors: ${report.errors.length}`);
 console.log(`Warnings: ${report.warnings.length}`);
 console.log(`Quality flags: ${report.qualityFlags.length}`);
