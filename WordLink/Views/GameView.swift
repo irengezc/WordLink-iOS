@@ -4,6 +4,8 @@ struct GameView: View {
     @EnvironmentObject var vm: GameViewModel
     @FocusState private var isKeyboardFocused: Bool
     @State private var keyboardHeight: CGFloat = 0
+    @State private var showIdleNudge = false
+    @State private var idleTask: Task<Void, Never>?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -14,12 +16,21 @@ struct GameView: View {
                 .padding(.bottom, 8)
                 .background(Color(.systemBackground))
                 .shadow(color: Color(.systemGray5), radius: 1, y: 1)
+                .zIndex(1)
 
             // Progress Bar
             progressBar
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
                 .background(Color(.systemBackground))
+
+            // Tutorial coach banner (guided mode only)
+            if let coach = vm.tutorialCoach {
+                coachBanner(coach, isNudge: showIdleNudge)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 12)
+                    .transition(.opacity)
+            }
 
             // Content
             ScrollViewReader { proxy in
@@ -41,7 +52,8 @@ struct GameView: View {
                                 targetWord: vm.targetWord,
                                 revealedCount: vm.revealedLetters,
                                 userInput: vm.userInput,
-                                feedback: vm.feedback
+                                feedback: vm.feedback,
+                                highlightCursor: tilePulse
                             )
                             .id("active")
                             .padding(.top, vm.completedPhrases.isEmpty ? 0 : 8)
@@ -83,8 +95,14 @@ struct GameView: View {
         .onAppear {
             isKeyboardFocused = true
             setupKeyboardObserver()
+            scheduleIdleNudge()
         }
+        .animation(.easeInOut(duration: 0.25), value: vm.tutorialCoach)
+        .onChange(of: vm.currentIndex) { _ in scheduleIdleNudge() }
+        .onChange(of: vm.userInput) { _ in scheduleIdleNudge() }
+        .onChange(of: vm.revealedLetters) { _ in scheduleIdleNudge() }
         .onDisappear {
+            idleTask?.cancel()
             NotificationCenter.default.removeObserver(self)
         }
     }
@@ -109,17 +127,21 @@ struct GameView: View {
     // MARK: - Top Bar
     private var topBar: some View {
         HStack {
-            Button {
-                HapticsService.shared.light()
-                vm.goHome()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 15, weight: .bold))
-                    .foregroundColor(Color(.systemGray))
-                    .frame(width: 36, height: 36)
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
+            HStack {
+                Button {
+                    HapticsService.shared.light()
+                    vm.goHome()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(Color(.systemGray))
+                        .frame(width: 36, height: 36)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                }
+                Spacer(minLength: 0)
             }
+            .frame(width: 94)
 
             Spacer()
 
@@ -142,13 +164,26 @@ struct GameView: View {
             Button {
                 HapticsService.shared.light()
                 vm.useHint()
+                scheduleIdleNudge()
             } label: {
-                Image(systemName: "lightbulb.fill")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(hintAvailable ? .amber : Color(.systemGray3))
-                .frame(width: 44, height: 36)
-                .background(hintAvailable ? Color.orange.opacity(0.12) : Color(.systemGray6))
-                .cornerRadius(10)
+                HStack(spacing: 5) {
+                    Image(systemName: "lightbulb.fill")
+                        .font(.system(size: 13, weight: .black))
+                    Text("Hint")
+                        .font(.system(size: 13, weight: .black))
+                }
+                .foregroundColor(hintAvailable ? .white : Color(.systemGray3))
+                .frame(width: 76, height: 36)
+                .background(hintAvailable ? Color.amber : Color(.systemGray6))
+                .cornerRadius(11)
+                .shadow(color: hintAvailable ? Color.amber.opacity(0.25) : .clear, radius: 5, y: 2)
+                .rippleHighlight(hintSpotlight, cornerRadius: 11)
+                .overlay(alignment: .bottom) {
+                    if hintSpotlight {
+                        GuideArrow()
+                            .offset(y: 36)
+                    }
+                }
             }
             .disabled(!hintAvailable)
         }
@@ -156,14 +191,72 @@ struct GameView: View {
 
     private var topBarHeight: CGFloat { 60 }
 
+    /// Whether the hint button should be spotlighted to teach hints during the
+    /// guided tutorial.
+    private var hintSpotlight: Bool {
+        vm.isTutorial && !vm.isGameOver && vm.hintsUsed == 0 && (vm.currentIndex == 1 || showIdleNudge)
+    }
+
+    /// Whether the next tile to fill should pulse to show first-time players
+    /// where to type. Only on the tutorial's opening word, before they answer.
+    private var tilePulse: Bool {
+        vm.isTutorial && !vm.isGameOver && vm.currentIndex == 0 && vm.feedback == .none
+    }
+
+    // MARK: - Tutorial coach banner
+    private func coachBanner(_ text: String, isNudge: Bool) -> some View {
+        HStack(alignment: .center, spacing: 14) {
+            Image(systemName: "lightbulb.fill")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(.amber)
+                .frame(width: 32, height: 32)
+                .background(Color.amber.opacity(0.18))
+                .clipShape(Circle())
+
+            Text(text)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(Color(.label))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .center)
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 14)
+        .background(Color.amber.opacity(0.12))
+        .cornerRadius(16)
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.amber, lineWidth: isNudge ? 2 : 1)
+        )
+        .shadow(color: Color.amber.opacity(0.15), radius: 3, y: 1)
+        .animation(.easeInOut(duration: 0.2), value: text)
+        .animation(.easeInOut(duration: 0.2), value: isNudge)
+    }
+
     // MARK: - Progress Bar
     private var progressBar: some View {
         HStack(spacing: 5) {
-            ForEach(0..<GameConstants.maxWords, id: \.self) { i in
+            ForEach(0..<vm.totalWords, id: \.self) { i in
                 RoundedRectangle(cornerRadius: 3)
                     .fill(i < vm.currentIndex ? Color.indigo : (i == vm.currentIndex ? Color.indigo.opacity(0.3) : Color(.systemGray5)))
                     .frame(height: 6)
                     .animation(.spring(response: 0.3), value: vm.currentIndex)
+            }
+        }
+    }
+
+    // MARK: - Tutorial idle nudge
+    private func scheduleIdleNudge() {
+        idleTask?.cancel()
+        showIdleNudge = false
+
+        guard vm.isTutorial, !vm.isGameOver, vm.feedback == .none else { return }
+
+        idleTask = Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 3_000_000_000)
+            guard !Task.isCancelled, vm.isTutorial, !vm.isGameOver, vm.feedback == .none else { return }
+            if vm.userInput.isEmpty || vm.currentIndex == 1 {
+                showIdleNudge = true
             }
         }
     }

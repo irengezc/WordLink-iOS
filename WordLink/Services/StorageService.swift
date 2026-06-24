@@ -3,8 +3,15 @@ import Foundation
 final class StorageService {
     static let shared = StorageService()
     private let historyKey = "wordlink_history_v2"
+    private let tutorialSeenKey = "wordlink_tutorial_seen_v1"
     private let maxHistory = 20
     private init() {}
+
+    // MARK: - Tutorial
+    var hasSeenTutorial: Bool {
+        get { UserDefaults.standard.bool(forKey: tutorialSeenKey) }
+        set { UserDefaults.standard.set(newValue, forKey: tutorialSeenKey) }
+    }
 
     func loadHistory() -> [HistoryItem] {
         guard let data = UserDefaults.standard.data(forKey: historyKey),

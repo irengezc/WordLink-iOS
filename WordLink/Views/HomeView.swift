@@ -107,27 +107,37 @@ struct HomeView: View {
                 .shadow(color: Color.black.opacity(0.25), radius: 12, y: 4)
             }
 
-            // History Button
-            Button {
-                HapticsService.shared.light()
-                vm.goToHistory()
-            } label: {
-                HStack(spacing: 10) {
-                    Image(systemName: "clock.arrow.circlepath")
-                        .font(.system(size: 15, weight: .semibold))
-                    Text("History")
-                        .font(.system(size: 16, weight: .bold))
+            // Secondary buttons row
+            HStack(spacing: 14) {
+                secondaryButton(icon: "clock.arrow.circlepath", title: "History") {
+                    HapticsService.shared.light()
+                    vm.goToHistory()
                 }
-                .foregroundColor(.white.opacity(0.9))
-                .frame(maxWidth: .infinity)
-                .frame(height: 52)
-                .background(Color.white.opacity(0.15))
-                .cornerRadius(16)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.white.opacity(0.2), lineWidth: 1)
-                )
+                secondaryButton(icon: "questionmark.circle", title: "How to Play") {
+                    HapticsService.shared.light()
+                    vm.goToTutorial()
+                }
             }
+        }
+    }
+
+    private func secondaryButton(icon: String, title: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 15, weight: .semibold))
+                Text(title)
+                    .font(.system(size: 15, weight: .bold))
+            }
+            .foregroundColor(.white.opacity(0.9))
+            .frame(maxWidth: .infinity)
+            .frame(height: 52)
+            .background(Color.white.opacity(0.15))
+            .cornerRadius(16)
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+            )
         }
     }
 }

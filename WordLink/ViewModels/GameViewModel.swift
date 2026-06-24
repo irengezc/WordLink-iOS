@@ -29,6 +29,19 @@ final class GameViewModel: ObservableObject {
     @Published var completedPhrases: [PhraseInfo] = []
     @Published var difficulty: Difficulty = .medium
 
+    // MARK: - Tutorial (guided mode)
+    // The onboarding tutorial is the real game in a guided mode — same screen,
+    // same controls — so there's nothing to relearn. A coach banner and a
+    // safety net are layered on top; everything else is the live game loop.
+    @Published var isTutorial: Bool = false
+    private var tutorialWrongCount = 0
+    private let tutorialChain = ["GO", "UP", "SIDE", "WALK"]
+    private let tutorialExplanations = [
+        "To move higher or increase.",
+        "The positive part of a situation.",
+        "A path beside a road for people walking."
+    ]
+
     // Transient event used to animate a floating "+N"/"-N" near the score.
     @Published var scoreChange: ScoreChange? = nil
     struct ScoreChange: Identifiable, Equatable {
@@ -54,6 +67,10 @@ final class GameViewModel: ObservableObject {
     // MARK: - Init
     init() {
         history = StorageService.shared.loadHistory()
+        // First launch: drop straight into the guided tutorial game.
+        if !StorageService.shared.hasSeenTutorial {
+            startTutorial()
+        }
     }
 
     // MARK: - Computed Properties
@@ -63,7 +80,9 @@ final class GameViewModel: ObservableObject {
         let longestAcceptedLength = acceptedTargetWords.map(\.count).max() ?? wordLength
         return max(0, longestAcceptedLength - revealedLetters)
     }
-    var totalWords: Int { GameConstants.maxWords }
+    // Number of connections to solve: derived from the loaded chain (8 for a
+    // real game's 9-word chain; fewer for the short tutorial chain).
+    var totalWords: Int { chain.isEmpty ? GameConstants.maxWords : max(0, chain.count - 1) }
     private var currentTargetWord: String { chain.indices.contains(currentIndex + 1) ? chain[currentIndex + 1] : "" }
     private var acceptedTargetWords: Set<String> { SpellingVariants.acceptedForms(for: currentTargetWord) }
 
@@ -91,7 +110,9 @@ final class GameViewModel: ObservableObject {
         }
     }
 
-    private func setupGame(chain: [String], explanations: [String]) {
+    private func setupGame(chain: [String], explanations: [String], isTutorial: Bool = false) {
+        self.isTutorial = isTutorial
+        self.tutorialWrongCount = 0
         self.chain = chain
         self.explanations = explanations
         currentWord = chain.first ?? ""
@@ -170,8 +191,9 @@ final class GameViewModel: ObservableObject {
             self.currentWord = target
             self.currentIndex += 1
             self.revealedLetters = 1
+            self.tutorialWrongCount = 0
 
-            if self.currentIndex >= GameConstants.maxWords {
+            if self.currentIndex >= self.totalWords {
                 self.finishGame(won: true)
             } else {
                 let next = self.currentTargetWord
@@ -185,9 +207,24 @@ final class GameViewModel: ObservableObject {
         AudioService.shared.playWrong()
         HapticsService.shared.error()
         feedback = .wrong
+        tutorialWrongCount += 1
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-            self?.feedback = .none
-            self?.userInput = ""
+            guard let self else { return }
+            self.feedback = .none
+            self.userInput = ""
+            // Tutorial safety net: after repeated misses, reveal a letter for
+            // free (no point cost) so the guided game can never trap a learner.
+            if self.isTutorial, self.tutorialWrongCount >= 3, self.revealedLetters < self.wordLength {
+                self.tutorialWrongCount = 0
+                self.revealedLetters += 1
+                let target = self.currentTargetWord
+                self.targetWordDisplay = String(target.prefix(self.revealedLetters))
+                    + String(repeating: "?", count: max(0, self.wordLength - self.revealedLetters))
+                AudioService.shared.playHint()
+                if self.revealedLetters >= self.wordLength {
+                    self.handleGuess()   // fully revealed -> auto-solve
+                }
+            }
         }
     }
 
@@ -229,7 +266,12 @@ final class GameViewModel: ObservableObject {
             AudioService.shared.playCompletion()
             HapticsService.shared.success()
         }
-        saveToHistory()
+        if isTutorial {
+            // Completing (or finishing) the guided game counts as "seen".
+            StorageService.shared.hasSeenTutorial = true
+        } else {
+            saveToHistory()
+        }
         gameStatus = .results
     }
 
@@ -257,8 +299,44 @@ final class GameViewModel: ObservableObject {
         return text
     }
 
+    // MARK: - Tutorial
+    /// Launch the guided tutorial: a real game on the live `GameView`, using a
+    /// short hand-authored chain and an easy budget. Invoked on first launch and
+    /// from Home's "How to Play".
+    func startTutorial() {
+        difficulty = .easy
+        sessionId = nil
+        setupGame(chain: tutorialChain, explanations: tutorialExplanations, isTutorial: true)
+    }
+    func goToTutorial() { startTutorial() }
+
+    /// Coach copy shown in the tutorial banner, derived directly from game state
+    /// so it always stays in sync with the live loop.
+    var tutorialCoach: String? {
+        guard isTutorial, !isGameOver else { return nil }
+        switch currentIndex {
+        case 0:
+            return "“Go up” means to move higher. Type P to finish the word."
+        case 1:
+            if hintsUsed == 0 {
+                return "Tap Hint to reveal a letter."
+            }
+            return "That hint cost points. Finish the word to keep going."
+        default:
+            if hintsUsed == 0 {
+                return "Last link! Find the word that pairs with \(currentWord)."
+            }
+            return "Almost there — complete your first chain!"
+        }
+    }
+
     // MARK: - Navigation
-    func goHome() { gameStatus = .start }
+    func goHome() {
+        // Exiting the guided game (e.g. via the close button) still counts as seen.
+        if isTutorial { StorageService.shared.hasSeenTutorial = true }
+        isTutorial = false
+        gameStatus = .start
+    }
     func goToDifficultySelect() { gameStatus = .difficultySelect }
     func goToHistory() { selectedHistoryId = nil; history = StorageService.shared.loadHistory(); gameStatus = .history }
     func clearHistory() { StorageService.shared.clearHistory(); history = [] }
