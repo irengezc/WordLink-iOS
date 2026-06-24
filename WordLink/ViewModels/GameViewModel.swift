@@ -59,9 +59,13 @@ final class GameViewModel: ObservableObject {
     // MARK: - Computed Properties
     var targetWord: String { targetWordDisplay }
     var revealedPrefix: String { String(targetWordDisplay.prefix(revealedLetters)) }
-    var maxInputLength: Int { max(0, wordLength - revealedLetters) }
+    var maxInputLength: Int {
+        let longestAcceptedLength = acceptedTargetWords.map(\.count).max() ?? wordLength
+        return max(0, longestAcceptedLength - revealedLetters)
+    }
     var totalWords: Int { GameConstants.maxWords }
     private var currentTargetWord: String { chain.indices.contains(currentIndex + 1) ? chain[currentIndex + 1] : "" }
+    private var acceptedTargetWords: Set<String> { SpellingVariants.acceptedForms(for: currentTargetWord) }
 
     // MARK: - Start Game
     func startGame(difficulty: Difficulty) {
@@ -115,7 +119,7 @@ final class GameViewModel: ObservableObject {
         if newInput.count <= maxInputLength {
             userInput = newInput
             HapticsService.shared.light()
-            if newInput.count == maxInputLength {
+            if isCompleteAcceptedGuess(newInput) || newInput.count == maxInputLength {
                 handleGuess()
             }
         }
@@ -128,12 +132,16 @@ final class GameViewModel: ObservableObject {
 
     func handleGuess() {
         let guess = (revealedPrefix + userInput).uppercased()
-        let target = currentTargetWord.uppercased()
-        if guess == target {
+        if acceptedTargetWords.contains(guess) {
             processCorrectGuess()
         } else {
             processWrongGuess()
         }
+    }
+
+    private func isCompleteAcceptedGuess(_ input: String) -> Bool {
+        let guess = (revealedPrefix + input).uppercased()
+        return acceptedTargetWords.contains(guess)
     }
 
     private func processCorrectGuess() {
