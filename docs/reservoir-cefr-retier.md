@@ -49,13 +49,13 @@ word + first letter. If it needs trivia, it is not easy.
       easy B2+ = error, easy B1 = quality flag, medium C1+ = error, hard
       uncapped. Spelling-insensitive lookup. Missing-from-list = quality flag
       because the list is incomplete.
-- [ ] T3. Rebuild easy tier (15 chains) against the rubric + gate.
-- [ ] T4. Re-tier / rebalance medium and hard to 15 each.
-- [ ] T5. Rewrite explanations to match new links.
-- [ ] T6. Dual-spelling acceptance: `SpellingVariants` helper + GameViewModel
+- [x] T3. Rebuild easy tier (15 chains) against the rubric + gate.
+- [x] T4. Re-tier / rebalance medium and hard to 15 each.
+- [x] T5. Rewrite explanations to match new links.
+- [x] T6. Dual-spelling acceptance: `SpellingVariants` helper + GameViewModel
       guess check + input-length cap. (Code change for decision 4.)
-- [ ] T7. Run validator until clean; capture counts.
-- [ ] T8. Update `docs/reservoir-audit.md` and the local-content-depth SPEC.
+- [x] T7. Run validator until clean; capture counts.
+- [x] T8. Update `docs/reservoir-audit.md` and the local-content-depth SPEC.
 - [ ] T9. Human-review pass before commit.
 
 ## Gate design decisions (refined during execution)
@@ -96,3 +96,7 @@ word + first letter. If it needs trivia, it is not easy.
 - 2026-06-19: T2 implemented. Current reservoir fails as expected: 14 errors,
   0 warnings, 42 quality flags. Added `.context/difficulty-levels-handoff.md`
   for Conductor workspace resume context.
+- 2026-06-24: Rebuilt easy tier, replaced medium C1 blockers (`CATALOG`,
+  `WARRANT`), and added dual-spelling gameplay acceptance. Validator now exits
+  successfully with 0 errors, 2 repeated-pair warnings, and 30 quality flags
+  under the pragmatic CEFR gate.

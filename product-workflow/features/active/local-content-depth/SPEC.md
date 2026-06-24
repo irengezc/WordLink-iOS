@@ -8,16 +8,16 @@
 - Stage: exploring
 - Owner: Cheng Zheng
 - Current code workspace or branch: main repository
-- Last updated: 2026-06-18
+- Last updated: 2026-06-24
 
 ## Problem
 
 ### User Problem
 
 WordLink starts quickly because normal games use the bundled local reservoir
-first, but the current bundled content is only a cleaned 45-chain seed: 15 easy,
-15 medium, and 15 hard. That is enough to prove the mechanism, but too small
-for a satisfying v1 starter library.
+first. The current bundled content is a CEFR-re-tiered 45-chain seed: 15 easy,
+15 medium, and 15 hard. That is enough to prove the mechanism, but still too
+small for a satisfying v1 starter library.
 
 For English learners, low-quality chains are worse than no chain. Awkward
 examples, suffix fragments, and invented compounds can teach unnatural English
@@ -85,6 +85,7 @@ per difficulty if quality remains high.
 | R4 | Known-bad pairs and suffix fragments fail validation, not just manual review. | confirmed |
 | R5 | New pairs avoid awkward ESL examples, invented compounds, and misleading closed-compound spacing. | confirmed |
 | R6 | Updated docs record the final counts and validation result. | confirmed |
+| R7 | Gameplay accepts supported US/UK spelling variants while displaying canonical US target length. | confirmed |
 
 ### Required States
 
@@ -101,6 +102,7 @@ per difficulty if quality remains high.
 
 - Relevant code paths:
   - `WordLink/reservoir.json`
+  - `WordLink/Services/SpellingVariants.swift`
   - `WordLink/Services/ReservoirService.swift`
   - `WordLink/ViewModels/GameViewModel.swift`
   - `WordLink/Models/Models.swift`
@@ -135,14 +137,17 @@ per difficulty if quality remains high.
 - Cleaned the reservoir to a 45-chain seed with 15 chains per difficulty.
 - Added `tools/validate-reservoir.js`.
 - Recorded forbidden examples and quality rules in `docs/reservoir-audit.md`.
+- Rebuilt the easy tier for learner-friendly links, replaced medium C1
+  blockers, and added variant-aware guess acceptance.
 
 ### Validation
 
 - Current docs report:
   - Counts: easy=15, medium=15, hard=15, total=45
   - Errors: 0
-  - Warnings: 0
-  - Quality flags: 0
+  - Warnings: 2
+  - Quality flags: 30
+  - CEFR gate: easy B2+ blocks, easy B1 flags, medium C1+ blocks, hard uncapped
 
 Detailed test evidence: `assets/testing/`
 
@@ -150,7 +155,9 @@ Detailed review findings: `assets/review/`
 
 ### Known Issues And Deferred Work
 
-- Content is clean but shallow.
+- Content is CEFR-gated but shallow.
+- Two repeated-pair validator warnings remain for human review:
+  `WINDOW SHOPPING` and `PARTY LINE`.
 - The actual external generation pipeline is unresolved.
 - Chain IDs should be considered before the reservoir becomes large.
 - Daily challenge selection metadata is deferred.

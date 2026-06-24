@@ -1,13 +1,14 @@
 # Reservoir Audit
 
-Audit date: 2026-06-17
+Audit date: 2026-06-24
 
 ## Summary
 
-The current reservoir is structurally valid but not content-ready for an
-English-learning App Store release.
+The current reservoir is structurally valid and has been re-tiered for a
+learner-facing 45-chain seed. The easy tier was rebuilt to avoid the old
+native-heavy links that made it too difficult for A1-A2 learners.
 
-Structural validation after cleanup:
+Structural validation after CEFR re-tier:
 
 - Easy: 15 chains.
 - Medium: 15 chains.
@@ -16,15 +17,18 @@ Structural validation after cleanup:
 - No JSON/schema errors found.
 - Every chain has 9 words.
 - Every chain has 8 explanations.
-- No repeated-pair warnings.
-- No quality flags.
+- No CEFR blocking errors.
+- 2 repeated-pair warnings remain for human review.
+- 30 quality flags remain under the pragmatic gate, mostly missing word-list
+  entries in medium/hard and a few B1-but-everyday easy words.
 
 Content quality:
 
-- The old reservoir proved the local reservoir mechanism but included many
-  artificial splits and awkward connector pairs.
-- The current reservoir is a cleaned seed set and should be used as the baseline
-  for expansion.
+- The old reservoir proved the local reservoir mechanism but included native
+  or domain-heavy easy links such as `BARRIER REEF`, `BRIDGE LOAN`,
+  `CABIN FEVER`, and `STROKE COUNT`.
+- The current reservoir keeps the 15/15/15 seed size, rebuilds easy around
+  concrete everyday links, and removes medium-tier C1 blockers.
 - Continue human review before accepting new chains because the validator cannot
   fully judge natural English usage.
 
@@ -73,9 +77,10 @@ Current result after cleanup:
 
 ```text
 Counts: easy=15, medium=15, hard=15, total=45
+CEFR gate: on (easy: B2+ error / B1 flag, medium<=B2, hard uncapped; 4924 words)
 Errors: 0
-Warnings: 0
-Quality flags: 0
+Warnings: 2
+Quality flags: 30
 ```
 
 The script checks:
@@ -92,6 +97,8 @@ The script checks:
   `PLAN NET`.
 - Review-discovered forbidden pairs such as `AID KIT`, `BLADE RUNNER`,
   `CAP SIZE`, `THROAT CLEARING`, and `DRIVER LICENSE`.
+- CEFR frequency caps: easy B2+ fails, easy B1 is flagged for review,
+  medium C1+ fails, and hard is uncapped.
 
 ## Old Repeated Pairs
 
