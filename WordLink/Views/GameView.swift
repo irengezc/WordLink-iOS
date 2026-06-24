@@ -93,8 +93,12 @@ struct GameView: View {
                 .allowsHitTesting(false)
         )
         .onAppear {
-            isKeyboardFocused = true
             setupKeyboardObserver()
+            // Assert focus now and again on the next runloop. The first attempt
+            // can be dropped while the page is still animating in; the re-assert
+            // guarantees the keyboard is up by the time the screen settles.
+            isKeyboardFocused = true
+            DispatchQueue.main.async { isKeyboardFocused = true }
             scheduleIdleNudge()
         }
         .animation(.easeInOut(duration: 0.25), value: vm.tutorialCoach)
@@ -194,7 +198,10 @@ struct GameView: View {
     /// Whether the hint button should be spotlighted to teach hints during the
     /// guided tutorial.
     private var hintSpotlight: Bool {
-        vm.isTutorial && !vm.isGameOver && vm.hintsUsed == 0 && (vm.currentIndex == 1 || showIdleNudge)
+        // Never on the opening word — step 0 only highlights the word tile.
+        // Hints are taught starting at step 1.
+        vm.isTutorial && !vm.isGameOver && vm.hintsUsed == 0
+            && vm.currentIndex >= 1 && (vm.currentIndex == 1 || showIdleNudge)
     }
 
     /// Whether the next tile to fill should pulse to show first-time players

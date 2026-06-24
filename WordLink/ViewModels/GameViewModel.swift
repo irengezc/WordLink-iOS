@@ -316,7 +316,7 @@ final class GameViewModel: ObservableObject {
         guard isTutorial, !isGameOver else { return nil }
         switch currentIndex {
         case 0:
-            return "“Go up” means to move higher. Type P to finish the word."
+            return "Type ‘P’ to finish the word."
         case 1:
             if hintsUsed == 0 {
                 return "Tap Hint to reveal a letter."

@@ -19,6 +19,7 @@
 		AA000004 /* GeminiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100004 /* GeminiService.swift */; };
 		AA000005 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100005 /* AudioService.swift */; };
 		AA000006 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100006 /* StorageService.swift */; };
+		AA000019 /* KeyboardWarmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100019 /* KeyboardWarmer.swift */; };
 		AA000007 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100007 /* GameViewModel.swift */; };
 		AA000018 /* SpellingVariants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100018 /* SpellingVariants.swift */; };
 		AA000008 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100008 /* HomeView.swift */; };
@@ -46,6 +47,7 @@
 		AA100004 /* GeminiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiService.swift; sourceTree = "<group>"; };
 		AA100005 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		AA100006 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		AA100019 /* KeyboardWarmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardWarmer.swift; sourceTree = "<group>"; };
 		AA100007 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		AA100018 /* SpellingVariants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingVariants.swift; sourceTree = "<group>"; };
 		AA100008 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				AA100004 /* GeminiService.swift */,
 				AA100005 /* AudioService.swift */,
 				AA100006 /* StorageService.swift */,
+				AA100019 /* KeyboardWarmer.swift */,
 				AA100018 /* SpellingVariants.swift */,
 			);
 			path = Services;
@@ -239,6 +242,7 @@
 				AA000004 /* GeminiService.swift in Sources */,
 				AA000005 /* AudioService.swift in Sources */,
 				AA000006 /* StorageService.swift in Sources */,
+				AA000019 /* KeyboardWarmer.swift in Sources */,
 				AA000018 /* SpellingVariants.swift in Sources */,
 				AA000007 /* GameViewModel.swift in Sources */,
 				AA000008 /* HomeView.swift in Sources */,
