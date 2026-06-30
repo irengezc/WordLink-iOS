@@ -6,6 +6,7 @@ struct WordDisplayView: View {
     let revealedCount: Int
     let userInput: String
     let feedback: FeedbackState
+    let separator: LinkSeparator
     /// When true, a pulsing ring draws the eye to the next tile to fill
     /// (used to guide first-time players during the tutorial).
     var highlightCursor: Bool = false
@@ -44,45 +45,52 @@ struct WordDisplayView: View {
     /// line. `ViewThatFits` picks the first that fits the available width.
     private let tileScales: [CGFloat] = [1.0, 0.88, 0.76, 0.64, 0.54, 0.46]
 
-    /// The front word + plus, followed by the target spelled out as tiles.
-    ///
-    /// Layout keeps each word whole on a single line:
-    /// - Preferred: everything on one line, full-size tiles.
-    /// - If the front word makes it too wide, it moves onto its own line above
-    ///   the target (the target stays full size).
-    /// - If the target itself is too long, the tiles shrink to fit one line.
+    /// The phrase preview shows the link spelling, while the target tiles own
+    /// the typing area. Keeping these separate avoids fragile one-line layouts
+    /// for long front words or long answers.
     private var phraseTiles: some View {
-        ViewThatFits(in: .horizontal) {
-            // 1. Front word + full-size target, all on one line.
-            HStack(spacing: 10) {
-                frontWordLabel
-                plusIcon
-                tileRow(scale: 1)
-            }
-            // 2. Front word stacked above the target; target shrinks to fit.
-            VStack(spacing: 10) {
-                // Only here — on its own full-width line — do we allow the front
-                // word to scale down, as a last resort for very long words.
-                frontWordLabel
-                    .minimumScaleFactor(0.7)
-                fittedTileRow
-            }
+        VStack(spacing: 14) {
+            phrasePreview
+            fittedTileRow
         }
     }
 
-    // Rigid in the inline layout: it reports its true width so a long front word
-    // forces the stacked fallback instead of silently shrinking on one line.
-    private var frontWordLabel: some View {
-        Text(firstWord)
-            .font(.system(size: 18, weight: .black))
-            .foregroundColor(Color(.systemGray))
-            .lineLimit(1)
+    private var phrasePreview: some View {
+        HStack(spacing: separator == .joined ? 0 : 4) {
+            Text(firstWord)
+                .foregroundColor(Color(.systemGray))
+
+            if separator == .hyphen {
+                Text(separator.symbol)
+                    .foregroundColor(Color(.systemGray3))
+            } else if separator == .space {
+                Color.clear
+                    .frame(width: 8)
+            }
+
+            previewTargetSlots
+        }
+        .font(.system(size: 22, weight: .black, design: .rounded))
+        .minimumScaleFactor(0.45)
+        .frame(maxWidth: .infinity)
+        .accessibilityLabel(Text(firstWord + separator.symbol + targetWord))
     }
 
-    private var plusIcon: some View {
-        Image(systemName: "plus")
-            .font(.system(size: 11, weight: .black))
-            .foregroundColor(Color(.systemGray3))
+    private var previewTargetSlots: some View {
+        HStack(spacing: 3) {
+            ForEach(0..<targetWord.count, id: \.self) { index in
+                let char = targetWord[targetWord.index(targetWord.startIndex, offsetBy: index)]
+                if char == "?" {
+                    Rectangle()
+                        .fill(Color.indigo.opacity(0.28))
+                        .frame(width: 14, height: 3)
+                        .frame(height: 22, alignment: .bottom)
+                } else {
+                    Text(String(char))
+                        .foregroundColor(.indigo)
+                }
+            }
+        }
     }
 
     /// The target on a single line, shrunk just enough to fit the width.

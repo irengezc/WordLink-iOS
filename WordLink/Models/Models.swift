@@ -67,6 +67,100 @@ struct PhraseInfo: Codable, Identifiable {
     }
 }
 
+// MARK: - Link Presentation
+enum LinkSeparator: Equatable {
+    case joined
+    case hyphen
+    case space
+
+    var symbol: String {
+        switch self {
+        case .joined: return ""
+        case .hyphen: return "-"
+        case .space: return " "
+        }
+    }
+}
+
+struct LinkPresentation: Equatable {
+    let firstWord: String
+    let targetWord: String
+    let separator: LinkSeparator
+    let resolvedPhraseText: String
+
+    init(firstWord: String, targetWord: String, explanation: String = "") {
+        let normalizedFirst = Self.normalized(firstWord)
+        let normalizedTarget = Self.normalized(targetWord)
+        self.firstWord = normalizedFirst
+        self.targetWord = normalizedTarget
+
+        let joinedText = normalizedFirst + normalizedTarget
+        let hyphenText = normalizedFirst + "-" + normalizedTarget
+        let openText = normalizedFirst + " " + normalizedTarget
+        let explanationPrefix = Self.explanationPrefix(from: explanation)
+
+        if explanationPrefix == joinedText || Self.knownJoinedPhrases.contains(joinedText) {
+            separator = .joined
+            resolvedPhraseText = joinedText
+        } else if explanationPrefix == hyphenText || Self.knownHyphenatedPhrases.contains(hyphenText) {
+            separator = .hyphen
+            resolvedPhraseText = hyphenText
+        } else if explanationPrefix == openText {
+            separator = .space
+            resolvedPhraseText = openText
+        } else {
+            separator = .space
+            resolvedPhraseText = openText
+        }
+    }
+
+    func previewText(targetDisplay: String) -> String {
+        firstWord + separator.symbol + targetDisplay
+    }
+
+    private static func normalized(_ word: String) -> String {
+        word.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    }
+
+    private static func explanationPrefix(from explanation: String) -> String? {
+        guard let colonIndex = explanation.firstIndex(of: ":") else { return nil }
+        let prefix = explanation[..<colonIndex]
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .uppercased()
+        return prefix.isEmpty ? nil : prefix
+    }
+
+    private static let knownJoinedPhrases: Set<String> = [
+        "AIRPORT",
+        "BASEBALL",
+        "BASKETBALL",
+        "BATHROOM",
+        "BEDROOM",
+        "BIRTHDAY",
+        "BOYFRIEND",
+        "CLASSROOM",
+        "COPYRIGHT",
+        "DOORSTEP",
+        "FEEDBACK",
+        "FIREFIGHTER",
+        "HOMEWORK",
+        "LIGHTHOUSE",
+        "MARKETPLACE",
+        "NOTEBOOK",
+        "OUTDOOR",
+        "PLAYGROUND",
+        "RAINCOAT",
+        "SIDEWALK",
+        "SUNGLASSES",
+        "TABLECLOTH",
+        "UPSIDE",
+        "WALKWAY",
+        "WORKSHEET"
+    ]
+
+    private static let knownHyphenatedPhrases: Set<String> = []
+}
+
 // MARK: - History Item
 struct HistoryItem: Codable, Identifiable {
     let id: String

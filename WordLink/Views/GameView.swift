@@ -53,6 +53,7 @@ struct GameView: View {
                                 revealedCount: vm.revealedLetters,
                                 userInput: vm.userInput,
                                 feedback: vm.feedback,
+                                separator: vm.currentLinkSeparator,
                                 highlightCursor: tilePulse
                             )
                             .id("active")
@@ -149,18 +150,21 @@ struct GameView: View {
 
             Spacer()
 
-            Text("\(vm.score)")
-                .font(.system(size: 32, weight: .black))
-                .foregroundColor(Color(.label))
-                .contentTransition(.numericText())
-                .animation(.spring(response: 0.35, dampingFraction: 0.7), value: vm.score)
-                .overlay(alignment: .top) {
-                    if let change = vm.scoreChange {
-                        FloatingScoreView(amount: change.amount)
-                            .id(change.id)
-                            .offset(y: -14)
-                    }
+            ZStack(alignment: .top) {
+                Text("\(vm.score)")
+                    .font(.system(size: 32, weight: .black))
+                    .foregroundColor(Color(.label))
+                    .contentTransition(.numericText())
+                    .animation(.spring(response: 0.35, dampingFraction: 0.7), value: vm.score)
+                    .frame(minWidth: 76)
+
+                if let change = vm.scoreChange {
+                    FloatingScoreView(amount: change.amount)
+                        .id(change.id)
+                        .offset(y: -18)
                 }
+            }
+            .frame(width: 112, height: 42)
 
             Spacer()
 
@@ -310,8 +314,11 @@ private struct FloatingScoreView: View {
         Text(label)
             .font(.system(size: 15, weight: .heavy, design: .rounded))
             .foregroundColor(.white)
+            .lineLimit(1)
+            .fixedSize(horizontal: true, vertical: false)
             .padding(.horizontal, 8)
             .padding(.vertical, 3)
+            .frame(minWidth: 44)
             .background(Capsule().fill(tint))
             .shadow(color: tint.opacity(0.4), radius: 4, y: 2)
             .scaleEffect(appeared ? 1.0 : 0.3)
