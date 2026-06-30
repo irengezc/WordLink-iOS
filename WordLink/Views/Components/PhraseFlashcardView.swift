@@ -40,24 +40,7 @@ struct PhraseFlashcardView: View {
     }
 
     private var frontSide: some View {
-        HStack(spacing: 10) {
-            Text(info.word1)
-                .font(.system(size: 19, weight: .bold))
-                .foregroundColor(Color(.systemGray))
-
-            ZStack {
-                Circle()
-                    .fill(Color.indigo.opacity(0.1))
-                    .frame(width: 24, height: 24)
-                Image(systemName: "link")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(.indigo)
-            }
-
-            Text(info.word2)
-                .font(.system(size: 19, weight: .black))
-                .foregroundColor(.indigo)
-        }
+        phraseText
         .frame(maxWidth: .infinity)
         .frame(height: 88)
         .overlay(alignment: .bottomTrailing) {
@@ -78,12 +61,9 @@ struct PhraseFlashcardView: View {
     }
 
     private var backSide: some View {
-        VStack(spacing: 4) {
-            Text("\(info.word1) + \(info.word2)")
-                .font(.system(size: 11, weight: .black))
-                .foregroundColor(.white.opacity(0.7))
-                .tracking(1)
-            Text("\"\(info.explanation)\"")
+        VStack(spacing: 2) {
+            backPhraseText
+            Text("\"\(displayedExplanation)\"")
                 .font(.system(size: 12, weight: .medium))
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -98,5 +78,64 @@ struct PhraseFlashcardView: View {
             RoundedRectangle(cornerRadius: 18)
                 .stroke(Color.indigo.opacity(0.8), lineWidth: 1.5)
         )
+    }
+
+    private var presentation: LinkPresentation {
+        LinkPresentation(firstWord: info.word1, targetWord: info.word2, explanation: info.explanation)
+    }
+
+    private var phraseText: some View {
+        HStack(spacing: presentation.separator == .joined ? 0 : 4) {
+            Text(presentation.firstWord)
+                .foregroundColor(Color(.systemGray))
+
+            phraseSeparator(width: 8, color: Color(.systemGray3))
+
+            Text(presentation.targetWord)
+                .foregroundColor(.indigo)
+        }
+        .font(.system(size: 21, weight: .black, design: .rounded))
+        .lineLimit(1)
+        .minimumScaleFactor(0.55)
+        .accessibilityLabel(Text(presentation.resolvedPhraseText))
+    }
+
+    private var backPhraseText: some View {
+        HStack(spacing: presentation.separator == .joined ? 0 : 3) {
+            Text(presentation.firstWord)
+
+            phraseSeparator(width: 6, color: .white.opacity(0.7))
+
+            Text(presentation.targetWord)
+        }
+        .font(.system(size: 11, weight: .black))
+        .foregroundColor(.white.opacity(0.7))
+        .tracking(1)
+        .lineLimit(1)
+        .minimumScaleFactor(0.8)
+        .accessibilityLabel(Text(presentation.resolvedPhraseText))
+    }
+
+    @ViewBuilder
+    private func phraseSeparator(width: CGFloat, color: Color) -> some View {
+        switch presentation.separator {
+        case .joined:
+            EmptyView()
+        case .hyphen:
+            Text("-")
+                .foregroundColor(color)
+        case .space:
+            Color.clear
+                .frame(width: width, height: 1)
+        }
+    }
+
+    private var displayedExplanation: String {
+        guard let colonIndex = info.explanation.firstIndex(of: ":") else {
+            return info.explanation
+        }
+        let bodyStart = info.explanation.index(after: colonIndex)
+        return info.explanation[bodyStart...]
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

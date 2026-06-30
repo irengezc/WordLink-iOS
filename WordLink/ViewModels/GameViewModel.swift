@@ -37,9 +37,9 @@ final class GameViewModel: ObservableObject {
     private var tutorialWrongCount = 0
     private let tutorialChain = ["GO", "UP", "SIDE", "WALK"]
     private let tutorialExplanations = [
-        "To move higher or increase.",
-        "The positive part of a situation.",
-        "A path beside a road for people walking."
+        "GO UP: To move higher or increase.",
+        "UPSIDE: The positive part of a situation.",
+        "SIDEWALK: A path beside a road for people walking."
     ]
 
     // Transient event used to animate a floating "+N"/"-N" near the score.
@@ -83,8 +83,17 @@ final class GameViewModel: ObservableObject {
     // Number of connections to solve: derived from the loaded chain (8 for a
     // real game's 9-word chain; fewer for the short tutorial chain).
     var totalWords: Int { chain.isEmpty ? GameConstants.maxWords : max(0, chain.count - 1) }
+    var currentLinkSeparator: LinkSeparator { currentLinkPresentation.separator }
     private var currentTargetWord: String { chain.indices.contains(currentIndex + 1) ? chain[currentIndex + 1] : "" }
+    private var currentExplanation: String { explanations.indices.contains(currentIndex) ? explanations[currentIndex] : "" }
     private var acceptedTargetWords: Set<String> { SpellingVariants.acceptedForms(for: currentTargetWord) }
+    private var currentLinkPresentation: LinkPresentation {
+        LinkPresentation(
+            firstWord: currentWord,
+            targetWord: currentTargetWord,
+            explanation: currentExplanation
+        )
+    }
 
     // MARK: - Start Game
     func startGame(difficulty: Difficulty) {
@@ -167,7 +176,7 @@ final class GameViewModel: ObservableObject {
 
     private func processCorrectGuess() {
         let target = currentTargetWord
-        let explanation = explanations.indices.contains(currentIndex) ? explanations[currentIndex] : ""
+        let explanation = currentExplanation
         let points = max(10, 50 - (revealedLetters - 1) * 10)
         score += points
         flashScoreChange(points)
@@ -293,7 +302,7 @@ final class GameViewModel: ObservableObject {
         var text = "🔗 WordLink - \(difficulty.displayName)\n"
         text += "Score: \(score) | \(completedPhrases.count)/\(GameConstants.maxWords) phrases\n\n"
         for phrase in completedPhrases {
-            text += "\(phrase.word1) → \(phrase.word2)\n"
+            text += "\(LinkPresentation(firstWord: phrase.word1, targetWord: phrase.word2, explanation: phrase.explanation).resolvedPhraseText)\n"
         }
         text += "\nPlay WordLink on iOS!"
         return text
