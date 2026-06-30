@@ -32,6 +32,12 @@
 		AA000015 /* PhraseFlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100015 /* PhraseFlashcardView.swift */; };
 		AA000016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA100016 /* Assets.xcassets */; };
 		AA000017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA100017 /* LaunchScreen.storyboard */; };
+		AA000025 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = AA100025 /* Sounds */; };
+		AA000020 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100020 /* Haptics.swift */; };
+		AA000021 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100021 /* SoundManager.swift */; };
+		AA000022 /* ChainLinkBurst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100022 /* ChainLinkBurst.swift */; };
+		AA000023 /* SnapBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100023 /* SnapBounce.swift */; };
+		AA000024 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100024 /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,12 @@
 		AA100015 /* PhraseFlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseFlashcardView.swift; sourceTree = "<group>"; };
 		AA100016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA100017 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA100020 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		AA100021 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		AA100022 /* ChainLinkBurst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLinkBurst.swift; sourceTree = "<group>"; };
+		AA100023 /* SnapBounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapBounce.swift; sourceTree = "<group>"; };
+		AA100024 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		AA100025 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		AA200001 /* WordLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,8 +104,10 @@
 				AA100002 /* ContentView.swift */,
 				AA400003 /* Models */,
 				AA400004 /* Services */,
+				AA400008 /* Juice */,
 				AA400005 /* ViewModels */,
 				AA400006 /* Views */,
+				AA100025 /* Sounds */,
 				AA100016 /* Assets.xcassets */,
 				AA100017 /* LaunchScreen.storyboard */,
 			);
@@ -120,6 +134,18 @@
 				AA100018 /* SpellingVariants.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AA400008 /* Juice */ = {
+			isa = PBXGroup;
+			children = (
+				AA100020 /* Haptics.swift */,
+				AA100021 /* SoundManager.swift */,
+				AA100022 /* ChainLinkBurst.swift */,
+				AA100023 /* SnapBounce.swift */,
+				AA100024 /* Shake.swift */,
+			);
+			path = Juice;
 			sourceTree = "<group>";
 		};
 		AA400005 /* ViewModels */ = {
@@ -221,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EFA09E2F8D2179005088E6 /* reservoir.json in Resources */,
+				AA000025 /* Sounds in Resources */,
 				27EFA0A02F8D2189005088E6 /* PrivacyInfo.xcprivacy in Resources */,
 				AA000016 /* Assets.xcassets in Resources */,
 				AA000017 /* LaunchScreen.storyboard in Resources */,
@@ -241,6 +268,11 @@
 				27EFA0992F8D214F005088E6 /* SupabaseGameService.swift in Sources */,
 				AA000004 /* GeminiService.swift in Sources */,
 				AA000005 /* AudioService.swift in Sources */,
+				AA000020 /* Haptics.swift in Sources */,
+				AA000021 /* SoundManager.swift in Sources */,
+				AA000022 /* ChainLinkBurst.swift in Sources */,
+				AA000023 /* SnapBounce.swift in Sources */,
+				AA000024 /* Shake.swift in Sources */,
 				AA000006 /* StorageService.swift in Sources */,
 				AA000019 /* KeyboardWarmer.swift in Sources */,
 				AA000018 /* SpellingVariants.swift in Sources */,

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: GameViewModel
+    @ObservedObject private var sound = SoundManager.shared
 
     @State private var titleScale: CGFloat = 0.8
     @State private var titleOpacity: Double = 0
@@ -34,6 +35,17 @@ struct HomeView: View {
                     .padding(.horizontal, 28)
                     .padding(.bottom, 40)
             }
+
+            // Sound mute toggle (persists across launches via SoundManager).
+            VStack {
+                HStack {
+                    Spacer()
+                    muteButton
+                }
+                Spacer()
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 8)
         }
         .onAppear {
             withAnimation(.spring(response: 0.7, dampingFraction: 0.6).delay(0.1)) {
@@ -41,6 +53,24 @@ struct HomeView: View {
                 titleOpacity = 1.0
             }
         }
+    }
+
+    private var muteButton: some View {
+        Button {
+            HapticsService.shared.light()
+            sound.isMuted.toggle()
+            // Play a tick so unmuting gives immediate, audible confirmation.
+            if !sound.isMuted { sound.play("tap") }
+        } label: {
+            Image(systemName: sound.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundColor(.white.opacity(0.9))
+                .frame(width: 44, height: 44)
+                .background(Color.white.opacity(0.15))
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 1))
+        }
+        .accessibilityLabel(sound.isMuted ? "Unmute sound" : "Mute sound")
     }
 
     private var decorativeBackground: some View {

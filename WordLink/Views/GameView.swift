@@ -6,6 +6,8 @@ struct GameView: View {
     @State private var keyboardHeight: CGFloat = 0
     @State private var showIdleNudge = false
     @State private var idleTask: Task<Void, Never>?
+    // Bumped on each completed link so SwiftUI replays a fresh ChainLinkBurst.
+    @State private var burstID: Int? = nil
 
     var body: some View {
         VStack(spacing: 0) {
@@ -57,6 +59,13 @@ struct GameView: View {
                             )
                             .id("active")
                             .padding(.top, vm.completedPhrases.isEmpty ? 0 : 8)
+                            // Signature link-snap burst, fired on each completed link.
+                            .overlay {
+                                if let burstID {
+                                    ChainLinkBurst(color: .amber)
+                                        .id(burstID)
+                                }
+                            }
                         }
 
                         // Bottom padding for keyboard
@@ -94,12 +103,20 @@ struct GameView: View {
         )
         .onAppear {
             setupKeyboardObserver()
+            // Warm up the haptic generators so the first tap has no latency.
+            Haptics.prepare()
             // Assert focus now and again on the next runloop. The first attempt
             // can be dropped while the page is still animating in; the re-assert
             // guarantees the keyboard is up by the time the screen settles.
             isKeyboardFocused = true
             DispatchQueue.main.async { isKeyboardFocused = true }
             scheduleIdleNudge()
+        }
+        // Fire the link-burst when a guess lands correct; clear it after it plays.
+        .onChange(of: vm.feedback) { newValue in
+            guard newValue == .correct else { return }
+            burstID = (burstID ?? 0) + 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { burstID = nil }
         }
         .animation(.easeInOut(duration: 0.25), value: vm.tutorialCoach)
         .onChange(of: vm.currentIndex) { _ in scheduleIdleNudge() }

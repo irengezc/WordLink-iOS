@@ -139,7 +139,8 @@ final class GameViewModel: ObservableObject {
         let newInput = userInput + String(upperChar)
         if newInput.count <= maxInputLength {
             userInput = newInput
-            HapticsService.shared.light()
+            Haptics.selection()
+            SoundManager.shared.play("tap")
             if isCompleteAcceptedGuess(newInput) || newInput.count == maxInputLength {
                 handleGuess()
             }
@@ -175,9 +176,16 @@ final class GameViewModel: ObservableObject {
         let phrase = PhraseInfo(word1: currentWord, word2: target, explanation: explanation)
         completedPhrases.append(phrase)
 
-        AudioService.shared.playCorrect()
-        HapticsService.shared.success()
+        // The "link-snap" beat: the halves snap together (snap), then — staggered
+        // by 0.15s so it reads as one satisfying beat — the chain rewards (success).
+        // Setting `feedback = .correct` drives the snap-bounce + link-burst in the view.
+        Haptics.snap()
+        SoundManager.shared.play("snap")
         feedback = .correct
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            Haptics.success()
+            SoundManager.shared.play("success")
+        }
 
         // Confirm with server in background (non-blocking)
         if let sid = sessionId {
@@ -204,8 +212,9 @@ final class GameViewModel: ObservableObject {
     }
 
     private func processWrongGuess() {
-        AudioService.shared.playWrong()
-        HapticsService.shared.error()
+        // Error buzz + sound; `feedback = .wrong` drives the shake in the view.
+        Haptics.error()
+        SoundManager.shared.play("wrong")
         feedback = .wrong
         tutorialWrongCount += 1
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -220,7 +229,7 @@ final class GameViewModel: ObservableObject {
                 let target = self.currentTargetWord
                 self.targetWordDisplay = String(target.prefix(self.revealedLetters))
                     + String(repeating: "?", count: max(0, self.wordLength - self.revealedLetters))
-                AudioService.shared.playHint()
+                SoundManager.shared.play("hint")
                 if self.revealedLetters >= self.wordLength {
                     self.handleGuess()   // fully revealed -> auto-solve
                 }
@@ -235,7 +244,7 @@ final class GameViewModel: ObservableObject {
         let cost = difficulty.hintCost
         score = max(0, score - cost)
         hintsUsed += 1
-        AudioService.shared.playHint()
+        SoundManager.shared.play("hint")
         HapticsService.shared.medium()
 
         // Trigger the floating "-N" animation; auto-clear after it finishes.
@@ -263,7 +272,7 @@ final class GameViewModel: ObservableObject {
         isGameWon = won
         isGameOver = true
         if won {
-            AudioService.shared.playCompletion()
+            SoundManager.shared.play("level_complete")
             HapticsService.shared.success()
         }
         if isTutorial {

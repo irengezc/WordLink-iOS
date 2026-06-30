@@ -10,14 +10,12 @@ struct WordDisplayView: View {
     /// (used to guide first-time players during the tutorial).
     var highlightCursor: Bool = false
 
-    @State private var shakeOffset: CGFloat = 0
-
     var body: some View {
         targetWordCard
+            // Juice layer: the card pops on a correct link and shakes on a wrong one.
+            .snapBounce(trigger: feedback == .correct)
+            .shake(trigger: feedback == .wrong)
             .padding(.horizontal)
-            .onChange(of: feedback) { newValue in
-                if newValue == .wrong { shake() }
-            }
     }
 
     // MARK: - Word Card
@@ -35,9 +33,6 @@ struct WordDisplayView: View {
                 .stroke(borderColor, lineWidth: 2)
         )
         .shadow(color: shadowColor, radius: 12, y: 4)
-        .scaleEffect(feedback == .correct ? 1.05 : 1.0)
-        .offset(x: shakeOffset)
-        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: feedback == .correct)
     }
 
     /// Tile scales tried (largest first) when shrinking the target to fit one
@@ -177,17 +172,6 @@ struct WordDisplayView: View {
         }
     }
 
-    // MARK: - Shake Animation
-    private func shake() {
-        let values: [CGFloat] = [0, -10, 10, -8, 8, -5, 5, 0]
-        for (i, offset) in values.enumerated() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(i) * 0.05) {
-                withAnimation(.easeInOut(duration: 0.05)) {
-                    shakeOffset = offset
-                }
-            }
-        }
-    }
 }
 
 // MARK: - Letter Tile
