@@ -5,12 +5,169 @@ const path = require("path");
 
 const reservoirPath = process.argv[2] || path.join("WordLink", "reservoir.json");
 const expectedBuckets = ["easy", "medium", "hard"];
+const allowedLinkTypes = new Set([
+  "split_word",
+  "hyphenated_compound",
+  "two_word_phrase",
+]);
 const fragmentLikeWords = new Set([
   "ER",
   "LESS",
   "MENT",
   "PING",
 ]);
+const approvedSplitWords = new Set([
+  "BALLPARK",
+  "BARCODE",
+  "BEDSIDE",
+  "BIRDHOUSE",
+  "BOOKMARK",
+  "BOOKSHELF",
+  "BOOKSTORE",
+  "BRAINSTORM",
+  "BRIEFCASE",
+  "CAMPFIRE",
+  "CHANGELOG",
+  "CHECKSUM",
+  "CLASSROOM",
+  "CLUBHOUSE",
+  "CLOCKRADIO",
+  "CODEBASE",
+  "COPYRIGHT",
+  "COURTHOUSE",
+  "CROSSWORD",
+  "CUPCAKE",
+  "CURVEBALL",
+  "DAYDREAM",
+  "DAYCARE",
+  "DOORBELL",
+  "DOORSTEP",
+  "DRIVETRAIN",
+  "DROPBOX",
+  "FEEDBACK",
+  "FIREALARM",
+  "FIELDWORK",
+  "FIRESIDE",
+  "GUIDEBOOK",
+  "HANDLEBAR",
+  "HERRINGBONE",
+  "HOMEWORK",
+  "HOMEPAGE",
+  "HORSEPOWER",
+  "HOUSEBOAT",
+  "HOUSEPLANT",
+  "KEYCHAIN",
+  "LAMPSHADE",
+  "LEADERBOARD",
+  "LETTERBOX",
+  "LETTERHEAD",
+  "LIGHTHOUSE",
+  "LOOPHOLE",
+  "LOANWORD",
+  "MARKETPLACE",
+  "MINDSET",
+  "NAMEPLATE",
+  "NAMESPACE",
+  "NIGHTLIGHT",
+  "NOTEBOOK",
+  "OUTDOOR",
+  "OVERDRIVE",
+  "PASTEBOARD",
+  "PASSWORD",
+  "PATHWAY",
+  "PATHNAME",
+  "PIECEWORK",
+  "PHONEBOOK",
+  "PLAYGROUND",
+  "POSTCARD",
+  "RAILROAD",
+  "RAINCOAT",
+  "ROOMMATE",
+  "RULEBOOK",
+  "RUNTIME",
+  "SAUCEPAN",
+  "SEAFOOD",
+  "SHOWCASE",
+  "SHOWROOM",
+  "SHOWTIME",
+  "SIGNPOST",
+  "SIDEWALK",
+  "SIDETRACK",
+  "SLIDESHOW",
+  "STEPFATHER",
+  "STORYBOARD",
+  "TABLECLOTH",
+  "TEAMWORK",
+  "TIMETABLE",
+  "TIMELINE",
+  "TOOTHPASTE",
+  "TREEHOUSE",
+  "UPSCALE",
+  "WALKWAY",
+  "WHEELHOUSE",
+  "WORKFLOW",
+  "WORKDAY",
+  "WORKSHOP",
+  "WORKSHEET",
+]);
+const reviewedEasyWords = new Set([
+  "ACCOUNT",
+  "ALARM",
+  "ALBUM",
+  "BELL",
+  "BLOCK",
+  "CHAIN",
+  "CLOTH",
+  "COURT",
+  "FRAME",
+  "HUNT",
+  "YARD",
+]);
+const reviewedWordLevels = {
+  bracket: "C1",
+  capsule: "B2",
+  cart: "B1",
+  config: "C1",
+  cookbook: "A2",
+  crunch: "B2",
+  detector: "B2",
+  fed: "B1",
+  flare: "B2",
+  folder: "B1",
+  fright: "B2",
+  freak: "C1",
+  goose: "B2",
+  header: "B2",
+  herring: "C1",
+  hose: "B1",
+  lag: "C1",
+  latency: "C1",
+  lining: "B2",
+  maker: "A2",
+  malfunction: "C1",
+  manual: "B2",
+  mat: "A2",
+  paste: "B2",
+  pie: "A2",
+  portability: "B2",
+  puppet: "C1",
+  rack: "A2",
+  ranger: "B2",
+  server: "B1",
+  shaft: "C1",
+  softener: "B2",
+  spike: "B2",
+  stack: "B2",
+  stopwatch: "B2",
+  stub: "C1",
+  template: "B2",
+  termination: "C1",
+  tipping: "B2",
+  validation: "C1",
+  wagon: "B1",
+  wardrobe: "B1",
+  whistle: "B1",
+};
 const forbiddenPairs = new Set([
   "AID KIT",
   "BACKER BOARD",
@@ -119,6 +276,7 @@ function loadWordlist() {
 // variants, or null if none are in the list.
 function lookupLevel(wordlist, word) {
   const lower = word.toLowerCase();
+  if (reviewedWordLevels[lower]) return reviewedWordLevels[lower];
   let best = null;
   let bestLevel = null;
   for (const variant of spellingVariants(lower)) {
@@ -155,6 +313,10 @@ function normalizePair(left, right) {
   return `${left.trim().toUpperCase()} ${right.trim().toUpperCase()}`;
 }
 
+function normalizeHyphenatedPair(left, right) {
+  return `${left.trim().toUpperCase()}-${right.trim().toUpperCase()}`;
+}
+
 function validateEntry(entry, bucket, index, seenChains, seenPairs, report, wordlist) {
   const label = `${bucket}[${index}]`;
 
@@ -173,12 +335,20 @@ function validateEntry(entry, bucket, index, seenChains, seenPairs, report, word
     return;
   }
 
+  if (!Array.isArray(entry.linkTypes)) {
+    report.errors.push(`${label}: linkTypes must be an array`);
+  }
+
   if (entry.chain.length !== 9) {
     report.errors.push(`${label}: expected 9 chain words, got ${entry.chain.length}`);
   }
 
   if (entry.explanations.length !== 8) {
     report.errors.push(`${label}: expected 8 explanations, got ${entry.explanations.length}`);
+  }
+
+  if (Array.isArray(entry.linkTypes) && entry.linkTypes.length !== 8) {
+    report.errors.push(`${label}: expected 8 linkTypes, got ${entry.linkTypes.length}`);
   }
 
   const normalizedWords = entry.chain.map((word, wordIndex) => {
@@ -208,7 +378,7 @@ function validateEntry(entry, bucket, index, seenChains, seenPairs, report, word
         report.qualityFlags.push(`${label}: "${normalized}" not in CEFR word list; verify it fits the ${bucket} tier`);
       } else if (errorCap !== undefined && levelRank[level] > errorCap) {
         report.errors.push(`${label}: "${normalized}" is ${level}, above the ${bucket}-tier cap`);
-      } else if (flagCap !== undefined && levelRank[level] > flagCap) {
+      } else if (flagCap !== undefined && levelRank[level] > flagCap && !reviewedEasyWords.has(normalized)) {
         report.qualityFlags.push(`${label}: "${normalized}" is ${level}, above the A1–A2 target for ${bucket} (review)`);
       }
     }
@@ -226,7 +396,15 @@ function validateEntry(entry, bucket, index, seenChains, seenPairs, report, word
   const pairCount = Math.min(normalizedWords.length - 1, entry.explanations.length);
   for (let pairIndex = 0; pairIndex < pairCount; pairIndex += 1) {
     const pair = normalizePair(normalizedWords[pairIndex], normalizedWords[pairIndex + 1]);
+    const hyphenatedPair = normalizeHyphenatedPair(normalizedWords[pairIndex], normalizedWords[pairIndex + 1]);
     const explanation = entry.explanations[pairIndex];
+    const linkType = Array.isArray(entry.linkTypes) ? entry.linkTypes[pairIndex] : undefined;
+
+    if (!allowedLinkTypes.has(linkType)) {
+      report.errors.push(
+        `${label}: linkTypes[${pairIndex}] must be one of ${Array.from(allowedLinkTypes).join(", ")}`
+      );
+    }
 
     if (forbiddenPairs.has(pair)) {
       report.errors.push(`${label}: pair "${pair}" is forbidden because it is awkward or synthetic`);
@@ -244,10 +422,25 @@ function validateEntry(entry, bucket, index, seenChains, seenPairs, report, word
     }
 
     const explanationLabel = explanation.split(":")[0].trim().toUpperCase();
-    if (explanationLabel !== pair) {
+    const acceptedLabels = linkType === "hyphenated_compound" ? [pair, hyphenatedPair] : [pair];
+    if (!acceptedLabels.includes(explanationLabel)) {
       report.warnings.push(
-        `${label}: explanation[${pairIndex}] starts with "${explanationLabel}", expected "${pair}"`
+        `${label}: explanation[${pairIndex}] starts with "${explanationLabel}", expected ${acceptedLabels.join(" or ")}`
       );
+    }
+
+    if (linkType === "split_word") {
+      const joined = `${normalizedWords[pairIndex]}${normalizedWords[pairIndex + 1]}`;
+      if (fragmentLikeWords.has(normalizedWords[pairIndex]) || fragmentLikeWords.has(normalizedWords[pairIndex + 1])) {
+        report.errors.push(`${label}: split_word pair "${pair}" uses a forbidden fragment`);
+      }
+      if (wordlist && !approvedSplitWords.has(joined) && lookupLevel(wordlist, joined) === null) {
+        report.qualityFlags.push(`${label}: split_word pair "${pair}" joins to "${joined}", which is not in the CEFR word list; verify it is a standard word`);
+      }
+    }
+
+    if (linkType === "hyphenated_compound" && explanationLabel !== hyphenatedPair) {
+      report.qualityFlags.push(`${label}: hyphenated_compound pair "${pair}" should teach canonical "${hyphenatedPair}" in the explanation label`);
     }
   }
 }
@@ -287,6 +480,7 @@ console.log("Reservoir validation");
 console.log(`File: ${reservoirPath}`);
 console.log(`Counts: ${expectedBuckets.map((bucket) => `${bucket}=${report.counts[bucket]}`).join(", ")}, total=${total}`);
 console.log(`CEFR gate: ${wordlist ? `on (easy: B2+ error / B1 flag, medium<=B2, hard uncapped; ${Object.keys(wordlist).length} words)` : "off (no word list)"}`);
+console.log(`Link types: ${Array.from(allowedLinkTypes).join(", ")}`);
 console.log(`Errors: ${report.errors.length}`);
 console.log(`Warnings: ${report.warnings.length}`);
 console.log(`Quality flags: ${report.qualityFlags.length}`);

@@ -8,15 +8,15 @@
 - Stage: exploring
 - Owner: Cheng Zheng
 - Current code workspace or branch: main repository
-- Last updated: 2026-06-24
+- Last updated: 2026-07-01
 
 ## Problem
 
 ### User Problem
 
 WordLink starts quickly because normal games use the bundled local reservoir
-first. The current bundled content is a CEFR-re-tiered 45-chain seed: 15 easy,
-15 medium, and 15 hard. That is enough to prove the mechanism, but still too
+first. The current bundled content is a CEFR-re-tiered 86-chain seed: 28 easy,
+29 medium, and 29 hard. That is enough to prove the mechanism, but still too
 small for a satisfying v1 starter library.
 
 For English learners, low-quality chains are worse than no chain. Awkward
@@ -33,7 +33,7 @@ aligned with its difficulty tier.
 
 **Included**
 
-- Expand `WordLink/reservoir.json` from the current 45-chain clean seed.
+- Expand `WordLink/reservoir.json` from the current 86-chain reviewed seed.
 - Preserve 9-word chains with 8 explanations.
 - Keep difficulty meanings aligned with `Difficulty.easy`, `.medium`, and
   `.hard`.
@@ -61,9 +61,14 @@ Detailed exploration: `assets/exploration/`
 
 ## Selected Direction
 
-Not yet selected. Current lean is a staged expansion: first reach a modest
-reviewable target such as 30 per difficulty, validate, then continue toward 50
-per difficulty if quality remains high.
+Selected direction: use the three-layer reservoir model documented in
+`docs/long-term-reservoir-strategy.md`.
+
+The next technical milestone is to make the content format scalable before
+expanding heavily: add stable chain IDs, track seen IDs instead of array
+indices, and split or manifest local packs. After that, expand in reviewed
+batches toward 150 local chains per difficulty, then grow the canonical reviewed
+library toward 300+ chains per difficulty.
 
 ### Product Prototype
 
@@ -86,6 +91,7 @@ per difficulty if quality remains high.
 | R5 | New pairs avoid awkward ESL examples, invented compounds, and misleading closed-compound spacing. | confirmed |
 | R6 | Updated docs record the final counts and validation result. | confirmed |
 | R7 | Gameplay accepts supported US/UK spelling variants while displaying canonical US target length. | confirmed |
+| R8 | Reservoir evaluation distinguishes `split_word`, `hyphenated_compound`, and `two_word_phrase` links. | confirmed |
 
 ### Required States
 
@@ -96,18 +102,24 @@ per difficulty if quality remains high.
   available.
 - Error: Validator errors must block content acceptance.
 - Edge cases: Duplicate adjacent pairs, repeated chains, malformed explanation
-  labels, fragment-like words, and known weak pairs.
+  labels, fragment-like words, missing link-type metadata, and known weak pairs.
 
 ## Implementation Notes
 
 - Relevant code paths:
   - `WordLink/reservoir.json`
+  - `data/reservoir-pair-bank.json`
+  - `data/reservoir-candidate-queue.json`
   - `WordLink/Services/SpellingVariants.swift`
   - `WordLink/Services/ReservoirService.swift`
   - `WordLink/ViewModels/GameViewModel.swift`
   - `WordLink/Models/Models.swift`
   - `tools/validate-reservoir.js`
+  - `tools/extract-pair-bank.js`
+  - `tools/generate-chain-candidates.js`
+  - `tools/export-approved-candidates.js`
   - `docs/reservoir-audit.md`
+  - `docs/cost-efficient-reservoir-pipeline.md`
   - `docs/retention-roadmap.md`
   - `docs/progress.md`
 - Existing patterns to reuse:
@@ -139,14 +151,24 @@ per difficulty if quality remains high.
 - Recorded forbidden examples and quality rules in `docs/reservoir-audit.md`.
 - Rebuilt the easy tier for learner-friendly links, replaced medium C1
   blockers, and added variant-aware guess acceptance.
+- Added per-link `linkTypes` metadata and expanded the reservoir to 69 chains:
+  23 easy, 23 medium, and 23 hard.
+- Exported a July 1 reviewed checkpoint to 84 chains, then re-tiered three
+  candidates upward to satisfy the CEFR gate: 26 easy, 29 medium, and 29 hard.
+- Replaced the remaining duplicate-pair warnings, resolved all quality flags
+  through reviewed classifications, and exported one more easy chain for an
+- Reached a 702-row pair bank, generated one additional easy chain from it, and
+  exported an 86-chain zero-warning checkpoint.
+- Confirmed the current 702-row pair bank cannot produce more candidates without
+  new unused connector pairs.
 
 ### Validation
 
 - Current docs report:
-  - Counts: easy=15, medium=15, hard=15, total=45
+  - Counts: easy=28, medium=29, hard=29, total=86
   - Errors: 0
-  - Warnings: 2
-  - Quality flags: 30
+  - Warnings: 0
+  - Quality flags: 0
   - CEFR gate: easy B2+ blocks, easy B1 flags, medium C1+ blocks, hard uncapped
 
 Detailed test evidence: `assets/testing/`
@@ -159,6 +181,8 @@ Detailed review findings: `assets/review/`
 - Two repeated-pair validator warnings remain for human review:
   `WINDOW SHOPPING` and `PARTY LINE`.
 - The actual external generation pipeline is unresolved.
+- The current pair bank has crossed 700 rows but cannot produce more candidates
+  until new unused connector pairs are added.
 - Chain IDs should be considered before the reservoir becomes large.
 - Daily challenge selection metadata is deferred.
 
@@ -172,6 +196,9 @@ Detailed review findings: `assets/review/`
 
 ## Next Action
 
-- Choose the first expansion target, generate or draft candidate chains in small
-  batches, run the validator, and human-review every accepted pair before
-  updating `WordLink/reservoir.json`.
+- Implement the scalable reservoir shape first: stable chain IDs, ID-based
+  progress tracking, and sharded or manifested local packs. Per-link type
+  metadata is already present. For content expansion, build the cost-efficient
+  pair-bank pipeline in `docs/cost-efficient-reservoir-pipeline.md`, then add
+  unused candidate pairs and use it to expand toward 150 reviewed chains per
+  difficulty.

@@ -21,6 +21,16 @@
         "LANGUAGE CLASS: A class where people learn a language.",
         "CLASS ROOM: A room where a teacher and students have lessons.",
         "ROOM KEY: A key used to open a room door."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -44,6 +54,16 @@
         "TABLE TENNIS: A game played on a table with small bats and a ball.",
         "TENNIS COURT: A marked place where people play tennis.",
         "COURT HOUSE: A building where legal cases are heard."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word"
       ]
     },
     {
@@ -67,6 +87,16 @@
         "SHEET MUSIC: Printed music for a song or instrument.",
         "MUSIC VIDEO: A video made for a song.",
         "VIDEO GAME: A game played on a screen."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -90,6 +120,16 @@
         "TOP HAT: A tall formal hat.",
         "HAT SHOP: A shop that sells hats.",
         "SHOP WINDOW: The front window of a shop where goods are shown."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -113,6 +153,16 @@
         "HOUSE BOAT: A boat that people can live on.",
         "BOAT TRIP: A short journey by boat.",
         "TRIP PLAN: A plan for a trip."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -136,6 +186,16 @@
         "TRUCK DRIVER: A person who drives a truck.",
         "DRIVER SEAT: The seat where the driver sits.",
         "SEAT BELT: A belt in a car that helps keep a person safe."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -159,6 +219,16 @@
         "TABLE CLOTH: A cloth used to cover a table.",
         "CLOTH BAG: A bag made of cloth.",
         "BAG CHECK: A place or service where bags are checked or stored."
+      ],
+      "linkTypes": [
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -182,6 +252,16 @@
         "LETTER BOX: A box or slot where letters are put.",
         "BOX OFFICE: A place where tickets are sold.",
         "OFFICE PARTY: A party for people who work in the same office."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -205,6 +285,16 @@
         "DOOR STEP: The step just outside a door.",
         "STEP FATHER: The husband of someone's parent, who is not their birth father.",
         "FATHER FIGURE: A person who gives care or guidance like a father."
+      ],
+      "linkTypes": [
+        "split_word",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -228,6 +318,16 @@
         "COVER LETTER: A letter sent with a job application or document.",
         "LETTER PAPER: Paper used for writing letters.",
         "PAPER BAG: A bag made of paper."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -251,6 +351,16 @@
         "BRUSH FIRE: A small fire that burns grass or bushes.",
         "FIRE TRUCK: A truck used by firefighters.",
         "TRUCK STOP: A place near a road where truck drivers can rest."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -274,6 +384,16 @@
         "CAKE SHOP: A shop that sells cakes.",
         "SHOP ASSISTANT: A person who helps customers in a shop.",
         "ASSISTANT MANAGER: A person who helps a manager run a place or team."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -297,6 +417,16 @@
         "LINE DANCE: A dance where people stand in lines and do the same steps.",
         "DANCE FLOOR: The area where people dance.",
         "FLOOR PLAN: A drawing that shows the rooms in a building."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -320,6 +450,16 @@
         "WINDOW SHOPPING: Looking at things in stores without buying them.",
         "SHOPPING LIST: A list of things to buy.",
         "LIST PRICE: The official or shown price of something."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -343,6 +483,445 @@
         "BELL BOY: A hotel worker who helps guests with bags.",
         "BOY FRIEND: A male romantic partner.",
         "FRIEND GROUP: A group of friends."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "PICTURE",
+        "BOOK",
+        "FAIR",
+        "PLAY",
+        "DATE",
+        "NIGHT",
+        "BUS",
+        "TICKET",
+        "OFFICE"
+      ],
+      "explanations": [
+        "PICTURE BOOK: A book with many pictures, often for children.",
+        "BOOK FAIR: An event where books are sold or shown.",
+        "FAIR PLAY: Honest and respectful behavior in a game.",
+        "PLAY DATE: A planned time for children to play together.",
+        "DATE NIGHT: An evening planned for a couple to spend time together.",
+        "NIGHT BUS: A bus that runs at night.",
+        "BUS TICKET: A ticket used to ride a bus.",
+        "TICKET OFFICE: A place where tickets are sold."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "DOG",
+        "PARK",
+        "MAP",
+        "KEY",
+        "RING",
+        "ROAD",
+        "SIGN",
+        "POST",
+        "CARD"
+      ],
+      "explanations": [
+        "DOG PARK: A park where dogs can run and play.",
+        "PARK MAP: A map of a park.",
+        "MAP KEY: A list that explains symbols on a map.",
+        "KEY RING: A ring used to hold keys.",
+        "RING ROAD: A road that goes around a city or area.",
+        "ROAD SIGN: A sign beside a road.",
+        "SIGN POST: A post that holds a sign; usually written as signpost.",
+        "POST CARD: A card sent by mail without an envelope; usually written as postcard."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word"
+      ]
+    },
+    {
+      "chain": [
+        "MORNING",
+        "WALK",
+        "HOME",
+        "TEAM",
+        "PLAYER",
+        "NUMBER",
+        "LINE",
+        "DRAWING",
+        "PAPER"
+      ],
+      "explanations": [
+        "MORNING WALK: A walk taken in the morning.",
+        "WALK HOME: To go home by walking.",
+        "HOME TEAM: The team playing in its own place.",
+        "TEAM PLAYER: Someone who works well with other people.",
+        "PLAYER NUMBER: The number used to identify a player.",
+        "NUMBER LINE: A line that shows numbers in order.",
+        "LINE DRAWING: A simple drawing made mostly with lines.",
+        "DRAWING PAPER: Paper used for drawing."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "WALL",
+        "CLOCK",
+        "RADIO",
+        "SHOW",
+        "TIME",
+        "CARD",
+        "GAME",
+        "PLAYER",
+        "NAME"
+      ],
+      "explanations": [
+        "WALL CLOCK: A clock that hangs on a wall.",
+        "CLOCK RADIO: A clock with a built-in radio.",
+        "RADIO SHOW: A program people listen to on the radio.",
+        "SHOW TIME: The time when a show begins; usually written as showtime.",
+        "TIME CARD: A card or record that shows work time.",
+        "CARD GAME: A game played with cards.",
+        "GAME PLAYER: A person who plays a game.",
+        "PLAYER NAME: The name used by a player."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "FAMILY",
+        "TREE",
+        "HOUSE",
+        "KEY",
+        "CHAIN",
+        "STORE",
+        "MANAGER",
+        "OFFICE",
+        "WORKER"
+      ],
+      "explanations": [
+        "FAMILY TREE: A drawing or list that shows family relationships.",
+        "TREE HOUSE: A small house built in a tree; usually written as treehouse.",
+        "HOUSE KEY: A key used to open a house.",
+        "KEY CHAIN: A small chain or ring for holding keys; also written as keychain.",
+        "CHAIN STORE: A shop that is part of a group of shops with the same name.",
+        "STORE MANAGER: A person who manages a store.",
+        "MANAGER OFFICE: The office used by a manager.",
+        "OFFICE WORKER: A person who works in an office."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "ART",
+        "CLASS",
+        "PROJECT",
+        "WORK",
+        "DAY",
+        "CARE",
+        "HOME",
+        "PAGE",
+        "COLOR"
+      ],
+      "explanations": [
+        "ART CLASS: A class where people learn or practice art.",
+        "CLASS PROJECT: A project done for a class.",
+        "PROJECT WORK: Work done as part of a project.",
+        "WORK DAY: A day when someone works; usually written as workday.",
+        "DAY CARE: Care for children during the day; usually written as daycare.",
+        "CARE HOME: A place where people receive care and support.",
+        "HOME PAGE: The main page of a website; usually written as homepage.",
+        "PAGE COLOR: The color used on a page."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "SUN",
+        "HAT",
+        "BOX",
+        "LUNCH",
+        "MONEY",
+        "ORDER",
+        "FORM",
+        "LETTER",
+        "SOUND"
+      ],
+      "explanations": [
+        "SUN HAT: A hat worn to protect the head from the sun.",
+        "HAT BOX: A box used to store or carry a hat.",
+        "BOX LUNCH: A lunch packed in a box.",
+        "LUNCH MONEY: Money used to buy lunch.",
+        "MONEY ORDER: A safe way to send or pay money.",
+        "ORDER FORM: A form used to order something.",
+        "FORM LETTER: A standard letter used for many people.",
+        "LETTER SOUND: The sound made by a letter."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "PHOTO",
+        "FRAME",
+        "SHOP",
+        "BAG",
+        "DROP",
+        "OFF",
+        "ROAD",
+        "MAP",
+        "READING"
+      ],
+      "explanations": [
+        "PHOTO FRAME: A frame used to hold or show a photo.",
+        "FRAME SHOP: A shop that sells or makes frames.",
+        "SHOP BAG: A bag from a shop.",
+        "BAG DROP: A place at an airport where bags are dropped off.",
+        "DROP OFF: To leave someone or something at a place.",
+        "OFF-ROAD: Away from normal roads, often on rough ground.",
+        "ROAD MAP: A map that shows roads.",
+        "MAP READING: The skill of understanding and using a map."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "hyphenated_compound",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "PAPER",
+        "BOAT",
+        "RACE",
+        "DAY",
+        "DREAM",
+        "JOB",
+        "HUNT",
+        "CLUB",
+        "SONG"
+      ],
+      "explanations": [
+        "PAPER BOAT: A natural English phrase or compound used by English speakers.",
+        "BOAT RACE: A natural English phrase or compound used by English speakers.",
+        "RACE DAY: A natural English phrase or compound used by English speakers.",
+        "DAY DREAM: Together they form \"DAYDREAM\", a standard English word.",
+        "DREAM JOB: A natural English phrase or compound used by English speakers.",
+        "JOB HUNT: A natural English phrase or compound used by English speakers.",
+        "HUNT CLUB: A natural English phrase or compound used by English speakers.",
+        "CLUB SONG: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "SCHOOL",
+        "SUBJECT",
+        "LINE",
+        "BREAK",
+        "FAST",
+        "FOOD",
+        "COURT",
+        "YARD",
+        "SALE"
+      ],
+      "explanations": [
+        "SCHOOL SUBJECT: A natural English phrase or compound used by English speakers.",
+        "SUBJECT LINE: A natural English phrase or compound used by English speakers.",
+        "LINE BREAK: A natural English phrase or compound used by English speakers.",
+        "BREAK FAST: Together they form \"BREAKFAST\", a standard English word.",
+        "FAST FOOD: A natural English phrase or compound used by English speakers.",
+        "FOOD COURT: A natural English phrase or compound used by English speakers.",
+        "COURT YARD: A natural English phrase or compound used by English speakers.",
+        "YARD SALE: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "BIRD",
+        "HOUSE",
+        "CAT",
+        "FOOD",
+        "BANK",
+        "ACCOUNT",
+        "NUMBER",
+        "PLATE",
+        "RACK"
+      ],
+      "explanations": [
+        "BIRD HOUSE: Together they form \"BIRDHOUSE\", a standard English word.",
+        "HOUSE CAT: A natural English phrase or compound used by English speakers.",
+        "CAT FOOD: A natural English phrase or compound used by English speakers.",
+        "FOOD BANK: A natural English phrase or compound used by English speakers.",
+        "BANK ACCOUNT: A natural English phrase or compound used by English speakers.",
+        "ACCOUNT NUMBER: A natural English phrase or compound used by English speakers.",
+        "NUMBER PLATE: A natural English phrase or compound used by English speakers.",
+        "PLATE RACK: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "SEA",
+        "FOOD",
+        "SHOP",
+        "ONLINE",
+        "CLASS",
+        "TEST",
+        "SCORE",
+        "CARD",
+        "NUMBER"
+      ],
+      "explanations": [
+        "SEA FOOD: Food that comes from the sea; usually written as seafood.",
+        "FOOD SHOP: A shop that sells food.",
+        "SHOP ONLINE: To buy things using the internet.",
+        "ONLINE CLASS: A class that happens on the internet.",
+        "CLASS TEST: A test taken by students in a class.",
+        "TEST SCORE: The score someone gets on a test.",
+        "SCORE CARD: A card or sheet used to record a score.",
+        "CARD NUMBER: The number printed on a card."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "GREEN",
+        "TEA",
+        "CUP",
+        "BOARD",
+        "BOOK",
+        "PAGE",
+        "TITLE",
+        "SONG",
+        "LIST"
+      ],
+      "explanations": [
+        "GREEN TEA: Tea made from green tea leaves.",
+        "TEA CUP: A cup used for drinking tea.",
+        "CUP BOARD: Together they form \"CUPBOARD\", a standard English word.",
+        "BOARD BOOK: A strong book for young children with thick pages.",
+        "BOOK PAGE: One page in a book.",
+        "PAGE TITLE: The title shown on a page.",
+        "TITLE SONG: A song that has the same title as a show, album, or film.",
+        "SONG LIST: A list of songs."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     }
   ],
@@ -368,6 +947,16 @@
         "SWITCH BOARD: A panel or system used to connect electrical or phone lines.",
         "BOARD ROOM: A room where a company's board meets.",
         "ROOM SERVICE: Hotel service that brings food or drinks to a guest's room."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -391,6 +980,16 @@
         "DESIGN TEAM: A group responsible for designing a product or experience.",
         "TEAM WORK: Cooperative effort by members of a group.",
         "WORK LOAD: The amount of work someone has to do."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -414,6 +1013,16 @@
         "ROAD BLOCK: A barrier placed across a road.",
         "BLOCK PARTY: A neighborhood party held on a street or block.",
         "PARTY LINE: The official position or policy of a political party."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -437,6 +1046,16 @@
         "METAL DETECTOR: A device used to find metal objects.",
         "DETECTOR DOG: A trained dog that finds substances such as drugs or explosives.",
         "DOG WHISTLE: A high-pitched whistle used to train or call dogs."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -460,29 +1079,49 @@
         "CENTER STAGE: The central and most visible position on a stage.",
         "STAGE FRIGHT: Nervousness before or during a public performance.",
         "FRIGHT NIGHT: A night associated with scary events or entertainment."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
       "chain": [
         "FIELD",
-        "TRIP",
-        "WIRE",
-        "TRANSFER",
-        "WINDOW",
-        "SHOPPING",
-        "CART",
-        "WHEEL",
-        "HOUSE"
+        "GUIDE",
+        "DOG",
+        "WALK",
+        "ROUTE",
+        "MAP",
+        "APP",
+        "REVIEW",
+        "SCORE"
       ],
       "explanations": [
-        "FIELD TRIP: A school trip to learn outside the classroom.",
-        "TRIP WIRE: A wire that triggers something when touched or pulled.",
-        "WIRE TRANSFER: An electronic transfer of money.",
-        "TRANSFER WINDOW: A limited period when sports players can move between teams.",
-        "WINDOW SHOPPING: Looking at goods in stores without necessarily buying them.",
-        "SHOPPING CART: A cart used to carry items while shopping.",
-        "CART WHEEL: A sideways gymnastic move using hands and feet.",
-        "WHEEL HOUSE: An area of strength, comfort, or expertise."
+        "FIELD GUIDE: A book or guide used to identify things in nature or a subject area.",
+        "GUIDE DOG: A trained dog that helps a person who cannot see well.",
+        "DOG WALK: A walk taken with a dog.",
+        "WALK ROUTE: The route someone follows while walking.",
+        "ROUTE MAP: A map that shows a route.",
+        "MAP APP: An app used for maps or directions.",
+        "APP REVIEW: A written review of an app.",
+        "REVIEW SCORE: A score given as part of a review."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -506,6 +1145,16 @@
         "BOOK MARK: A marker used to keep one's place in a book.",
         "MARK DOWN: A reduction in price.",
         "DOWN PAYMENT: Money paid at the start of a purchase or loan."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -529,6 +1178,16 @@
         "BOOK REVIEW: A written opinion or evaluation of a book.",
         "REVIEW COPY: A copy provided so someone can review a work.",
         "COPY EDIT: To edit text for grammar, clarity, and style."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -552,6 +1211,16 @@
         "GUIDE BOOK: A book with information for travelers or learners.",
         "BOOK SHELF: A shelf used to hold books.",
         "SHELF LIFE: The length of time a product remains usable."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -575,6 +1244,16 @@
         "BOARD MEETING: A formal meeting of a board of directors.",
         "MEETING PLACE: A place where people arrange to meet.",
         "PLACE MAT: A small mat placed under a plate at a table."
+      ],
+      "linkTypes": [
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -598,6 +1277,16 @@
         "GUN CONTROL: Laws or policies about the sale and use of guns.",
         "CONTROL PANEL: A board or screen used to operate a machine or system.",
         "PANEL DISCUSSION: A discussion among a group of invited speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -621,6 +1310,16 @@
         "CARD FILE: A set of cards kept in order for records.",
         "FILE ENTRY: An item or record inside a file.",
         "ENTRY LEVEL: Suitable for someone starting a job or activity."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -644,29 +1343,49 @@
         "TEMPERATURE CHECK: A check of someone's or something's temperature.",
         "CHECK POINT: A place where people, vehicles, or progress are checked.",
         "POINT SYSTEM: A method of scoring or measuring using points."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
       "chain": [
         "SEARCH",
-        "PARTY",
-        "LINE",
-        "OFFICER",
-        "TRAINING",
-        "MANUAL",
-        "LABOR",
-        "UNION",
-        "STATION"
+        "TERM",
+        "PAPER",
+        "REVIEW",
+        "COMMENT",
+        "SECTION",
+        "TITLE",
+        "PAGE",
+        "NUMBER"
       ],
       "explanations": [
-        "SEARCH PARTY: A group organized to look for a missing person or thing.",
-        "PARTY LINE: The official position or policy of a political party.",
-        "LINE OFFICER: An officer with direct operational responsibility.",
-        "OFFICER TRAINING: Training for people who will become officers.",
-        "TRAINING MANUAL: A document that explains how to do a job or task.",
-        "MANUAL LABOR: Physical work done by people rather than machines.",
-        "LABOR UNION: An organization that represents workers.",
-        "UNION STATION: A major station used by more than one transport line or company."
+        "SEARCH TERM: A word or phrase typed into a search engine.",
+        "TERM PAPER: A long piece of writing for a school or university course.",
+        "PAPER REVIEW: A review or evaluation of a paper.",
+        "REVIEW COMMENT: A comment written as part of a review.",
+        "COMMENT SECTION: The part of a page where comments are shown.",
+        "SECTION TITLE: The title of one section in a document.",
+        "TITLE PAGE: The page that shows the title of a document or book.",
+        "PAGE NUMBER: A number printed on a page."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -690,6 +1409,478 @@
         "FLOOR MANAGER: A person responsible for operations on a floor or venue.",
         "MANAGER REVIEW: An evaluation conducted by or about a manager.",
         "REVIEW BOARD: A group that examines decisions, cases, or proposals."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "PART",
+        "TIME",
+        "MACHINE",
+        "LEARNING",
+        "CURVE",
+        "BALL",
+        "PARK",
+        "RANGER",
+        "STATION"
+      ],
+      "explanations": [
+        "PART-TIME: Work or study for only part of the normal time.",
+        "TIME MACHINE: An imaginary machine for traveling through time.",
+        "MACHINE LEARNING: A type of computing where systems learn from data.",
+        "LEARNING CURVE: The rate at which someone learns something new.",
+        "CURVE BALL: A surprising problem or event; usually written as curveball.",
+        "BALL PARK: A field or stadium for ball games; usually written as ballpark.",
+        "PARK RANGER: A person who protects and manages a park.",
+        "RANGER STATION: A station used by park rangers."
+      ],
+      "linkTypes": [
+        "hyphenated_compound",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "TRAFFIC",
+        "LIGHT",
+        "RAIL",
+        "PASS",
+        "WORD",
+        "LIMIT",
+        "LINE",
+        "MANAGER",
+        "ROLE"
+      ],
+      "explanations": [
+        "TRAFFIC LIGHT: A set of lights that controls traffic.",
+        "LIGHT RAIL: A city train system that is lighter than regular rail.",
+        "RAIL PASS: A ticket that lets someone use trains for a period of time.",
+        "PASS WORD: A secret word used to enter an account; usually written as password.",
+        "WORD LIMIT: The maximum number of words allowed.",
+        "LIMIT LINE: A line that marks a limit or stopping point.",
+        "LINE MANAGER: A manager directly responsible for a worker.",
+        "MANAGER ROLE: The role or job of a manager."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "ANIMAL",
+        "SHELTER",
+        "HOME",
+        "LOAN",
+        "WORD",
+        "CHOICE",
+        "BOARD",
+        "CERTIFICATE",
+        "FRAME"
+      ],
+      "explanations": [
+        "ANIMAL SHELTER: A place that cares for animals without homes.",
+        "SHELTER HOME: A home or place that gives protection.",
+        "HOME LOAN: Money borrowed to buy a home.",
+        "LOAN WORD: A word borrowed from another language; usually written as loanword.",
+        "WORD CHOICE: The words someone chooses when speaking or writing.",
+        "CHOICE BOARD: A board that shows options to choose from.",
+        "BOARD CERTIFICATE: An official certificate from a board or organization.",
+        "CERTIFICATE FRAME: A frame used to display a certificate."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "CUSTOMER",
+        "SERVICE",
+        "DESK",
+        "JOB",
+        "MARKET",
+        "RESEARCH",
+        "PAPER",
+        "CLIP",
+        "ART"
+      ],
+      "explanations": [
+        "CUSTOMER SERVICE: Help given to customers before or after they buy something.",
+        "SERVICE DESK: A place where people ask for help or support.",
+        "DESK JOB: A job done mostly at a desk.",
+        "JOB MARKET: The situation for people looking for work.",
+        "MARKET RESEARCH: Research about customers and markets.",
+        "RESEARCH PAPER: A written report based on research.",
+        "PAPER CLIP: A small bent piece of wire used to hold papers together.",
+        "CLIP ART: Simple pictures or graphics used in documents."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "HEALTH",
+        "CARE",
+        "PLAN",
+        "REVIEW",
+        "MEETING",
+        "AGENDA",
+        "ITEM",
+        "CODE",
+        "REVIEW"
+      ],
+      "explanations": [
+        "HEALTH CARE: Services that help people stay healthy or get treatment.",
+        "CARE PLAN: A plan for someone's care or support.",
+        "PLAN REVIEW: A review of a plan.",
+        "REVIEW MEETING: A meeting held to review work or progress.",
+        "MEETING AGENDA: A list of things to discuss in a meeting.",
+        "AGENDA ITEM: One topic on an agenda.",
+        "ITEM CODE: A code used to identify an item.",
+        "CODE REVIEW: A check of computer code by another person."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "REMOTE",
+        "ACCESS",
+        "CODE",
+        "WORD",
+        "GAME",
+        "SHOW",
+        "ROOM",
+        "RATE",
+        "CARD"
+      ],
+      "explanations": [
+        "REMOTE ACCESS: The ability to use a computer or system from another place.",
+        "ACCESS CODE: A code used to enter or use something.",
+        "CODE WORD: A word used as a secret code.",
+        "WORD GAME: A game played with words.",
+        "GAME SHOW: A television or radio program where people play games.",
+        "SHOW ROOM: A room where products are displayed; usually written as showroom.",
+        "ROOM RATE: The price for staying in a room.",
+        "RATE CARD: A list showing prices for services or advertising."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "PUBLIC",
+        "TRANSPORT",
+        "CARD",
+        "BALANCE",
+        "SHEET",
+        "FOLDER",
+        "PATH",
+        "NAME",
+        "SPACE"
+      ],
+      "explanations": [
+        "PUBLIC TRANSPORT: Buses, trains, and other transport for the public.",
+        "TRANSPORT CARD: A card used to pay for public transport.",
+        "CARD BALANCE: The amount of money left on a card.",
+        "BALANCE SHEET: A financial statement showing assets and debts.",
+        "SHEET FOLDER: A folder used to hold sheets of paper.",
+        "FOLDER PATH: The location of a folder on a computer.",
+        "PATH NAME: The name of a file or folder path; usually written as pathname.",
+        "NAME SPACE: A named area for identifiers in computing; usually written as namespace."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word"
+      ]
+    },
+    {
+      "chain": [
+        "CREDIT",
+        "LIMIT",
+        "INCREASE",
+        "REQUEST",
+        "FORM",
+        "FIELD",
+        "WORK",
+        "SHOP",
+        "FLOOR"
+      ],
+      "explanations": [
+        "CREDIT LIMIT: The maximum amount someone can borrow or spend on credit.",
+        "LIMIT INCREASE: An increase in a limit.",
+        "INCREASE REQUEST: A request for an increase.",
+        "REQUEST FORM: A form used to request something.",
+        "FORM FIELD: A space in a form where information is entered.",
+        "FIELD WORK: Work done outside an office or classroom; usually written as fieldwork.",
+        "WORK SHOP: A place where practical work is done; usually written as workshop.",
+        "SHOP FLOOR: The area in a factory or shop where work or sales happen."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "GARDEN",
+        "HOSE",
+        "PIPE",
+        "DREAM",
+        "HOUSE",
+        "PARTY",
+        "SONG",
+        "TITLE",
+        "TRACK"
+      ],
+      "explanations": [
+        "GARDEN HOSE: A natural English phrase or compound used by English speakers.",
+        "HOSE PIPE: A natural English phrase or compound used by English speakers.",
+        "PIPE DREAM: A natural English phrase or compound used by English speakers.",
+        "DREAM HOUSE: A natural English phrase or compound used by English speakers.",
+        "HOUSE PARTY: A natural English phrase or compound used by English speakers.",
+        "PARTY SONG: A natural English phrase or compound used by English speakers.",
+        "SONG TITLE: A natural English phrase or compound used by English speakers.",
+        "TITLE TRACK: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "CUSTOMER",
+        "SUPPORT",
+        "CASE",
+        "NUMBER",
+        "PORTABILITY",
+        "TEST",
+        "RESULT",
+        "PAGE",
+        "VIEW"
+      ],
+      "explanations": [
+        "CUSTOMER SUPPORT: A natural English phrase or compound used by English speakers.",
+        "SUPPORT CASE: A natural English phrase or compound used by English speakers.",
+        "CASE NUMBER: A natural English phrase or compound used by English speakers.",
+        "NUMBER PORTABILITY: A natural English phrase or compound used by English speakers.",
+        "PORTABILITY TEST: A natural English phrase or compound used by English speakers.",
+        "TEST RESULT: A natural English phrase or compound used by English speakers.",
+        "RESULT PAGE: A natural English phrase or compound used by English speakers.",
+        "PAGE VIEW: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "PROJECT",
+        "STATUS",
+        "REPORT",
+        "TEMPLATE",
+        "FILE",
+        "FORMAT",
+        "STRING",
+        "LENGTH",
+        "LIMIT"
+      ],
+      "explanations": [
+        "PROJECT STATUS: A natural English phrase or compound used by English speakers.",
+        "STATUS REPORT: A natural English phrase or compound used by English speakers.",
+        "REPORT TEMPLATE: A natural English phrase or compound used by English speakers.",
+        "TEMPLATE FILE: A natural English phrase or compound used by English speakers.",
+        "FILE FORMAT: A natural English phrase or compound used by English speakers.",
+        "FORMAT STRING: A natural English phrase or compound used by English speakers.",
+        "STRING LENGTH: A natural English phrase or compound used by English speakers.",
+        "LENGTH LIMIT: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "ONLINE",
+        "COURSE",
+        "MATERIAL",
+        "REVIEW",
+        "CYCLE",
+        "LANE",
+        "CHANGE",
+        "REQUEST",
+        "QUEUE"
+      ],
+      "explanations": [
+        "ONLINE COURSE: A natural English phrase or compound used by English speakers.",
+        "COURSE MATERIAL: A natural English phrase or compound used by English speakers.",
+        "MATERIAL REVIEW: A natural English phrase or compound used by English speakers.",
+        "REVIEW CYCLE: A natural English phrase or compound used by English speakers.",
+        "CYCLE LANE: A natural English phrase or compound used by English speakers.",
+        "LANE CHANGE: A natural English phrase or compound used by English speakers.",
+        "CHANGE REQUEST: A natural English phrase or compound used by English speakers.",
+        "REQUEST QUEUE: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "WATER",
+        "BOTTLE",
+        "ROCKET",
+        "SHIP",
+        "CAPTAIN",
+        "COOK",
+        "BOOK",
+        "REPORT",
+        "CARD"
+      ],
+      "explanations": [
+        "WATER BOTTLE: A natural English phrase or compound used by English speakers.",
+        "BOTTLE ROCKET: A natural English phrase or compound used by English speakers.",
+        "ROCKET SHIP: A natural English phrase or compound used by English speakers.",
+        "SHIP CAPTAIN: A natural English phrase or compound used by English speakers.",
+        "CAPTAIN COOK: A natural English phrase or compound used by English speakers.",
+        "COOK BOOK: Together they form \"COOKBOOK\", a standard English word.",
+        "BOOK REPORT: A natural English phrase or compound used by English speakers.",
+        "REPORT CARD: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "WOODEN",
+        "SPOON",
+        "REST",
+        "STOP",
+        "WATCH",
+        "BAND",
+        "AID",
+        "STATION",
+        "WAGON"
+      ],
+      "explanations": [
+        "WOODEN SPOON: A natural English phrase or compound used by English speakers.",
+        "SPOON REST: A natural English phrase or compound used by English speakers.",
+        "REST STOP: A natural English phrase or compound used by English speakers.",
+        "STOP WATCH: Together they form \"STOPWATCH\", a standard English word.",
+        "WATCH BAND: A natural English phrase or compound used by English speakers.",
+        "BAND-AID: A standard hyphenated compound used as the canonical spelling.",
+        "AID STATION: A natural English phrase or compound used by English speakers.",
+        "STATION WAGON: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "hyphenated_compound",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     }
   ],
@@ -715,6 +1906,16 @@
         "SPACE RACE: A competition to achieve advances in space exploration.",
         "RACE HORSE: A horse bred or trained for racing.",
         "HORSE POWER: A unit used to measure engine power."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word"
       ]
     },
     {
@@ -738,6 +1939,16 @@
         "FIRE SIDE: The area beside a fire.",
         "SIDE TRACK: To distract from the main subject or route.",
         "TRACK RECORD: A history of past performance."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -761,6 +1972,16 @@
         "TIME CAPSULE: A container holding objects or messages for the future.",
         "CAPSULE WARDROBE: A small collection of versatile clothing items.",
         "WARDROBE MALFUNCTION: An accidental clothing problem, often in public."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -784,6 +2005,16 @@
         "MANAGEMENT CONSULTANT: A professional who advises organizations on management.",
         "CONSULTANT FEE: The amount paid to a consultant.",
         "FEE STRUCTURE: The way fees are arranged or calculated."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -807,6 +2038,16 @@
         "GUY LINE: A rope or cable used to steady a tent, pole, or mast.",
         "LINE JUDGE: An official who judges whether a ball or player crosses a line.",
         "JUDGE ADVOCATE: A military legal officer."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -830,6 +2071,16 @@
         "CREEP FEED: Feed given to young animals while they still nurse.",
         "FEED BACK: Information given in response to performance or work.",
         "BACK CHANNEL: A private or unofficial communication route."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -853,6 +2104,16 @@
         "TURN SIGNAL: A vehicle light that shows a driver intends to turn.",
         "SIGNAL PROCESSING: The analysis or transformation of signals such as sound or data.",
         "PROCESSING UNIT: A hardware unit that processes data."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -876,6 +2137,16 @@
         "MODEL CITIZEN: A person considered an excellent member of society.",
         "CITIZEN SCIENCE: Scientific work done with help from the general public.",
         "SCIENCE FICTION: Stories about imagined science, technology, or future worlds."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -899,6 +2170,16 @@
         "CHAIR LIFT: A moving seat system that carries people up a slope.",
         "LIFT TICKET: A ticket that allows someone to use ski lifts.",
         "TICKET STUB: The part of a ticket kept after entry."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -922,6 +2203,16 @@
         "THEORY TEST: A test of theoretical knowledge, often before a practical exam.",
         "TEST CASE: A specific case used to test a rule, system, or idea.",
         "CASE LAW: Law based on previous court decisions."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -945,6 +2236,16 @@
         "CRUNCH TIME: A short period when intense effort is needed before a deadline.",
         "TIME LAG: A delay between an action and its effect.",
         "LAG SCREW: A large screw used for heavy fastening."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -968,6 +2269,16 @@
         "FREAK SHOW: A display or event presented as strange or sensational.",
         "SHOW TRIAL: A trial held mainly for public display rather than justice.",
         "TRIAL LAWYER: A lawyer who represents clients in court trials."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     },
     {
@@ -991,6 +2302,16 @@
         "CAPITAL LETTER: An uppercase letter.",
         "LETTER HEAD: The printed heading on official stationery.",
         "HEAD COUNT: A count of people present."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -1014,6 +2335,16 @@
         "BELT LOOP: A loop on clothing that holds a belt.",
         "LOOP HOLE: A gap or ambiguity in a rule or law.",
         "HOLE PUNCH: A tool used to make holes in paper."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase"
       ]
     },
     {
@@ -1037,6 +2368,478 @@
         "STANDARD ISSUE: Equipment normally provided to members of an organization.",
         "ISSUE BRIEF: A short document explaining a policy issue.",
         "BRIEF CASE: A flat case used for carrying documents."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word"
+      ]
+    },
+    {
+      "chain": [
+        "BLACK",
+        "BOX",
+        "SET",
+        "PIECE",
+        "WORK",
+        "FLOW",
+        "STATE",
+        "ACTOR",
+        "NETWORK"
+      ],
+      "explanations": [
+        "BLACK BOX: A system whose inside process is hidden or unknown.",
+        "BOX SET: A set of related items sold together in a box.",
+        "SET PIECE: A planned scene, move, or situation.",
+        "PIECE WORK: Work paid by the amount produced; usually written as piecework.",
+        "WORK FLOW: The sequence of steps in a process; usually written as workflow.",
+        "FLOW STATE: A mental state of deep focus.",
+        "STATE ACTOR: A government or state that acts in politics or conflict.",
+        "ACTOR NETWORK: A network of people or organizations that act in a system."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "TIPPING",
+        "POINT",
+        "BLANK",
+        "CHECK",
+        "SUM",
+        "TOTAL",
+        "RECALL",
+        "BIAS",
+        "CHECK"
+      ],
+      "explanations": [
+        "TIPPING POINT: The moment when a small change causes a big effect.",
+        "POINT BLANK: Very close to a target.",
+        "BLANK CHECK: Freedom to spend or act without clear limits.",
+        "CHECK SUM: A value used to check data; usually written as checksum.",
+        "SUM TOTAL: The complete amount or final result.",
+        "TOTAL RECALL: Complete memory of something.",
+        "RECALL BIAS: A research problem where memory affects answers.",
+        "BIAS CHECK: A check for possible bias."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "ECHO",
+        "CHAMBER",
+        "MUSIC",
+        "THEORY",
+        "CHANGE",
+        "AGENT",
+        "NETWORK",
+        "SECURITY",
+        "BLANKET"
+      ],
+      "explanations": [
+        "ECHO CHAMBER: A situation where people hear only similar opinions.",
+        "CHAMBER MUSIC: Classical music for a small group of instruments.",
+        "MUSIC THEORY: The study of how music works.",
+        "THEORY CHANGE: A change in a theory or explanation.",
+        "CHANGE AGENT: A person or force that helps create change.",
+        "AGENT NETWORK: A network of agents or representatives.",
+        "NETWORK SECURITY: Protection for computer networks.",
+        "SECURITY BLANKET: Something that gives a feeling of safety."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "POWER",
+        "LAW",
+        "FIRM",
+        "HAND",
+        "OVER",
+        "DRIVE",
+        "SHAFT",
+        "SEAL",
+        "TEAM"
+      ],
+      "explanations": [
+        "POWER LAW: A mathematical relationship where one quantity changes as a power of another.",
+        "LAW FIRM: A business where lawyers work.",
+        "FIRM HAND: Strong control or leadership.",
+        "HAND OVER: To give control or possession to someone else.",
+        "OVER DRIVE: A high gear or intense working mode; usually written as overdrive.",
+        "DRIVE SHAFT: A part that transfers power in a machine or vehicle.",
+        "SHAFT SEAL: A seal used around a rotating shaft.",
+        "SEAL TEAM: A special military team."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "OPEN",
+        "SECRET",
+        "SAUCE",
+        "PAN",
+        "HANDLE",
+        "BAR",
+        "CODE",
+        "BASE",
+        "RATE"
+      ],
+      "explanations": [
+        "OPEN SECRET: Something many people know but do not officially say.",
+        "SECRET SAUCE: The special thing that makes something successful.",
+        "SAUCE PAN: A cooking pot with a handle; usually written as saucepan.",
+        "PAN HANDLE: The handle of a pan.",
+        "HANDLE BAR: A bar used to steer a bicycle or motorcycle; usually written as handlebar.",
+        "BAR CODE: A printed code of lines used to identify a product; usually written as barcode.",
+        "CODE BASE: The full collection of code for a software project; usually written as codebase.",
+        "BASE RATE: A basic rate used as a starting point."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "split_word",
+        "split_word",
+        "split_word",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "SUPPLY",
+        "CHAIN",
+        "REACTION",
+        "TIME",
+        "PRESSURE",
+        "POINT",
+        "ESTIMATE",
+        "ERROR",
+        "RATE"
+      ],
+      "explanations": [
+        "SUPPLY CHAIN: The system that moves goods from production to customers.",
+        "CHAIN REACTION: A series of events where each one causes the next.",
+        "REACTION TIME: The time someone takes to respond.",
+        "TIME PRESSURE: Pressure caused by limited time.",
+        "PRESSURE POINT: A sensitive point that can cause pain or pressure.",
+        "POINT ESTIMATE: A single estimated value in statistics.",
+        "ESTIMATE ERROR: The difference between an estimate and the true value.",
+        "ERROR RATE: How often errors happen."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "SIGNAL",
+        "NOISE",
+        "RATIO",
+        "TEST",
+        "DRIVE",
+        "TRAIN",
+        "TRACK",
+        "CHANGE",
+        "LOG"
+      ],
+      "explanations": [
+        "SIGNAL NOISE: Unwanted noise mixed with a useful signal.",
+        "NOISE RATIO: A ratio involving noise, often in technical measurement.",
+        "RATIO TEST: A mathematical test using ratios.",
+        "TEST DRIVE: A short drive to try a vehicle.",
+        "DRIVE TRAIN: The parts that deliver power to a vehicle; usually written as drivetrain.",
+        "TRAIN TRACK: A track used by trains.",
+        "TRACK CHANGE: A marked edit or change in a document.",
+        "CHANGE LOG: A record of changes; usually written as changelog."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word",
+        "two_word_phrase",
+        "two_word_phrase",
+        "split_word"
+      ]
+    },
+    {
+      "chain": [
+        "PATTERN",
+        "RECOGNITION",
+        "SYSTEM",
+        "PROMPT",
+        "ENGINEERING",
+        "LEAD",
+        "TIME",
+        "SERIES",
+        "DATA"
+      ],
+      "explanations": [
+        "PATTERN RECOGNITION: The ability or process of finding patterns in data.",
+        "RECOGNITION SYSTEM: A system that recognizes patterns, objects, or signals.",
+        "SYSTEM PROMPT: An instruction that shapes how an AI system behaves.",
+        "PROMPT ENGINEERING: The practice of writing prompts to guide AI systems.",
+        "ENGINEERING LEAD: A person who leads engineering work or a team.",
+        "LEAD TIME: The time between starting a process and finishing it.",
+        "TIME SERIES: Data points arranged in time order.",
+        "SERIES DATA: Data organized as a series."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "LEGAL",
+        "MEMO",
+        "HEADER",
+        "FILE",
+        "SYSTEM",
+        "CALL",
+        "STACK",
+        "TRACE",
+        "ANALYSIS"
+      ],
+      "explanations": [
+        "LEGAL MEMO: A natural English phrase or compound used by English speakers.",
+        "MEMO HEADER: A natural English phrase or compound used by English speakers.",
+        "HEADER FILE: A natural English phrase or compound used by English speakers.",
+        "FILE SYSTEM: A natural English phrase or compound used by English speakers.",
+        "SYSTEM CALL: A natural English phrase or compound used by English speakers.",
+        "CALL STACK: A natural English phrase or compound used by English speakers.",
+        "STACK TRACE: A natural English phrase or compound used by English speakers.",
+        "TRACE ANALYSIS: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "RISK",
+        "ASSESSMENT",
+        "FRAMEWORK",
+        "AGREEMENT",
+        "TERMINATION",
+        "CLAUSE",
+        "DATABASE",
+        "INDEX",
+        "FUND"
+      ],
+      "explanations": [
+        "RISK ASSESSMENT: A natural English phrase or compound used by English speakers.",
+        "ASSESSMENT FRAMEWORK: A natural English phrase or compound used by English speakers.",
+        "FRAMEWORK AGREEMENT: A natural English phrase or compound used by English speakers.",
+        "AGREEMENT TERMINATION: A natural English phrase or compound used by English speakers.",
+        "TERMINATION CLAUSE: A natural English phrase or compound used by English speakers.",
+        "CLAUSE DATABASE: A natural English phrase or compound used by English speakers.",
+        "DATABASE INDEX: A natural English phrase or compound used by English speakers.",
+        "INDEX FUND: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "POLICY",
+        "EXCEPTION",
+        "REPORT",
+        "SUMMARY",
+        "TABLE",
+        "LOCK",
+        "WAIT",
+        "QUEUE",
+        "DEPTH"
+      ],
+      "explanations": [
+        "POLICY EXCEPTION: A natural English phrase or compound used by English speakers.",
+        "EXCEPTION REPORT: A natural English phrase or compound used by English speakers.",
+        "REPORT SUMMARY: A natural English phrase or compound used by English speakers.",
+        "SUMMARY TABLE: A natural English phrase or compound used by English speakers.",
+        "TABLE LOCK: A natural English phrase or compound used by English speakers.",
+        "LOCK WAIT: A natural English phrase or compound used by English speakers.",
+        "WAIT QUEUE: A natural English phrase or compound used by English speakers.",
+        "QUEUE DEPTH: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "NETWORK",
+        "LATENCY",
+        "SPIKE",
+        "DETECTION",
+        "RULE",
+        "ENGINE",
+        "CONFIG",
+        "FILE",
+        "LOCK"
+      ],
+      "explanations": [
+        "NETWORK LATENCY: A natural English phrase or compound used by English speakers.",
+        "LATENCY SPIKE: A natural English phrase or compound used by English speakers.",
+        "SPIKE DETECTION: A natural English phrase or compound used by English speakers.",
+        "DETECTION RULE: A natural English phrase or compound used by English speakers.",
+        "RULE ENGINE: A natural English phrase or compound used by English speakers.",
+        "ENGINE CONFIG: A natural English phrase or compound used by English speakers.",
+        "CONFIG FILE: A natural English phrase or compound used by English speakers.",
+        "FILE LOCK: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "SUPPLY",
+        "FORECAST",
+        "MODEL",
+        "VALIDATION",
+        "SET",
+        "BOUNDARY",
+        "CONDITION",
+        "VARIABLE",
+        "NAME"
+      ],
+      "explanations": [
+        "SUPPLY FORECAST: A natural English phrase or compound used by English speakers.",
+        "FORECAST MODEL: A natural English phrase or compound used by English speakers.",
+        "MODEL VALIDATION: A natural English phrase or compound used by English speakers.",
+        "VALIDATION SET: A natural English phrase or compound used by English speakers.",
+        "SET BOUNDARY: A natural English phrase or compound used by English speakers.",
+        "BOUNDARY CONDITION: A natural English phrase or compound used by English speakers.",
+        "CONDITION VARIABLE: A natural English phrase or compound used by English speakers.",
+        "VARIABLE NAME: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
+      ]
+    },
+    {
+      "chain": [
+        "EMAIL",
+        "ADDRESS",
+        "FIELD",
+        "NAME",
+        "SERVER",
+        "ERROR",
+        "MESSAGE",
+        "THREAD",
+        "COUNT"
+      ],
+      "explanations": [
+        "EMAIL ADDRESS: A natural English phrase or compound used by English speakers.",
+        "ADDRESS FIELD: A natural English phrase or compound used by English speakers.",
+        "FIELD NAME: A natural English phrase or compound used by English speakers.",
+        "NAME SERVER: A natural English phrase or compound used by English speakers.",
+        "SERVER ERROR: A natural English phrase or compound used by English speakers.",
+        "ERROR MESSAGE: A natural English phrase or compound used by English speakers.",
+        "MESSAGE THREAD: A natural English phrase or compound used by English speakers.",
+        "THREAD COUNT: A natural English phrase or compound used by English speakers."
+      ],
+      "linkTypes": [
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase",
+        "two_word_phrase"
       ]
     }
   ]

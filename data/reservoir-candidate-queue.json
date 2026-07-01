@@ -1,0 +1,818 @@
+[
+  {
+    "id": "easy-bird-house-cat-food-bank-account-number-plate-rack",
+    "difficulty": "easy",
+    "status": "exported",
+    "chain": [
+      "BIRD",
+      "HOUSE",
+      "CAT",
+      "FOOD",
+      "BANK",
+      "ACCOUNT",
+      "NUMBER",
+      "PLATE",
+      "RACK"
+    ],
+    "explanations": [
+      "BIRD HOUSE: Together they form \"BIRDHOUSE\", a standard English word.",
+      "HOUSE CAT: A natural English phrase or compound used by English speakers.",
+      "CAT FOOD: A natural English phrase or compound used by English speakers.",
+      "FOOD BANK: A natural English phrase or compound used by English speakers.",
+      "BANK ACCOUNT: A natural English phrase or compound used by English speakers.",
+      "ACCOUNT NUMBER: A natural English phrase or compound used by English speakers.",
+      "NUMBER PLATE: A natural English phrase or compound used by English speakers.",
+      "PLATE RACK: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "split_word",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "bird_house",
+      "house_cat",
+      "cat_food",
+      "food_bank",
+      "bank_account",
+      "account_number",
+      "number_plate",
+      "plate_rack"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "easy-green-tea-cup-board-book-page-title-song-list",
+    "difficulty": "easy",
+    "status": "exported",
+    "chain": [
+      "GREEN",
+      "TEA",
+      "CUP",
+      "BOARD",
+      "BOOK",
+      "PAGE",
+      "TITLE",
+      "SONG",
+      "LIST"
+    ],
+    "explanations": [
+      "GREEN TEA: Tea made from green tea leaves.",
+      "TEA CUP: A cup used for drinking tea.",
+      "CUP BOARD: Together they form \"CUPBOARD\", a standard English word.",
+      "BOARD BOOK: A strong book for young children with thick pages.",
+      "BOOK PAGE: One page in a book.",
+      "PAGE TITLE: The title shown on a page.",
+      "TITLE SONG: A song that has the same title as a show, album, or film.",
+      "SONG LIST: A list of songs."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "split_word",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "green_tea",
+      "tea_cup",
+      "cup_board",
+      "board_book",
+      "book_page",
+      "page_title",
+      "title_song",
+      "song_list"
+    ],
+    "reviewNote": "approved: natural easy chain with no repeated pairs",
+    "exportedAt": "2026-07-01T12:21:01.004Z"
+  },
+  {
+    "id": "easy-paper-boat-race-day-dream-job-hunt-club-song",
+    "difficulty": "easy",
+    "status": "exported",
+    "chain": [
+      "PAPER",
+      "BOAT",
+      "RACE",
+      "DAY",
+      "DREAM",
+      "JOB",
+      "HUNT",
+      "CLUB",
+      "SONG"
+    ],
+    "explanations": [
+      "PAPER BOAT: A natural English phrase or compound used by English speakers.",
+      "BOAT RACE: A natural English phrase or compound used by English speakers.",
+      "RACE DAY: A natural English phrase or compound used by English speakers.",
+      "DAY DREAM: Together they form \"DAYDREAM\", a standard English word.",
+      "DREAM JOB: A natural English phrase or compound used by English speakers.",
+      "JOB HUNT: A natural English phrase or compound used by English speakers.",
+      "HUNT CLUB: A natural English phrase or compound used by English speakers.",
+      "CLUB SONG: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "split_word",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "paper_boat",
+      "boat_race",
+      "race_day",
+      "day_dream",
+      "dream_job",
+      "job_hunt",
+      "hunt_club",
+      "club_song"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "easy-school-subject-line-break-fast-food-court-yard-sale",
+    "difficulty": "easy",
+    "status": "exported",
+    "chain": [
+      "SCHOOL",
+      "SUBJECT",
+      "LINE",
+      "BREAK",
+      "FAST",
+      "FOOD",
+      "COURT",
+      "YARD",
+      "SALE"
+    ],
+    "explanations": [
+      "SCHOOL SUBJECT: A natural English phrase or compound used by English speakers.",
+      "SUBJECT LINE: A natural English phrase or compound used by English speakers.",
+      "LINE BREAK: A natural English phrase or compound used by English speakers.",
+      "BREAK FAST: Together they form \"BREAKFAST\", a standard English word.",
+      "FAST FOOD: A natural English phrase or compound used by English speakers.",
+      "FOOD COURT: A natural English phrase or compound used by English speakers.",
+      "COURT YARD: A natural English phrase or compound used by English speakers.",
+      "YARD SALE: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "split_word",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "school_subject",
+      "subject_line",
+      "line_break",
+      "break_fast",
+      "fast_food",
+      "food_court",
+      "court_yard",
+      "yard_sale"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "easy-sea-food-shop-online-class-test-score-card-number",
+    "difficulty": "easy",
+    "status": "exported",
+    "chain": [
+      "SEA",
+      "FOOD",
+      "SHOP",
+      "ONLINE",
+      "CLASS",
+      "TEST",
+      "SCORE",
+      "CARD",
+      "NUMBER"
+    ],
+    "explanations": [
+      "SEA FOOD: Food that comes from the sea; usually written as seafood.",
+      "FOOD SHOP: A shop that sells food.",
+      "SHOP ONLINE: To buy things using the internet.",
+      "ONLINE CLASS: A class that happens on the internet.",
+      "CLASS TEST: A test taken by students in a class.",
+      "TEST SCORE: The score someone gets on a test.",
+      "SCORE CARD: A card or sheet used to record a score.",
+      "CARD NUMBER: The number printed on a card."
+    ],
+    "linkTypes": [
+      "split_word",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "sea_food",
+      "food_shop",
+      "shop_online",
+      "online_class",
+      "class_test",
+      "test_score",
+      "score_card",
+      "card_number"
+    ],
+    "reviewNote": "high-confidence zero-flag follow-up checkpoint",
+    "exportedAt": "2026-07-01T12:17:14.865Z"
+  },
+  {
+    "id": "easy-water-bottle-rocket-ship-captain-cook-book-report-card",
+    "difficulty": "medium",
+    "status": "exported",
+    "chain": [
+      "WATER",
+      "BOTTLE",
+      "ROCKET",
+      "SHIP",
+      "CAPTAIN",
+      "COOK",
+      "BOOK",
+      "REPORT",
+      "CARD"
+    ],
+    "explanations": [
+      "WATER BOTTLE: A natural English phrase or compound used by English speakers.",
+      "BOTTLE ROCKET: A natural English phrase or compound used by English speakers.",
+      "ROCKET SHIP: A natural English phrase or compound used by English speakers.",
+      "SHIP CAPTAIN: A natural English phrase or compound used by English speakers.",
+      "CAPTAIN COOK: A natural English phrase or compound used by English speakers.",
+      "COOK BOOK: Together they form \"COOKBOOK\", a standard English word.",
+      "BOOK REPORT: A natural English phrase or compound used by English speakers.",
+      "REPORT CARD: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "split_word",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "water_bottle",
+      "bottle_rocket",
+      "rocket_ship",
+      "ship_captain",
+      "captain_cook",
+      "cook_book",
+      "book_report",
+      "report_card"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.384Z"
+  },
+  {
+    "id": "easy-wooden-spoon-rest-stop-watch-band-aid-station-wagon",
+    "difficulty": "medium",
+    "status": "exported",
+    "chain": [
+      "WOODEN",
+      "SPOON",
+      "REST",
+      "STOP",
+      "WATCH",
+      "BAND",
+      "AID",
+      "STATION",
+      "WAGON"
+    ],
+    "explanations": [
+      "WOODEN SPOON: A natural English phrase or compound used by English speakers.",
+      "SPOON REST: A natural English phrase or compound used by English speakers.",
+      "REST STOP: A natural English phrase or compound used by English speakers.",
+      "STOP WATCH: Together they form \"STOPWATCH\", a standard English word.",
+      "WATCH BAND: A natural English phrase or compound used by English speakers.",
+      "BAND-AID: A standard hyphenated compound used as the canonical spelling.",
+      "AID STATION: A natural English phrase or compound used by English speakers.",
+      "STATION WAGON: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "split_word",
+      "two_word_phrase",
+      "hyphenated_compound",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "wooden_spoon",
+      "spoon_rest",
+      "rest_stop",
+      "stop_watch",
+      "watch_band",
+      "band_aid",
+      "aid_station",
+      "station_wagon"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "hard-legal-memo-header-file-system-call-stack-trace-analysis",
+    "difficulty": "hard",
+    "status": "exported",
+    "chain": [
+      "LEGAL",
+      "MEMO",
+      "HEADER",
+      "FILE",
+      "SYSTEM",
+      "CALL",
+      "STACK",
+      "TRACE",
+      "ANALYSIS"
+    ],
+    "explanations": [
+      "LEGAL MEMO: A natural English phrase or compound used by English speakers.",
+      "MEMO HEADER: A natural English phrase or compound used by English speakers.",
+      "HEADER FILE: A natural English phrase or compound used by English speakers.",
+      "FILE SYSTEM: A natural English phrase or compound used by English speakers.",
+      "SYSTEM CALL: A natural English phrase or compound used by English speakers.",
+      "CALL STACK: A natural English phrase or compound used by English speakers.",
+      "STACK TRACE: A natural English phrase or compound used by English speakers.",
+      "TRACE ANALYSIS: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "legal_memo",
+      "memo_header",
+      "header_file",
+      "file_system",
+      "system_call",
+      "call_stack",
+      "stack_trace",
+      "trace_analysis"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "hard-network-latency-spike-detection-rule-engine-config-file-lock",
+    "difficulty": "hard",
+    "status": "exported",
+    "chain": [
+      "NETWORK",
+      "LATENCY",
+      "SPIKE",
+      "DETECTION",
+      "RULE",
+      "ENGINE",
+      "CONFIG",
+      "FILE",
+      "LOCK"
+    ],
+    "explanations": [
+      "NETWORK LATENCY: A natural English phrase or compound used by English speakers.",
+      "LATENCY SPIKE: A natural English phrase or compound used by English speakers.",
+      "SPIKE DETECTION: A natural English phrase or compound used by English speakers.",
+      "DETECTION RULE: A natural English phrase or compound used by English speakers.",
+      "RULE ENGINE: A natural English phrase or compound used by English speakers.",
+      "ENGINE CONFIG: A natural English phrase or compound used by English speakers.",
+      "CONFIG FILE: A natural English phrase or compound used by English speakers.",
+      "FILE LOCK: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "network_latency",
+      "latency_spike",
+      "spike_detection",
+      "detection_rule",
+      "rule_engine",
+      "engine_config",
+      "config_file",
+      "file_lock"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "hard-policy-exception-report-summary-table-lock-wait-queue-depth",
+    "difficulty": "hard",
+    "status": "exported",
+    "chain": [
+      "POLICY",
+      "EXCEPTION",
+      "REPORT",
+      "SUMMARY",
+      "TABLE",
+      "LOCK",
+      "WAIT",
+      "QUEUE",
+      "DEPTH"
+    ],
+    "explanations": [
+      "POLICY EXCEPTION: A natural English phrase or compound used by English speakers.",
+      "EXCEPTION REPORT: A natural English phrase or compound used by English speakers.",
+      "REPORT SUMMARY: A natural English phrase or compound used by English speakers.",
+      "SUMMARY TABLE: A natural English phrase or compound used by English speakers.",
+      "TABLE LOCK: A natural English phrase or compound used by English speakers.",
+      "LOCK WAIT: A natural English phrase or compound used by English speakers.",
+      "WAIT QUEUE: A natural English phrase or compound used by English speakers.",
+      "QUEUE DEPTH: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "policy_exception",
+      "exception_report",
+      "report_summary",
+      "summary_table",
+      "table_lock",
+      "lock_wait",
+      "wait_queue",
+      "queue_depth"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "hard-risk-assessment-framework-agreement-termination-clause-database-index-fund",
+    "difficulty": "hard",
+    "status": "exported",
+    "chain": [
+      "RISK",
+      "ASSESSMENT",
+      "FRAMEWORK",
+      "AGREEMENT",
+      "TERMINATION",
+      "CLAUSE",
+      "DATABASE",
+      "INDEX",
+      "FUND"
+    ],
+    "explanations": [
+      "RISK ASSESSMENT: A natural English phrase or compound used by English speakers.",
+      "ASSESSMENT FRAMEWORK: A natural English phrase or compound used by English speakers.",
+      "FRAMEWORK AGREEMENT: A natural English phrase or compound used by English speakers.",
+      "AGREEMENT TERMINATION: A natural English phrase or compound used by English speakers.",
+      "TERMINATION CLAUSE: A natural English phrase or compound used by English speakers.",
+      "CLAUSE DATABASE: A natural English phrase or compound used by English speakers.",
+      "DATABASE INDEX: A natural English phrase or compound used by English speakers.",
+      "INDEX FUND: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "risk_assessment",
+      "assessment_framework",
+      "framework_agreement",
+      "agreement_termination",
+      "termination_clause",
+      "clause_database",
+      "database_index",
+      "index_fund"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "hard-supply-forecast-model-validation-set-boundary-condition-variable-name",
+    "difficulty": "hard",
+    "status": "exported",
+    "chain": [
+      "SUPPLY",
+      "FORECAST",
+      "MODEL",
+      "VALIDATION",
+      "SET",
+      "BOUNDARY",
+      "CONDITION",
+      "VARIABLE",
+      "NAME"
+    ],
+    "explanations": [
+      "SUPPLY FORECAST: A natural English phrase or compound used by English speakers.",
+      "FORECAST MODEL: A natural English phrase or compound used by English speakers.",
+      "MODEL VALIDATION: A natural English phrase or compound used by English speakers.",
+      "VALIDATION SET: A natural English phrase or compound used by English speakers.",
+      "SET BOUNDARY: A natural English phrase or compound used by English speakers.",
+      "BOUNDARY CONDITION: A natural English phrase or compound used by English speakers.",
+      "CONDITION VARIABLE: A natural English phrase or compound used by English speakers.",
+      "VARIABLE NAME: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "supply_forecast",
+      "forecast_model",
+      "model_validation",
+      "validation_set",
+      "set_boundary",
+      "boundary_condition",
+      "condition_variable",
+      "variable_name"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "medium-customer-support-case-number-portability-test-result-page-view",
+    "difficulty": "medium",
+    "status": "exported",
+    "chain": [
+      "CUSTOMER",
+      "SUPPORT",
+      "CASE",
+      "NUMBER",
+      "PORTABILITY",
+      "TEST",
+      "RESULT",
+      "PAGE",
+      "VIEW"
+    ],
+    "explanations": [
+      "CUSTOMER SUPPORT: A natural English phrase or compound used by English speakers.",
+      "SUPPORT CASE: A natural English phrase or compound used by English speakers.",
+      "CASE NUMBER: A natural English phrase or compound used by English speakers.",
+      "NUMBER PORTABILITY: A natural English phrase or compound used by English speakers.",
+      "PORTABILITY TEST: A natural English phrase or compound used by English speakers.",
+      "TEST RESULT: A natural English phrase or compound used by English speakers.",
+      "RESULT PAGE: A natural English phrase or compound used by English speakers.",
+      "PAGE VIEW: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "customer_support",
+      "support_case",
+      "case_number",
+      "number_portability",
+      "portability_test",
+      "test_result",
+      "result_page",
+      "page_view"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "medium-email-address-field-name-server-error-message-thread-count",
+    "difficulty": "hard",
+    "status": "exported",
+    "chain": [
+      "EMAIL",
+      "ADDRESS",
+      "FIELD",
+      "NAME",
+      "SERVER",
+      "ERROR",
+      "MESSAGE",
+      "THREAD",
+      "COUNT"
+    ],
+    "explanations": [
+      "EMAIL ADDRESS: A natural English phrase or compound used by English speakers.",
+      "ADDRESS FIELD: A natural English phrase or compound used by English speakers.",
+      "FIELD NAME: A natural English phrase or compound used by English speakers.",
+      "NAME SERVER: A natural English phrase or compound used by English speakers.",
+      "SERVER ERROR: A natural English phrase or compound used by English speakers.",
+      "ERROR MESSAGE: A natural English phrase or compound used by English speakers.",
+      "MESSAGE THREAD: A natural English phrase or compound used by English speakers.",
+      "THREAD COUNT: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "email_address",
+      "address_field",
+      "field_name",
+      "name_server",
+      "server_error",
+      "error_message",
+      "message_thread",
+      "thread_count"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "medium-garden-hose-pipe-dream-house-party-song-title-track",
+    "difficulty": "medium",
+    "status": "exported",
+    "chain": [
+      "GARDEN",
+      "HOSE",
+      "PIPE",
+      "DREAM",
+      "HOUSE",
+      "PARTY",
+      "SONG",
+      "TITLE",
+      "TRACK"
+    ],
+    "explanations": [
+      "GARDEN HOSE: A natural English phrase or compound used by English speakers.",
+      "HOSE PIPE: A natural English phrase or compound used by English speakers.",
+      "PIPE DREAM: A natural English phrase or compound used by English speakers.",
+      "DREAM HOUSE: A natural English phrase or compound used by English speakers.",
+      "HOUSE PARTY: A natural English phrase or compound used by English speakers.",
+      "PARTY SONG: A natural English phrase or compound used by English speakers.",
+      "SONG TITLE: A natural English phrase or compound used by English speakers.",
+      "TITLE TRACK: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "garden_hose",
+      "hose_pipe",
+      "pipe_dream",
+      "dream_house",
+      "house_party",
+      "party_song",
+      "song_title",
+      "title_track"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "medium-online-course-material-review-cycle-lane-change-request-queue",
+    "difficulty": "medium",
+    "status": "exported",
+    "chain": [
+      "ONLINE",
+      "COURSE",
+      "MATERIAL",
+      "REVIEW",
+      "CYCLE",
+      "LANE",
+      "CHANGE",
+      "REQUEST",
+      "QUEUE"
+    ],
+    "explanations": [
+      "ONLINE COURSE: A natural English phrase or compound used by English speakers.",
+      "COURSE MATERIAL: A natural English phrase or compound used by English speakers.",
+      "MATERIAL REVIEW: A natural English phrase or compound used by English speakers.",
+      "REVIEW CYCLE: A natural English phrase or compound used by English speakers.",
+      "CYCLE LANE: A natural English phrase or compound used by English speakers.",
+      "LANE CHANGE: A natural English phrase or compound used by English speakers.",
+      "CHANGE REQUEST: A natural English phrase or compound used by English speakers.",
+      "REQUEST QUEUE: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "online_course",
+      "course_material",
+      "material_review",
+      "review_cycle",
+      "cycle_lane",
+      "lane_change",
+      "change_request",
+      "request_queue"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  },
+  {
+    "id": "medium-project-status-report-template-file-format-string-length-limit",
+    "difficulty": "medium",
+    "status": "exported",
+    "chain": [
+      "PROJECT",
+      "STATUS",
+      "REPORT",
+      "TEMPLATE",
+      "FILE",
+      "FORMAT",
+      "STRING",
+      "LENGTH",
+      "LIMIT"
+    ],
+    "explanations": [
+      "PROJECT STATUS: A natural English phrase or compound used by English speakers.",
+      "STATUS REPORT: A natural English phrase or compound used by English speakers.",
+      "REPORT TEMPLATE: A natural English phrase or compound used by English speakers.",
+      "TEMPLATE FILE: A natural English phrase or compound used by English speakers.",
+      "FILE FORMAT: A natural English phrase or compound used by English speakers.",
+      "FORMAT STRING: A natural English phrase or compound used by English speakers.",
+      "STRING LENGTH: A natural English phrase or compound used by English speakers.",
+      "LENGTH LIMIT: A natural English phrase or compound used by English speakers."
+    ],
+    "linkTypes": [
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase",
+      "two_word_phrase"
+    ],
+    "pairIds": [
+      "project_status",
+      "status_report",
+      "report_template",
+      "template_file",
+      "file_format",
+      "format_string",
+      "string_length",
+      "length_limit"
+    ],
+    "reviewNote": "high-confidence manual checkpoint batch",
+    "exportedAt": "2026-07-01T12:09:44.385Z"
+  }
+]
